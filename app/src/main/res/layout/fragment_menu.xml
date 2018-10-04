@@ -1,0 +1,91 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hmohamadi.ebooklibrary.Menu_Fragment">
+<android.support.v7.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:textSize="25dp"
+        android:text="@string/menufragment_label_Title"/>
+    <!-- TODO: Update blank fragment layout -->
+    <Button
+        android:id="@+id/btnEnterWebSIte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@mipmap/ic_menufragment_enterwebsite"
+        android:paddingStart="70dp"
+        android:paddingEnd="70dp"
+        android:text="@string/menufragment_label_btnenterwebsite" />
+
+    <Button
+        android:id="@+id/btnSendEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="70dp"
+        android:paddingEnd="70dp"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@mipmap/ic_menufragment_enterwebsite"
+        android:text="@string/menufragment_label_btnSendEmail" />
+
+    <Button
+        android:id="@+id/btnContactUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@mipmap/ic_menufragment_enterwebsite"
+        android:paddingStart="70dp"
+        android:paddingEnd="70dp"
+        android:text="@string/menufragment_label_btnContactUs" />
+
+
+
+    <Button
+        android:id="@+id/btnAboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="70dp"
+        android:paddingEnd="70dp"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@mipmap/ic_menufragment_enterwebsite"
+        android:text="@string/menufragment_label_btnAboutUs" />
+
+    <Button
+        android:id="@+id/btnSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="70dp"
+        android:paddingEnd="70dp"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@mipmap/ic_menufragment_enterwebsite"
+        android:text="@string/menufragment_label_btnSetting" />
+
+    <Button
+        android:id="@+id/btnHelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="70dp"
+        android:paddingEnd="70dp"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@mipmap/ic_menufragment_enterwebsite"
+        android:text="@string/menufragment_label_btnHelp" />
+    <android.support.v7.widget.LinearLayoutCompat
+
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </android.support.v7.widget.LinearLayoutCompat>
+</android.support.v7.widget.LinearLayoutCompat>
+</FrameLayout>

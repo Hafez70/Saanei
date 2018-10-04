@@ -1,7 +1,20 @@
 <resources>
     <string name="app_name">EbookLibrary</string>
-    <string name="title_home">we have successfully fuck your aunt</string>
+    <string name="title_home">home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- menufragment -->
+
+    <string name="menufragment_label_Title">منو اصلی</string>
+    <string name="menufragment_label_btnenterwebsite">ورود به سایت</string>
+    <string name="menufragment_label_btnSendEmail">ارسالی ایمیل</string>
+    <string name="menufragment_label_btnContactUs">تماس با ما</string>
+    <string name="menufragment_label_btnAboutUs">درباره ما</string>
+    <string name="menufragment_label_btnSetting">تنظیمات</string>
+    <string name="menufragment_label_btnHelp">راهنما</string>
 </resources>
