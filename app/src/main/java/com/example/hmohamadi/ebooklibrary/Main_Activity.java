@@ -1,13 +1,18 @@
 package com.example.hmohamadi.ebooklibrary;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class Main_Activity extends AppCompatActivity {
+public class Main_Activity extends AppCompatActivity
+        implements
+        Menu_Fragment.OnFragmentInteractionListener
+{
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -15,8 +20,12 @@ public class Main_Activity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_Setting:
-
+                case R.id.navigation_home:
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    Menu_Fragment fragment = new Menu_Fragment();
+                    transaction.replace(R.id.fragment_container, fragment);
+                    transaction.addToBackStack(null);
+                    transaction.commit();
                     return true;
             }
             return true;
@@ -34,4 +43,8 @@ public class Main_Activity extends AppCompatActivity {
         navigation.setSelectedItemId(R.id.navigation_BookList);
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }

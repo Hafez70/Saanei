@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:drawableLeft="@mipmap/ic_menufragment_enterwebsite"
+        android:drawableLeft="@mipmap/ic_enterwebsite"
         android:paddingStart="70dp"
         android:paddingEnd="70dp"
         android:text="@string/menufragment_label_btnenterwebsite" />
@@ -35,7 +35,7 @@
         android:paddingStart="70dp"
         android:paddingEnd="70dp"
         android:background="@android:color/transparent"
-        android:drawableLeft="@mipmap/ic_menufragment_enterwebsite"
+        android:drawableLeft="@mipmap/ic_sendemail"
         android:text="@string/menufragment_label_btnSendEmail" />
 
     <Button
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:drawableLeft="@mipmap/ic_menufragment_enterwebsite"
+        android:drawableLeft="@mipmap/ic_contactus"
         android:paddingStart="70dp"
         android:paddingEnd="70dp"
         android:text="@string/menufragment_label_btnContactUs" />
@@ -57,7 +57,7 @@
         android:paddingStart="70dp"
         android:paddingEnd="70dp"
         android:background="@android:color/transparent"
-        android:drawableLeft="@mipmap/ic_menufragment_enterwebsite"
+        android:drawableLeft="@mipmap/ic_aboutus"
         android:text="@string/menufragment_label_btnAboutUs" />
 
     <Button
@@ -67,7 +67,7 @@
         android:paddingStart="70dp"
         android:paddingEnd="70dp"
         android:background="@android:color/transparent"
-        android:drawableLeft="@mipmap/ic_menufragment_enterwebsite"
+        android:drawableLeft="@mipmap/ic_menufragment_setting"
         android:text="@string/menufragment_label_btnSetting" />
 
     <Button
@@ -77,7 +77,7 @@
         android:paddingStart="70dp"
         android:paddingEnd="70dp"
         android:background="@android:color/transparent"
-        android:drawableLeft="@mipmap/ic_menufragment_enterwebsite"
+        android:drawableLeft="@mipmap/ic_help"
         android:text="@string/menufragment_label_btnHelp" />
     <android.support.v7.widget.LinearLayoutCompat
 
