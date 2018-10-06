@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="top|center"
+    android:orientation="vertical"
+    android:visibility="visible">
+    tools:context="com.example.hmohamadi.ebooklibrary.SplashScreen">
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/txtSplashTtile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_margin="60dp"
+        android:gravity="top"
+        android:text="بِسمِ اللهِ الرَحمنِ الرَحیم"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/imgSplash_logo"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:src="@drawable/splash_logo" />
+
+</android.support.v7.widget.LinearLayoutCompat>
