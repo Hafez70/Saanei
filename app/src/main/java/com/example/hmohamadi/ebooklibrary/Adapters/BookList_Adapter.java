@@ -54,6 +54,7 @@ public class BookList_Adapter extends ArrayAdapter<Book_Model> {
 
         AppCompatTextView txt_Year = (AppCompatTextView)v.findViewById(R.id.txt_Year_gridItem);
         txt_Year.setText(book.getYear());
+
         return v;
     }
 

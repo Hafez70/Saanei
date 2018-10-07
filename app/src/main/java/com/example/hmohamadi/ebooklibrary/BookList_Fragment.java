@@ -8,7 +8,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.example.hmohamadi.ebooklibrary.Adapters.BookList_Adapter;
 import com.example.hmohamadi.ebooklibrary.Models.Book_Model;
@@ -86,6 +88,13 @@ public class BookList_Fragment extends Fragment {
 
         grd_booklist = (GridView)rootView.findViewById(R.id.grdBookList);
         grd_booklist.setAdapter(new BookList_Adapter(getActivity(),_lstBooks));
+        grd_booklist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Book_Model _book = _lstBooks.get(position);
+                Toast.makeText(getActivity(), "you clicked on :: " + _book.getName() + " Damn bitch!",Toast.LENGTH_LONG).show();
+            }
+        });
 
         return rootView;
     }
