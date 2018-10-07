@@ -22,7 +22,8 @@
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/b_koodak_outline"/>
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/imgSplash_logo"

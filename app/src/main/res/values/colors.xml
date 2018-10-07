@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="black_overlay">#66000000</color>
+    <color name="PressedWidgetColor">#0071fc</color>
+    <color name="HoverWidgetColor">#638ec2</color>
+    <color name="NormalWidgetColor">#FFFFFF</color>
+
+    <color name="colorPrimaryLight">#e9e9e9</color>
+    <color name="Mainbackground">#ffffff</color>
+
+    <color name="textColorPrimary">#4d4d4d</color>
+    <color name="textColorSecondary">#000000</color>
+
+    <color name="textColorPrimary_Dialog">#000000</color>
+    <color name="textColorSecondary_Dialog">#000000</color>
+
 </resources>

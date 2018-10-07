@@ -5,14 +5,14 @@ buildscript {
     repositories {
         google()
         jcenter()
-        mavenCentral()
-        maven { url "https://jitpack.io" }
-        maven {url 'https://maven.google.com'}
-        maven {
-            repositories {
-                url 'https://oss.sonatype.org/content/repositories/releases/'
-            }
-        }
+//        mavenCentral()
+//        maven { url "https://jitpack.io" }
+//        maven {url 'https://maven.google.com'}
+//        maven {
+//            repositories {
+//                url 'https://oss.sonatype.org/content/repositories/releases/'
+//            }
+//        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
@@ -27,16 +27,8 @@ allprojects {
     repositories {
         google()
         jcenter()
-        mavenCentral()
-        maven {
-            url 'https://maven.google.com'
-        }
-        maven { url "https://jitpack.io" }
-        maven {
-            repositories {
-                url 'https://oss.sonatype.org/content/repositories/releases/'
-            }
-        }
+//        mavenCentral()
+
     }
 }
 

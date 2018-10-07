@@ -1,0 +1,26 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hmohamadi.ebooklibrary.Setting_Fragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/Mainbackground">
+
+    <TextView
+        style="@style/App_HelperTextStyle"
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:text="نام wifi :" />
+
+    <EditText
+        android:id="@+id/txtSSID"
+        style="@style/App_EditTextStyle"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:hint="نام مودم مورد نظر برای اتصال دستگاه"
+        android:inputType="text" />
+    </LinearLayout>
+</FrameLayout>
