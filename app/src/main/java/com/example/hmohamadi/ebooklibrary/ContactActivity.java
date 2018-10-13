@@ -1,15 +1,14 @@
 package com.example.hmohamadi.ebooklibrary;
 
-import android.content.Intent;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.hmohamadi.ebooklibrary.Models.GMailSender;
+import com.folioreader.Config;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -19,7 +18,7 @@ public class ContactActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact_form);
+         setContentView(R.layout.activity_contact_form);
 
         final EditText your_name        = (EditText) findViewById(R.id.your_name);
         final EditText your_email       = (EditText) findViewById(R.id.your_email);
@@ -52,34 +51,17 @@ public class ContactActivity extends AppCompatActivity {
                 return;
             }
             if (TextUtils.isEmpty(message)){
-                your_message.setError(getResources().getString(R.string.invalid_email));
+                your_message.setError("متن ایمیل نباید خالی باشد");
                 your_message.requestFocus();
                 return;
             }
-            //Intent sendEmail = new Intent(android.content.Intent.ACTION_SEND);
 
-            /* Fill it with Data */
+            SendMail sm = new SendMail(getActivity(), Config.DESTINATION_EMAIL, subject,
+                    "<b>Sender: "+ email + "</b><br>" + message);
 
-            try {
-                GMailSender sender = new GMailSender("saaneimobileapp@gmail.com", "Saanei2018");
-                sender.sendMail(subject,
-                        message,
-                        "saaneimobileapp@gmail.com",
-                        "mostafa.abdollahi@gmail.com");
-            } catch (Exception e) {
-                Log.e("SendMail", e.getMessage(), e);
-            }
+            //Executing sendmail to send email
+            sm.execute();
 
-
-
-            //sendEmail.setType("plain/text");
-            //sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"saaneimobileapp@gmail.com"});
-            //sendEmail.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
-           // sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
-               //     "name:"+name+'\n'+"Email ID:"+email+'\n'+"Message:"+'\n'+message);
-
-            /* Send it off to the Activity-Chooser */
-            //startActivity(Intent.createChooser(sendEmail, "Send email..."));
         }
         });
 
@@ -93,4 +75,12 @@ public class ContactActivity extends AppCompatActivity {
         return matcher.matches();
     }
 
+    public Context getActivity() {
+        return this;
+    }
+
+
+
+
 }
+

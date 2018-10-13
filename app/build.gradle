@@ -34,10 +34,10 @@ dependencies
             implementation 'com.daimajia.easing:library:2.0@aar'
             implementation 'com.daimajia.androidanimations:library:2.3@aar'
             implementation project(':folioreader')
-
             implementation files('src/main/libs/activation.jar')
             implementation files('src/main/libs/additionnal.jar')
             implementation files('src/main/libs/mail.jar')
+
         }
 
 
