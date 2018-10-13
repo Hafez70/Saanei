@@ -18,4 +18,19 @@
     <string name="lbl_Year_gridItem">انتشار :</string>
 
     <!-- book list grid item -->
+    <!-- Contact Us -->
+    <string name="contact_form">تماس با ما</string>
+    <string name="contact_form_name">نام</string>
+    <string name="contact_form_email">ایمیل</string>
+    <string name="contact_form_subject">موضوع</string>
+    <string name="contact_form_message">متن ایمیل</string>
+    <string name="contact_form_button">ارسال</string>
+    <string name="contact_form_post_message">منتظر بمانید! در حال ارسال ایمیل هستیم...</string>
+    <string name="contact_posted">پیغام شما با موفقیت ارسال شد.</string>
+    <string name="empty_name">نام خود را وارد کنید</string>
+    <string name="invalid_email">ایمیل نا معتبر است</string>
+    <string name="empty_message">متن خود را وارد کنید</string>
+    <string name="empty_subject">موضوع خود را وارد کنید</string>
+
+    <!--Contact Us -->
 </resources>
