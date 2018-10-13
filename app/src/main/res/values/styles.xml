@@ -1,23 +1,72 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+        <item name="android:windowBackground">@color/Mainbackground</item>
+        <item name="android:layoutDirection">rtl</item>
     </style>
 
-    <style name="FullscreenTheme" parent="AppTheme">
-        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:windowBackground">@null</item>
-        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
-        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+
+    <style name="App_HelperTextStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/textColorSecondary</item>
+        <item name="android:background">@color/Mainbackground</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">11dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:gravity">start|center</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
-        <item name="android:background">@color/black_overlay</item>
+    <style name="App_btnStyle" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:background">@color/Mainbackground</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingRight">70dp</item>
+        <item name="android:paddingLeft">70dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:gravity">start|center</item>
+        <item name="android:textStyle">bold</item>
+
     </style>
 
+    <style name="App_EditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textColorHint">@color/textColorSecondary</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:textSize">15dp</item>
+
+    </style>
+
+    <style name="ThemeCustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="android:background">@color/Mainbackground</item>
+        <item name="android:direction">right_to_left</item>
+
+    </style>
 </resources>

@@ -7,11 +7,13 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
+
 
 public class Main_Activity extends AppCompatActivity
         implements
-        Menu_Fragment.OnFragmentInteractionListener
+        Menu_Fragment.OnFragmentInteractionListener,
+        Setting_Fragment.OnFragmentInteractionListener,
+        BookList_Fragment.OnFragmentInteractionListener
 {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -20,13 +22,30 @@ public class Main_Activity extends AppCompatActivity
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.navigation_home: {
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     Menu_Fragment fragment = new Menu_Fragment();
                     transaction.replace(R.id.fragment_container, fragment);
                     transaction.addToBackStack(null);
                     transaction.commit();
                     return true;
+                }
+                case R.id.navigation_Setting: {
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    Setting_Fragment fragment = new Setting_Fragment();
+                    transaction.replace(R.id.fragment_container, fragment);
+                    transaction.addToBackStack(null);
+                    transaction.commit();
+                    return true;
+                }
+                case R.id.navigation_BookList: {
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    BookList_Fragment fragment = new BookList_Fragment();
+                    transaction.replace(R.id.fragment_container, fragment);
+                    transaction.addToBackStack(null);
+                    transaction.commit();
+                    return true;
+                }
             }
             return true;
         }

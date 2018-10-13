@@ -1,33 +1,30 @@
 package com.example.hmohamadi.ebooklibrary;
 
-import android.support.v4.app.Fragment;
+
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-
-import com.example.hmohamadi.ebooklibrary.Helpers.ChangeActivityHelper;
-
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Menu_Fragment.OnFragmentInteractionListener} interface
+ * {@link Setting_Fragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Menu_Fragment#newInstance} factory method to
+ * Use the {@link Setting_Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Menu_Fragment extends Fragment {
+public class Setting_Fragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
 
     private OnFragmentInteractionListener mListener;
 
-    public Menu_Fragment() {
+    public Setting_Fragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +33,11 @@ public class Menu_Fragment extends Fragment {
      * this fragment using the provided parameters.
      *
 
-     * @return A new instance of fragment Menu_Fragment.
+     * @return A new instance of fragment Setting_Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Menu_Fragment newInstance() {
-        Menu_Fragment fragment = new Menu_Fragment();
+    public static Setting_Fragment newInstance() {
+        Setting_Fragment fragment = new Setting_Fragment();
 
         return fragment;
     }
@@ -55,20 +52,7 @@ public class Menu_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v  = inflater.inflate(R.layout.fragment_menu, container, false);
-
-
-        //---------- contact us --------------------//
-        Button _btnContactUs = (Button) v.findViewById(R.id.btnContactUs);
-        _btnContactUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ChangeActivityHelper.changeActivity(getActivity(),ContactActivity.class,false);
-            }
-        });
-        //---------- contact us --------------------//
-
-        return v;
+        return inflater.inflate(R.layout.fragment_setting, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -76,7 +60,6 @@ public class Menu_Fragment extends Fragment {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
-
     }
 
     @Override
