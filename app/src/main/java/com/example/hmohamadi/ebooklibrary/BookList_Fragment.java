@@ -14,9 +14,14 @@ import android.widget.Toast;
 
 import com.example.hmohamadi.ebooklibrary.Adapters.BookList_Adapter;
 import com.example.hmohamadi.ebooklibrary.Models.Book_Model;
+import com.folioreader.Config;
+import com.folioreader.Constants;
+import com.folioreader.FolioReader;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
 
         /**
  * A simple {@link Fragment} subclass.
@@ -80,11 +85,11 @@ public class BookList_Fragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_booklist, container, false);
         // Inflate the layout for this fragment
         _lstBooks.add(new Book_Model(1,"کامله الرساله","1352","آیتالله صانعی",""));
-        _lstBooks.add(new Book_Model(1,"کامله","1354","صانعی",""));
-        _lstBooks.add(new Book_Model(1,"الرساله","1356","داداچ صانعی",""));
-        _lstBooks.add(new Book_Model(1,"هری پاتر 1","1380","جی کی رولینگ",""));
-        _lstBooks.add(new Book_Model(1,"هری پاتر 2","1382","رولینگ",""));
-        _lstBooks.add(new Book_Model(1,"هری پاتر 3","1383","جی جی",""));
+        _lstBooks.add(new Book_Model(2,"کامله","1354","صانعی",""));
+        _lstBooks.add(new Book_Model(3,"الرساله","1356","داداچ صانعی",""));
+        _lstBooks.add(new Book_Model(4,"هری پاتر 1","1380","جی کی رولینگ",""));
+        _lstBooks.add(new Book_Model(5,"هری پاتر 2","1382","رولینگ",""));
+        _lstBooks.add(new Book_Model(6,"هری پاتر 3","1383","جی جی",""));
 
         grd_booklist = (GridView)rootView.findViewById(R.id.grdBookList);
         grd_booklist.setAdapter(new BookList_Adapter(getActivity(),_lstBooks));
@@ -92,7 +97,13 @@ public class BookList_Fragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Book_Model _book = _lstBooks.get(position);
-                Toast.makeText(getActivity(), "you clicked on :: " + _book.getName() + " Damn bitch!",Toast.LENGTH_LONG).show();
+                FolioReader folioReader = FolioReader.get();
+                folioReader.openBook(R.raw.resaleh);
+                Config conf = new Config();
+                conf.setAllowedDirection(Config.AllowedDirection.VERTICAL_AND_HORIZONTAL );
+                conf.setShowTts(false);
+                conf.setFont(Constants.FONT_ANDADA);
+
             }
         });
 

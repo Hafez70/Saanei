@@ -60,6 +60,14 @@ public class ChangeActivityHelper implements OnClickListener {
         source.startActivity(intent);
     }
 
+    public static void changeActivityForResult(FragmentActivity source, Class<?> destination, boolean shouldFinishContext, Bundle bundle) {
+        if (shouldFinishContext){
+            source.finish();
+        }
+        Intent intent = new Intent(source, destination);
+        intent.putExtras(bundle);
+        source.startActivity(intent);
+    }
 
 
 }
