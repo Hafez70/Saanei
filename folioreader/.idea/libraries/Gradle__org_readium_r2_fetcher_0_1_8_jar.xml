@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.readium:r2-fetcher:0.1.8@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.readium/r2-fetcher/0.1.8/df84a2e747b4e47b246b17731618b581e9f39aed/r2-fetcher-0.1.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.readium/r2-fetcher/0.1.8/a279cfe105ba826a63ac0b06a3166df78999369e/r2-fetcher-0.1.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
