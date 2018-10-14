@@ -5,7 +5,7 @@
 
     <string name="menufragment_label_Title">منو اصلی</string>
     <string name="menufragment_label_btnenterwebsite">ورود به سایت</string>
-    <string name="menufragment_label_btnSendEmail">ارسالی ایمیل</string>
+    <string name="menufragment_label_btnSendEmail">ارسال ایمیل</string>
     <string name="menufragment_label_btnContactUs">تماس با ما</string>
     <string name="menufragment_label_btnAboutUs">درباره ما</string>
     <string name="menufragment_label_btnSetting">تنظیمات</string>

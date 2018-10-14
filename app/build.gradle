@@ -39,5 +39,3 @@ dependencies
             implementation files('src/main/libs/mail.jar')
 
         }
-
-

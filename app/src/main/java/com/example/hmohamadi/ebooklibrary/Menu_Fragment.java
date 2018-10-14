@@ -59,8 +59,8 @@ public class Menu_Fragment extends Fragment {
 
 
         //---------- contact us --------------------//
-        Button _btnContactUs = (Button) v.findViewById(R.id.btnContactUs);
-        _btnContactUs.setOnClickListener(new View.OnClickListener() {
+        Button _btnSendEmail = (Button) v.findViewById(R.id.btnSendEmail);
+        _btnSendEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ChangeActivityHelper.changeActivity(getActivity(),ContactActivity.class,false);
@@ -68,6 +68,25 @@ public class Menu_Fragment extends Fragment {
         });
         //---------- contact us --------------------//
 
+        //---------- About us --------------------//
+        Button _btnAboutUs = (Button) v.findViewById(R.id.btnAboutUs);
+        _btnAboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChangeActivityHelper.changeActivity(getActivity(),AboutUsActivity.class,false);
+            }
+        });
+        //---------- About us --------------------//
+
+        //---------- About us --------------------//
+        Button _btnContactUS = (Button) v.findViewById(R.id.btnContactUs);
+        _btnContactUS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChangeActivityHelper.changeActivity(getActivity(),ContactUsStaticTextActivity.class,false);
+            }
+        });
+        //---------- About us --------------------//
         return v;
     }
 
