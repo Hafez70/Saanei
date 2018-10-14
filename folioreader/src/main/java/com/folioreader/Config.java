@@ -16,6 +16,7 @@ import org.json.JSONObject;
 @SuppressWarnings("PMD.AvoidDuplicateLiterals")
 public class Config implements Parcelable {
 
+
     public static final String SOURCE_EMAIL = "saaneimobileapp@gmail.com";
 
     public static final String DESTINATION_EMAIL = "mostafa.abdollahi@gmail.com";
