@@ -17,6 +17,7 @@ import org.json.JSONObject;
 public class Config implements Parcelable {
 
     public static final String SOURCE_EMAIL = "saaneimobileapp@gmail.com";
+
     public static final String DESTINATION_EMAIL = "mostafa.abdollahi@gmail.com";
     public static final String PASSWORD = "Saanei2018";
     private static final String LOG_TAG = Config.class.getSimpleName();
