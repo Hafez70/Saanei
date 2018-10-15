@@ -1,6 +1,7 @@
         package com.example.hmohamadi.ebooklibrary;
 
 
+
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -98,11 +99,7 @@ public class BookList_Fragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Book_Model _book = _lstBooks.get(position);
                 FolioReader folioReader = FolioReader.get();
-                folioReader.openBook(R.raw.resaleh);
-                Config conf = new Config();
-                conf.setAllowedDirection(Config.AllowedDirection.VERTICAL_AND_HORIZONTAL );
-                conf.setShowTts(false);
-                conf.setFont(Constants.FONT_ANDADA);
+                folioReader.openBook(R.raw.rresaleh);
 
             }
         });

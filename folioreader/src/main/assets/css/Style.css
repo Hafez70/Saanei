@@ -250,23 +250,33 @@ html.nightMode .highlight_underline {border-bottom: 2px solid rgba(240, 40, 20, 
 }
 
 .andada {
-     font-family: "andada", sans-serif;
+     font-family: "andada", sans-serif !important;
  }
 .lato {
-     font-family: "lato", serif;
+     font-family: "lato", serif !important;
  }
 .lora {
-     font-family: "lora", serif;
+     font-family: "lora", serif !important;
  }
 .raleway {
-     font-family: "raleway", sans-serif;
+     font-family: "raleway", sans-serif !important;
+ }
+
+@font-face {
+    font-family: 'koodak';
+    src: url('file:///android_asset/fonts/koodak/Koodak-Bold.ttf');
+}
+
+.koodak {
+     font-family: "koodak", sans-serif !important;
+
  }
 
 html.textSizeOne { font-size: 13px !important; }
 html.textSizeTwo { font-size: 15px !important; }
-html.textSizeThree { font-size: 17px !important; }
-html.textSizeFour { font-size: 19px !important; }
-html.textSizeFive { font-size: 21px !important; }
+html.textSizeThree { font-size: 25px !important; }
+html.textSizeFour { font-size: 28px !important; }
+html.textSizeFive { font-size: 72px !important; }
 
 h1 {
     font-size: 2rem;

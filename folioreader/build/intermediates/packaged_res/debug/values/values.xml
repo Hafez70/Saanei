@@ -28,8 +28,7 @@
     <color name="yellow">#FFEB6B</color>
     <declare-styleable name="DirectionalViewpager">
         <attr format="string" name="direction">
-            <!-- <enum name="vertical" value="vertical"></enum>
-             <enum name="horizontal" value="horizontal"></enum>-->
+            
         </attr>
     </declare-styleable>
     <declare-styleable name="LoadingView">
@@ -52,7 +51,7 @@
     <string name="LanguageChooserTitle">Choose two languages:</string>
     <string name="OK">OK</string>
     <string name="SetSizeTitle">Upper Panel Size:</string>
-    <string name="andada">lotus</string>
+    <string name="andada">Andada</string>
     <string name="andada_font">fonts/andada/Andada-Regular.otf</string>
     <string name="app_name">FolioReader</string>
     <string name="audio_mark_id">javascript:alert(audioMarkID(\'epub-media-overlay-playing\',\'%s\'))</string>
@@ -87,40 +86,42 @@
     <string name="half_speed">1/2x</string>
     <string name="half_speed_text"><![CDATA[<sup>1</sup>/<sub>2</sub>x]]></string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="highlight">متن منتخب</string>
+    <string name="highlight">Highlight</string>
     <string name="highlight_search_result" translatable="false">javascript:highlightSearchResult(\"%s\", %d)</string>
-    <string name="highlights">متن منتخب</string>
+    <string name="highlights">Highlights</string>
     <string name="htmlBodyTableOpen">&lt;html>&lt;body>&lt;table></string>
     <string name="html_mime_type" translatable="false">text/html</string>
+    <string name="koodak">کودک</string>
+    <string name="koodak_font">fonts/koodak/Koodak-Bold.ttf</string>
     <string name="languageMeta">&lt;tr>&lt;td>Language:&lt;/td>&lt;td></string>
-    <string name="lato">potus</string>
+    <string name="lato">Lato</string>
     <string name="lato_font">fonts/lato/Lato-Regular.ttf</string>
     <string name="less_than_minute">Less than a minute · </string>
     <string name="loading">Loading</string>
-    <string name="lora">pitus</string>
+    <string name="lora">Lora</string>
     <string name="lora_font">fonts/lora/Lora-Regular.ttf</string>
     <string name="make_search_results_invisible" translatable="false">javascript:makeSearchResultsInvisible()</string>
     <string name="menu_item_config">Configuration</string>
     <string name="menu_item_copy">Copy</string>
     <string name="menu_item_define">Define</string>
-    <string name="menu_item_highlight">نشانه</string>
+    <string name="menu_item_highlight">Highlight</string>
     <string name="menu_item_search">Search</string>
     <string name="menu_item_share">Share</string>
     <string name="menu_item_tts">Text To Speech</string>
-    <string name="minute_left">%1$d minute · </string>
-    <string name="minutes_left">%1$d minutes · </string>
+    <string name="minute_left">%1$d دقیقه · </string>
+    <string name="minutes_left">%1$d دقیقه · </string>
     <string name="one_and_half">1 1/2x</string>
     <string name="one_and_half_speed"><![CDATA[1<sup>1</sup>/<sub>2</sub>x]]></string>
     <string name="onex">1x</string>
     <string name="page_left">%1$d page left</string>
-    <string name="pages_left">%1$d pages left</string>
+    <string name="pages_left">%1$d صفحه مانده</string>
     <string name="parallelTextBool">parallelTextBool</string>
     <string name="pattern">\\{\\{(-?\\d+\\.?\\d*)\\,(-?\\d+\\.?\\d*)\\}\\,\\s\\{(-?\\d+\\.?\\d*)\\,(-?\\d+\\.?\\d*)\\}\\}</string>
     <string name="please_enter_note">please enter a note</string>
     <string name="please_wait">please wait...</string>
     <string name="please_wait_till_audio_is_parsed">please wait till audio is been parsed, Retry after some time</string>
     <string name="publishersMeta">&lt;tr>&lt;td>Publishers:&lt;/td></string>
-    <string name="raleway">kosbus</string>
+    <string name="raleway">Raleway</string>
     <string name="raleway_font">fonts/raleway/Raleway-Regular.ttf</string>
     <string name="red_rgb">#ff0000</string>
     <string name="reset_search_results" translatable="false">javascript:resetSearchResults()</string>
@@ -229,7 +230,7 @@
 
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

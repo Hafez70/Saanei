@@ -2,18 +2,22 @@
 
     <string name="app_name">FolioReader</string>
 
-    <string name="andada">lotus</string>
-    <string name="lato">potus</string>
-    <string name="lora">pitus</string>
-    <string name="raleway">kosbus</string>
+    <string name="andada">Andada</string>
+    <string name="lato">Lato</string>
+    <string name="lora">Lora</string>
+    <string name="raleway">Raleway</string>
+
+    <string name="koodak">کودک</string>
 
     <string name="andada_font">fonts/andada/Andada-Regular.otf</string>
     <string name="lato_font">fonts/lato/Lato-Regular.ttf</string>
     <string name="lora_font">fonts/lora/Lora-Regular.ttf</string>
     <string name="raleway_font">fonts/raleway/Raleway-Regular.ttf</string>
 
-    <string name="minutes_left">%1$d minutes ·&#160;</string>
-    <string name="minute_left">%1$d minute ·&#160;</string>
+    <string name="koodak_font">fonts/koodak/Koodak-Bold.ttf</string>
+
+    <string name="minutes_left">%1$d دقیقه ·&#160;</string>
+    <string name="minute_left">%1$d دقیقه ·&#160;</string>
     <string name="less_than_minute">Less than a minute ·&#160;</string>
 
     <string name="copied">Copied</string>
@@ -22,11 +26,11 @@
     <string name="copy">Copy</string>
     <string name="share">Share</string>
     <string name="define">Define</string>
-    <string name="highlight">متن منتخب</string>
+    <string name="highlight">Highlight</string>
 
-    <string name="pages_left">%1$d pages left</string>
+    <string name="pages_left">%1$d صفحه مانده</string>
     <string name="page_left">%1$d page left</string>
-    <string name="highlights">متن منتخب</string>
+    <string name="highlights">Highlights</string>
     <string name="half_speed">1/2x</string>
     <string name="onex">1x</string>
     <string name="one_and_half">1&#160;1/2x</string>
@@ -106,7 +110,7 @@
     <string name="back_compat" translatable="false">BackCompat</string>
 
     <string name="menu_item_copy">Copy</string>
-    <string name="menu_item_highlight">نشانه</string>
+    <string name="menu_item_highlight">Highlight</string>
     <string name="menu_item_define">Define</string>
     <string name="menu_item_share">Share</string>
 

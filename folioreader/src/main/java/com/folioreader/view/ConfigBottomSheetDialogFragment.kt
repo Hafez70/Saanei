@@ -158,12 +158,12 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
         buttonHorizontal.setTextColor(colorStateList)
         view_config_font_andada.setTextColor(colorStateList)
         view_config_font_lato.setTextColor(colorStateList)
-        view_config_font_lora.setTextColor(colorStateList)
+        view_config_font_koodak.setTextColor(colorStateList)
         view_config_font_raleway.setTextColor(colorStateList)
 
         view_config_font_andada.setOnClickListener { selectFont(Constants.FONT_ANDADA, true) }
         view_config_font_lato.setOnClickListener { selectFont(Constants.FONT_LATO, true) }
-        view_config_font_lora.setOnClickListener { selectFont(Constants.FONT_LORA, true) }
+        view_config_font_koodak.setOnClickListener { selectFont(Constants.FONT_KOODAK, true) }
         view_config_font_raleway.setOnClickListener { selectFont(Constants.FONT_RALEWAY, true) }
     }
 
@@ -171,7 +171,7 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
         when (selectedFont) {
             Constants.FONT_ANDADA -> setSelectedFont(true, false, false, false)
             Constants.FONT_LATO -> setSelectedFont(false, true, false, false)
-            Constants.FONT_LORA -> setSelectedFont(false, false, true, false)
+            Constants.FONT_KOODAK -> setSelectedFont(false, false, true, false)
             Constants.FONT_RALEWAY -> setSelectedFont(false, false, false, true)
         }
         config.font = selectedFont
@@ -184,7 +184,7 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private fun setSelectedFont(andada: Boolean, lato: Boolean, lora: Boolean, raleway: Boolean) {
         view_config_font_andada.isSelected = andada
         view_config_font_lato.isSelected = lato
-        view_config_font_lora.isSelected = lora
+        view_config_font_koodak.isSelected = lora
         view_config_font_raleway.isSelected = raleway
     }
 

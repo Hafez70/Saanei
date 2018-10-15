@@ -1403,8 +1403,8 @@ id view4
 id view5
 id viewLineBottom
 id view_config_font_andada
+id view_config_font_koodak
 id view_config_font_lato
-id view_config_font_lora
 id view_config_font_raleway
 id view_config_font_size_seek_bar
 id view_config_ib_day_mode
@@ -1625,6 +1625,8 @@ string highlight_search_result
 string highlights
 string htmlBodyTableOpen
 string html_mime_type
+string koodak
+string koodak_font
 string languageMeta
 string lato
 string lato_font
