@@ -1402,11 +1402,11 @@ id view3
 id view4
 id view5
 id viewLineBottom
-id view_config_font_andada
 id view_config_font_koodak
-id view_config_font_lato
-id view_config_font_raleway
+id view_config_font_lotus
+id view_config_font_nazanin
 id view_config_font_size_seek_bar
+id view_config_font_yekan
 id view_config_ib_day_mode
 id view_config_ib_night_mode
 id view_config_iv_label_font_big
@@ -1634,6 +1634,8 @@ string less_than_minute
 string loading
 string lora
 string lora_font
+string lotus
+string lotus_font
 string make_search_results_invisible
 string menu_item_config
 string menu_item_copy
@@ -1645,6 +1647,8 @@ string menu_item_tts
 string minute_left
 string minutes_left
 string mtrl_chip_close_icon_content_description
+string nazanin
+string nazanin_font
 string one_and_half
 string one_and_half_speed
 string onex
@@ -1691,6 +1695,8 @@ string underline_highlights
 string white_rgb
 string wikipedia
 string xhtml_mime_type
+string yekan
+string yekan_font
 string zip
 style ActionBarDayStyle
 style ActionBarDayTitleTextStyle

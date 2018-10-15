@@ -267,16 +267,40 @@ html.nightMode .highlight_underline {border-bottom: 2px solid rgba(240, 40, 20, 
     src: url('file:///android_asset/fonts/koodak/Koodak-Bold.ttf');
 }
 
+@font-face {
+    font-family: 'nazanin';
+    src: url('file:///android_asset/fonts/nazanin/Nazanin-Black.ttf');
+}
+@font-face {
+    font-family: 'yekan';
+    src: url('file:///android_asset/fonts/yekan/B-Yekan.ttf');
+}
+@font-face {
+    font-family: 'lotus';
+    src: url('file:///android_asset/fonts/lotus/Lotus-Regular.ttf');
+}
+
 .koodak {
-     font-family: "koodak", sans-serif !important;
+    font-family: "koodak", sans-serif !important;
 
  }
+.nazanin {
+    font-family: "nazanin", sans-serif !important;
 
+ }
+.yekan {
+    font-family: "yekan", sans-serif !important;
+
+  }
+.lotus {
+    font-family: "lotus", sans-serif !important;
+
+}
 html.textSizeOne { font-size: 13px !important; }
 html.textSizeTwo { font-size: 15px !important; }
-html.textSizeThree { font-size: 25px !important; }
-html.textSizeFour { font-size: 28px !important; }
-html.textSizeFive { font-size: 72px !important; }
+html.textSizeThree { font-size: 19px !important; }
+html.textSizeFour { font-size: 23px !important; }
+html.textSizeFive { font-size: 30px !important; }
 
 h1 {
     font-size: 2rem;

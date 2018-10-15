@@ -74,6 +74,15 @@ public final class HtmlUtil {
             case Constants.FONT_KOODAK:
                 classes = "koodak";
                 break;
+            case Constants.FONT_NAZANIN:
+                classes = "nazanin";
+                break;
+            case Constants.FONT_LOTUS:
+                classes = "lotus";
+                break;
+            case Constants.FONT_YEKAN:
+                classes = "yekan";
+                break;
             default:
                 break;
         }

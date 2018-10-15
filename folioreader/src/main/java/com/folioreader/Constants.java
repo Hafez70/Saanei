@@ -22,6 +22,9 @@ public class Constants {
     public static final int FONT_RALEWAY = 4;
 
     public static final int FONT_KOODAK = 5;
+    public static final int FONT_NAZANIN = 6;
+    public static final int FONT_YEKAN = 7;
+    public static final int FONT_LOTUS = 8;
 
     public static final String DATE_FORMAT = "MMM dd, yyyy | HH:mm";
     public static final String ASSET = "file:///android_asset/";

@@ -156,23 +156,23 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
                 ContextCompat.getColor(context!!, R.color.grey_color))
         buttonVertical.setTextColor(colorStateList)
         buttonHorizontal.setTextColor(colorStateList)
-        view_config_font_andada.setTextColor(colorStateList)
-        view_config_font_lato.setTextColor(colorStateList)
+        view_config_font_nazanin.setTextColor(colorStateList)
+        view_config_font_lotus.setTextColor(colorStateList)
         view_config_font_koodak.setTextColor(colorStateList)
-        view_config_font_raleway.setTextColor(colorStateList)
+        view_config_font_yekan.setTextColor(colorStateList)
 
-        view_config_font_andada.setOnClickListener { selectFont(Constants.FONT_ANDADA, true) }
-        view_config_font_lato.setOnClickListener { selectFont(Constants.FONT_LATO, true) }
+        view_config_font_nazanin.setOnClickListener { selectFont(Constants.FONT_NAZANIN, true) }
+        view_config_font_lotus.setOnClickListener { selectFont(Constants.FONT_LOTUS, true) }
         view_config_font_koodak.setOnClickListener { selectFont(Constants.FONT_KOODAK, true) }
-        view_config_font_raleway.setOnClickListener { selectFont(Constants.FONT_RALEWAY, true) }
+        view_config_font_yekan.setOnClickListener { selectFont(Constants.FONT_YEKAN, true) }
     }
 
     private fun selectFont(selectedFont: Int, isReloadNeeded: Boolean) {
         when (selectedFont) {
-            Constants.FONT_ANDADA -> setSelectedFont(true, false, false, false)
-            Constants.FONT_LATO -> setSelectedFont(false, true, false, false)
+            Constants.FONT_NAZANIN -> setSelectedFont(true, false, false, false)
+            Constants.FONT_LOTUS -> setSelectedFont(false, true, false, false)
             Constants.FONT_KOODAK -> setSelectedFont(false, false, true, false)
-            Constants.FONT_RALEWAY -> setSelectedFont(false, false, false, true)
+            Constants.FONT_YEKAN -> setSelectedFont(false, false, false, true)
         }
         config.font = selectedFont
         if (isAdded && isReloadNeeded) {
@@ -182,10 +182,10 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
     }
 
     private fun setSelectedFont(andada: Boolean, lato: Boolean, lora: Boolean, raleway: Boolean) {
-        view_config_font_andada.isSelected = andada
-        view_config_font_lato.isSelected = lato
+        view_config_font_nazanin.isSelected = andada
+        view_config_font_lotus.isSelected = lato
         view_config_font_koodak.isSelected = lora
-        view_config_font_raleway.isSelected = raleway
+        view_config_font_yekan.isSelected = raleway
     }
 
     private fun toggleBlackTheme() {
