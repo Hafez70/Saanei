@@ -25,7 +25,8 @@
         <activity android:name=".ContactActivity" />
         <activity android:name=".AboutUs" />
         <activity android:name=".AboutUsActivity" />
-        <activity android:name=".ContactUsStaticTextActivity"></activity>
+        <activity android:name=".ContactUsStaticTextActivity" />
+        <activity android:name=".WevViewActivity"></activity>
     </application>
 
 </manifest>
