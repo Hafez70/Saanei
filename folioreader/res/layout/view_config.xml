@@ -35,50 +35,51 @@
         app:layout_constraintTop_toBottomOf="@+id/view_config_ib_night_mode" />
 
     <com.folioreader.view.StyleableTextView
-        android:id="@+id/view_config_font_andada"
+        android:id="@+id/view_config_font_nazanin"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="@string/andada"
+        android:text="@string/nazanin"
         android:textSize="17sp"
-        app:layout_constraintEnd_toStartOf="@+id/view_config_font_lato"
+        app:folio_font="@string/nazanin_font"
+        app:layout_constraintEnd_toStartOf="@+id/view_config_font_lotus"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <com.folioreader.view.StyleableTextView
-        android:id="@+id/view_config_font_lato"
+        android:id="@+id/view_config_font_lotus"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="@string/lato"
+        android:text="@string/lotus"
         android:textSize="17sp"
-        app:folio_font="@string/lato_font"
-        app:layout_constraintEnd_toStartOf="@+id/view_config_font_lora"
-        app:layout_constraintStart_toEndOf="@+id/view_config_font_andada"
+        app:folio_font="@string/lotus_font"
+        app:layout_constraintEnd_toStartOf="@+id/view_config_font_koodak"
+        app:layout_constraintStart_toEndOf="@+id/view_config_font_nazanin"
         app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <com.folioreader.view.StyleableTextView
-        android:id="@+id/view_config_font_lora"
+        android:id="@+id/view_config_font_koodak"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="@string/lora"
+        android:text="@string/koodak"
         android:textSize="17sp"
-        app:folio_font="@string/lora_font"
-        app:layout_constraintEnd_toStartOf="@+id/view_config_font_raleway"
-        app:layout_constraintStart_toEndOf="@+id/view_config_font_lato"
+        app:folio_font="@string/koodak_font"
+        app:layout_constraintEnd_toStartOf="@+id/view_config_font_yekan"
+        app:layout_constraintStart_toEndOf="@+id/view_config_font_lotus"
         app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <com.folioreader.view.StyleableTextView
-        android:id="@+id/view_config_font_raleway"
+        android:id="@+id/view_config_font_yekan"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="@string/raleway"
+        android:text="@string/yekan"
         android:textSize="17sp"
-        app:folio_font="@string/raleway_font"
+        app:folio_font="@string/yekan_font"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view_config_font_lora"
+        app:layout_constraintStart_toEndOf="@+id/view_config_font_koodak"
         app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <View
@@ -88,7 +89,7 @@
         android:background="@color/grey_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_config_font_lato" />
+        app:layout_constraintTop_toBottomOf="@+id/view_config_font_yekan" />
 
     <ImageView
         android:id="@+id/view_config_iv_label_font_small"
