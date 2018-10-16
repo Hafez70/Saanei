@@ -78,7 +78,7 @@ public class Menu_Fragment extends Fragment {
         });
         //---------- About us --------------------//
 
-        //---------- About us --------------------//
+        //---------- Contact us --------------------//
         Button _btnContactUS = (Button) v.findViewById(R.id.btnContactUs);
         _btnContactUS.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +86,17 @@ public class Menu_Fragment extends Fragment {
                 ChangeActivityHelper.changeActivity(getActivity(),ContactUsStaticTextActivity.class,false);
             }
         });
-        //---------- About us --------------------//
+        //---------- Contact us--------------------//
+
+        //---------- WebView --------------------//
+        Button _btnEnterWebSIte = (Button) v.findViewById(R.id.btnEnterWebSIte);
+        _btnEnterWebSIte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChangeActivityHelper.changeActivity(getActivity(),WevViewActivity.class,false);
+            }
+        });
+        //---------- WebView--------------------//
         return v;
     }
 
