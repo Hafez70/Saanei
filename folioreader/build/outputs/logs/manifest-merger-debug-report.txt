@@ -1,87 +1,87 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
+ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
 	package
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:3:5-30
-		INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
-		INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:3:5-30
+		INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
+		INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
-		INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
+		INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
+		INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
-		INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
+		INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:2:1-37:12
+		INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:5:5-81
+ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:5:5-81
 	android:name
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:5:22-78
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:5:22-78
 uses-permission#android.permission.INTERNET
-ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:6:5-67
+ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:6:5-67
 	android:name
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:6:22-64
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:6:22-64
 application
-ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:8:5-35:19
+ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:8:5-35:19
 provider#com.folioreader.AppContext
-ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:10:9-13:40
+ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:10:9-13:40
 	android:authorities
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:12:13-67
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:12:13-67
 	android:exported
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:13:13-37
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:13:13-37
 	android:name
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:11:13-39
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:11:13-39
 activity#com.folioreader.ui.folio.activity.FolioActivity
-ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:15:9-18:55
+ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:15:9-18:55
 	android:label
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:17:13-45
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:17:13-45
 	android:theme
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:18:13-52
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:18:13-52
 	android:name
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:16:13-60
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:16:13-60
 activity#com.folioreader.ui.folio.activity.ContentHighlightActivity
-ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:20:9-22:59
+ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:20:9-22:59
 	android:theme
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:22:13-56
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:22:13-56
 	android:name
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:21:13-71
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:21:13-71
 activity#com.folioreader.ui.folio.activity.SearchActivity
-ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:24:9-33:20
+ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:24:9-33:20
 	android:launchMode
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:26:13-43
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:26:13-43
 	android:name
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:25:13-61
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:25:13-61
 intent-filter#action:name:android.intent.action.SEARCH
-ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:27:13-29:29
+ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:27:13-29:29
 action#android.intent.action.SEARCH
-ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:28:17-71
+ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:28:17-71
 	android:name
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:28:25-68
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:28:25-68
 meta-data#android.app.searchable
-ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:30:13-32:54
+ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:30:13-32:54
 	android:resource
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:32:17-51
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:32:17-51
 	android:name
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml:31:17-54
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml:31:17-54
 uses-sdk
-INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
-INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
-INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
-INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
+INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
+INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
+INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
+INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml
-		INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
+		INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
+		INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
-		ADDED from D:\projects\Saanei\folioreader\AndroidManifest.xml
-		INJECTED from D:\projects\Saanei\folioreader\AndroidManifest.xml
+		INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
+		ADDED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml
+		INJECTED from C:\Users\m.abdolahi\AndroidStudioProjects\Saanei\folioreader\AndroidManifest.xml

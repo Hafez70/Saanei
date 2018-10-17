@@ -11,12 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import com.example.hmohamadi.ebooklibrary.Adapters.BookList_Adapter;
 import com.example.hmohamadi.ebooklibrary.Models.Book_Model;
-import com.folioreader.Config;
-import com.folioreader.Constants;
 import com.folioreader.FolioReader;
 
 import java.util.ArrayList;
@@ -99,7 +96,7 @@ public class BookList_Fragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Book_Model _book = _lstBooks.get(position);
                 FolioReader folioReader = FolioReader.get();
-                folioReader.openBook(R.raw.rresaleh);
+                folioReader.openBook(R.raw.resalehhh);
 
             }
         });
