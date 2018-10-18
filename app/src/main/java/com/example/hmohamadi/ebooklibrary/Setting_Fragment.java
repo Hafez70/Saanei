@@ -5,9 +5,19 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.SeekBar;
+
+import com.folioreader.Config;
+import com.folioreader.Constants;
+import com.folioreader.util.AppUtil;
+import com.folioreader.util.UiUtil;
+import com.folioreader.view.StyleableTextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +33,8 @@ public class Setting_Fragment extends Fragment {
 
 
     private OnFragmentInteractionListener mListener;
-
+    private Config config = null;
+    boolean  isNightMode = false;
     public Setting_Fragment() {
         // Required empty public constructor
     }
@@ -45,14 +56,216 @@ public class Setting_Fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        config = AppUtil.getSavedConfig(getContext());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setting, container, false);
+
+        View rootview = inflater.inflate(R.layout.fragment_setting, container, false);
+
+        initViews(rootview);
+
+        return rootview;
+    }
+
+    private void initViews(View v) {
+        inflateView(v);
+        configFonts(v);
+        SeekBar seek = v.findViewById(R.id.view_setting_font_size_seek_bar);
+        seek.setProgress(config.getFontSize());
+        configSeekBar(seek);
+        selectFont(v,config.getFont());
+        isNightMode = config.isNightMode();
+
+        ImageButton btnDay = (ImageButton)v.findViewById(R.id.view_setting_ib_day_mode);
+
+        ImageButton btnnight= (ImageButton)v.findViewById(R.id.view_setting_ib_night_mode);
+        int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
+        if(isNightMode)
+        {
+            btnnight.setSelected(true);
+            btnDay.setSelected(false);
+            UiUtil.setColorIntToDrawable(_color, btnnight.getDrawable());
+            UiUtil.setColorResToDrawable(R.color.app_gray, btnDay.getDrawable());
+        }
+        else
+        {
+            btnDay.setSelected(true);
+            btnnight.setSelected(false);
+            UiUtil.setColorIntToDrawable(_color, btnDay.getDrawable());
+            UiUtil.setColorResToDrawable(R.color.app_gray, btnnight.getDrawable());
+        }
+       //////////////////////change theme
+    }
+
+    private void inflateView(View _v) {
+        final ImageButton btnDay = _v.findViewById(R.id.view_setting_ib_day_mode);
+        final ImageButton btnnight= _v.findViewById(R.id.view_setting_ib_night_mode);
+        final int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
+
+        btnDay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isNightMode = false;
+                btnDay.setSelected(!isNightMode);
+                btnnight.setSelected(isNightMode);
+                config.setNightMode(isNightMode);
+                UiUtil.setColorIntToDrawable(_color, btnDay.getDrawable());
+                UiUtil.setColorResToDrawable(R.color.app_gray, btnnight.getDrawable());
+                AppUtil.saveConfig(getContext(), config);
+            }
+        });
+        btnnight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isNightMode = true;
+                btnDay.setSelected(!isNightMode);
+                btnnight.setSelected(isNightMode);
+                config.setNightMode(isNightMode);
+                UiUtil.setColorIntToDrawable(_color, btnnight.getDrawable());
+                UiUtil.setColorResToDrawable(R.color.app_gray, btnDay.getDrawable());
+                AppUtil.saveConfig(getContext(), config);
+            }
+        });
+    }
+
+    private void configFonts(final View _v) {
+        final int _color_grey = ContextCompat.getColor(getContext(),R.color.grey_color);
+        final StyleableTextView btnnazanin = _v.findViewById(R.id.view_setting_font_nazanin);
+        btnnazanin.setTextColor(_color_grey);
+        final StyleableTextView btnlotus = _v.findViewById(R.id.view_setting_font_lotus);
+        btnlotus.setTextColor(_color_grey);
+        final StyleableTextView btnkoodak = _v.findViewById(R.id.view_setting_font_koodak);
+        btnkoodak.setTextColor(_color_grey);
+        final StyleableTextView btnyekan = _v.findViewById(R.id.view_setting_font_yekan);
+        btnyekan.setTextColor(_color_grey);
+
+        btnnazanin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
+                btnnazanin.setTextColor(_color);
+                btnlotus.setTextColor(_color_grey);
+                btnkoodak.setTextColor(_color_grey);
+                btnyekan.setTextColor(_color_grey);
+                selectFont(_v,Constants.FONT_NAZANIN);
+
+            }
+        });
+
+        btnlotus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectFont(_v,Constants.FONT_LOTUS);
+                int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
+                btnnazanin.setTextColor(_color_grey);
+                btnlotus.setTextColor(_color);
+                btnkoodak.setTextColor(_color_grey);
+                btnyekan.setTextColor(_color_grey);
+            }
+        });
+        btnkoodak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                selectFont(_v,Constants.FONT_KOODAK);
+                int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
+                btnnazanin.setTextColor(_color_grey);
+                btnlotus.setTextColor(_color_grey);
+                btnkoodak.setTextColor(_color);
+                btnyekan.setTextColor(_color_grey);
+            }
+        });
+        btnyekan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectFont(_v,Constants.FONT_YEKAN);
+                int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
+                btnnazanin.setTextColor(_color_grey);
+                btnlotus.setTextColor(_color_grey);
+                btnkoodak.setTextColor(_color_grey);
+                btnyekan.setTextColor(_color);
+            }
+        });
+    }
+
+    private void selectFont(View _v,int selectedFont ) {
+        int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
+        switch (selectedFont) {
+            case Constants.FONT_NAZANIN : {
+
+                final StyleableTextView btnnazanin = _v.findViewById(R.id.view_setting_font_nazanin);
+                btnnazanin.setTextColor(_color);
+                setSelectedFont(_v, true, false, false, false);
+
+                break;
+            }
+            case
+                    Constants.FONT_LOTUS :{
+                final StyleableTextView btnltus = _v.findViewById(R.id.view_setting_font_lotus);
+                btnltus.setTextColor(_color);
+                setSelectedFont(_v,false, true, false, false); break;
+            }
+            case
+                    Constants.FONT_KOODAK :
+            {
+                final StyleableTextView btnkoodak = _v.findViewById(R.id.view_setting_font_koodak);
+                btnkoodak.setTextColor(_color);
+                setSelectedFont(_v,false, false, true, false);
+                break;
+            }
+            case
+                    Constants.FONT_YEKAN :
+            {
+                final StyleableTextView btnyekan = _v.findViewById(R.id.view_setting_font_yekan);
+                btnyekan.setTextColor(_color);
+                setSelectedFont(_v,false, false, false, true);
+                break;
+            }
+         }
+        config.setFont(selectedFont);
+
+        AppUtil.saveConfig(getActivity(), config);
+    }
+
+    private void setSelectedFont(View v, Boolean nazanin,Boolean lotus,Boolean koodak,Boolean yekan) {
+
+        StyleableTextView btnnazanin = v.findViewById(R.id.view_setting_font_nazanin);
+        btnnazanin.setSelected(nazanin);
+        Log.w("My error >>>>", " setSelectedFont >>>>>>>>>>>>>" + String.valueOf(nazanin));
+        StyleableTextView btnlotus = v.findViewById(R.id.view_setting_font_lotus);
+        btnlotus.setSelected(lotus);
+        StyleableTextView btnkoodak = v.findViewById(R.id.view_setting_font_koodak);
+        btnkoodak.setSelected(koodak);
+        StyleableTextView btnyekan = v.findViewById(R.id.view_setting_font_yekan);
+        btnyekan.setSelected(yekan);
+    }
+
+    private void configSeekBar(SeekBar _seek) {
+
+        _seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                config.setFontSize(progress);
+                AppUtil.saveConfig(getActivity(), config);
+               // EventBus.getDefault().post(ReloadDataEvent())
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

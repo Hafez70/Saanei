@@ -96,7 +96,7 @@ public class BookList_Fragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Book_Model _book = _lstBooks.get(position);
                 FolioReader folioReader = FolioReader.get();
-                folioReader.openBook(R.raw.resalehhh);
+                folioReader.openBook(R.raw.resal);
 
             }
         });

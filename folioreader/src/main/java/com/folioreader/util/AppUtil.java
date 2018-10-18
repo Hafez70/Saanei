@@ -107,12 +107,21 @@ public class AppUtil {
     }
 
     public static Config getSavedConfig(Context context) {
+        if(context == null)
+        {
+            Log.w("My error >>>>" ," getSavedConfig >>>>>>>>>>>>> context is null");
+        }
+
         String json = getSharedPreferencesString(context, Config.INTENT_CONFIG, null);
+
         if (json != null) {
             try {
+
                 JSONObject jsonObject = new JSONObject(json);
+
                 return new Config(jsonObject);
             } catch (JSONException e) {
+
                 Log.e(TAG, e.getMessage());
                 return null;
             }
