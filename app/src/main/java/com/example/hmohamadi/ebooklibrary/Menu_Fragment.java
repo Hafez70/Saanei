@@ -59,7 +59,7 @@ public class Menu_Fragment extends Fragment {
 
 
         //---------- contact us --------------------//
-        Button _btnSendEmail = (Button) v.findViewById(R.id.btnSendEmail);
+        Button _btnSendEmail =  v.findViewById(R.id.btnSendEmail);
         _btnSendEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +69,7 @@ public class Menu_Fragment extends Fragment {
         //---------- contact us --------------------//
 
         //---------- About us --------------------//
-        Button _btnAboutUs = (Button) v.findViewById(R.id.btnAboutUs);
+        Button _btnAboutUs = v.findViewById(R.id.btnAboutUs);
         _btnAboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,7 +79,7 @@ public class Menu_Fragment extends Fragment {
         //---------- About us --------------------//
 
         //---------- Contact us --------------------//
-        Button _btnContactUS = (Button) v.findViewById(R.id.btnContactUs);
+        Button _btnContactUS = v.findViewById(R.id.btnContactUs);
         _btnContactUS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,13 +97,22 @@ public class Menu_Fragment extends Fragment {
             }
         });
         //---------- WebView--------------------//
+        //---------- WebView --------------------//
+        Button _btnSetting =  v.findViewById(R.id.btnSetting);
+        _btnSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onFragmentInteraction("call_setting");
+            }
+        });
+        //---------- WebView--------------------//
         return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+
         }
 
     }
@@ -137,6 +146,7 @@ public class Menu_Fragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(String _data);
     }
+
 }

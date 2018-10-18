@@ -15,7 +15,7 @@ public class Main_Activity extends AppCompatActivity
         Setting_Fragment.OnFragmentInteractionListener,
         BookList_Fragment.OnFragmentInteractionListener
 {
-
+    BottomNavigationView navigation;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -57,9 +57,18 @@ public class Main_Activity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_BookList);
+    }
+
+    @Override
+    public void onFragmentInteraction(String data) {
+
+        if(data.contains("call_setting"))
+        {
+            navigation.setSelectedItemId(R.id.navigation_Setting);
+        }
     }
 
     @Override
