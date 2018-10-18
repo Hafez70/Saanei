@@ -3,6 +3,7 @@ package com.folioreader.ui.folio.fragment;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -448,6 +449,7 @@ public class FolioPageFragment
                 mScrollSeekbar.setProgressAndThumb(percent);
                 updatePagesLeftText(percent);
             }
+
         });
 
         mWebview.setWebViewClient(webViewClient);
@@ -480,6 +482,7 @@ public class FolioPageFragment
         new HtmlTask(this).execute(getWebviewUrl());
     }
 
+    int _PageNumber=0;
     private WebViewClient webViewClient = new WebViewClient() {
         @Override
         public void onPageFinished(WebView view, String url) {
@@ -574,6 +577,8 @@ public class FolioPageFragment
             }
         }
 
+
+
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
 
@@ -637,6 +642,11 @@ public class FolioPageFragment
                 }
             }
             return null;
+        }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
         }
     };
 
@@ -794,10 +804,12 @@ public class FolioPageFragment
                     .setBackgroundColor(Color.WHITE);
         }
     }
-
+    //int currentPage = 0;
     private void updatePagesLeftText(int scrollY) {
         try {
+            
             int currentPage = (int) (Math.ceil((double) scrollY / mWebview.getWebViewHeight()) + 1);
+
             int totalPages =
                     (int) Math.ceil((double) mWebview.getContentHeightVal()
                             / mWebview.getWebViewHeight());
@@ -806,7 +818,7 @@ public class FolioPageFragment
                     pagesRemaining > 1 ?
                             getString(R.string.pages_left) : getString(R.string.page_left);
             String pagesRemainingStr = String.format(Locale.US,
-                    pagesRemainingStrFormat, pagesRemaining);
+                    pagesRemainingStrFormat, currentPage);
 
             int minutesRemaining =
                     (int) Math.ceil((double) (pagesRemaining * mTotalMinutes) / totalPages);
@@ -823,7 +835,7 @@ public class FolioPageFragment
                 minutesRemainingStr = getString(R.string.less_than_minute);
             }
 
-            mMinutesLeftTextView.setText(minutesRemainingStr);
+            //mMinutesLeftTextView.setText(minutesRemainingStr);
             mPagesLeftTextView.setText(pagesRemainingStr);
         } catch (java.lang.ArithmeticException | IllegalStateException exp) {
             Log.e("divide error", exp.toString());

@@ -28,8 +28,7 @@
     <color name="yellow">#FFEB6B</color>
     <declare-styleable name="DirectionalViewpager">
         <attr format="string" name="direction">
-            <!-- <enum name="vertical" value="vertical"></enum>
-             <enum name="horizontal" value="horizontal"></enum>-->
+            
         </attr>
     </declare-styleable>
     <declare-styleable name="LoadingView">
@@ -94,6 +93,9 @@
     <string name="html_mime_type" translatable="false">text/html</string>
     <string name="koodak">کودک</string>
     <string name="koodak_font">fonts/koodak/Koodak-Bold.ttf</string>
+    <string name="lang_Ar">العربیه</string>
+    <string name="lang_En">English</string>
+    <string name="lang_fa">فارسی</string>
     <string name="languageMeta">&lt;tr>&lt;td>Language:&lt;/td>&lt;td></string>
     <string name="lato">Lato</string>
     <string name="lato_font">fonts/lato/Lato-Regular.ttf</string>
@@ -118,8 +120,8 @@
     <string name="one_and_half">1 1/2x</string>
     <string name="one_and_half_speed"><![CDATA[1<sup>1</sup>/<sub>2</sub>x]]></string>
     <string name="onex">1x</string>
-    <string name="page_left">%1$d page left</string>
-    <string name="pages_left">%1$d صفحه مانده</string>
+    <string name="page_left">%1$d صفحه </string>
+    <string name="pages_left">%1$d صفحه </string>
     <string name="parallelTextBool">parallelTextBool</string>
     <string name="pattern">\\{\\{(-?\\d+\\.?\\d*)\\,(-?\\d+\\.?\\d*)\\}\\,\\s\\{(-?\\d+\\.?\\d*)\\,(-?\\d+\\.?\\d*)\\}\\}</string>
     <string name="please_enter_note">لطفا یادداشت کنید</string>
@@ -237,7 +239,7 @@
 
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

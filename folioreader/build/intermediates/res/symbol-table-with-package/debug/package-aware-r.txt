@@ -1627,6 +1627,9 @@ string htmlBodyTableOpen
 string html_mime_type
 string koodak
 string koodak_font
+string lang_Ar
+string lang_En
+string lang_fa
 string languageMeta
 string lato
 string lato_font

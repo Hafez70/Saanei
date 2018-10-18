@@ -12,6 +12,10 @@
     <string name="lotus">لوتوس</string>
     <string name="yekan">یکان</string>
 
+    <string name="lang_fa">فارسی</string>
+    <string name="lang_Ar">العربیه</string>
+    <string name="lang_En">English</string>
+
     <string name="andada_font">fonts/andada/Andada-Regular.otf</string>
     <string name="lato_font">fonts/lato/Lato-Regular.ttf</string>
     <string name="lora_font">fonts/lora/Lora-Regular.ttf</string>
@@ -34,8 +38,8 @@
     <string name="define">تعاریف</string>
     <string name="highlight">نشانه</string>
 
-    <string name="pages_left">%1$d صفحه مانده</string>
-    <string name="page_left">%1$d page left</string>
+    <string name="pages_left">%1$d صفحه </string>
+    <string name="page_left">%1$d صفحه </string>
     <string name="highlights">Highlights</string>
     <string name="half_speed">1/2x</string>
     <string name="onex">1x</string>

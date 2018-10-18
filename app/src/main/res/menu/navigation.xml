@@ -19,7 +19,8 @@
     <item
         android:id="@+id/navigation_Bookmark"
         android:icon="@drawable/ic_bookmark_navigation"
-        android:title="" />
+        android:title=""
+        android:visible="false"/>
     <item
         android:id="@+id/navigation_Setting"
         android:icon="@drawable/ic_setting_navigation"

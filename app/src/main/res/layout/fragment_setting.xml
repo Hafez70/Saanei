@@ -1,26 +1,273 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.hmohamadi.ebooklibrary.Setting_Fragment">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/Mainbackground">
 
-    <TextView
-        style="@style/App_HelperTextStyle"
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
-        android:text="نام wifi :" />
+        android:layout_height="wrap_content"
 
-    <EditText
-        android:id="@+id/txtSSID"
-        style="@style/App_EditTextStyle"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:hint="نام مودم مورد نظر برای اتصال دستگاه"
-        android:inputType="text" />
-    </LinearLayout>
-</FrameLayout>
+        >
+
+        <TextView
+            android:id="@+id/lblthemeMode"
+            style="@style/App_HelperTextStyle"
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:text="حالت پوسته :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <ImageButton
+            android:id="@+id/view_config_ib_day_mode"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toStartOf="@+id/view_config_ib_night_mode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblthemeMode"
+            app:srcCompat="@drawable/icon_sun_sel" />
+
+        <ImageButton
+            android:id="@+id/view_config_ib_night_mode"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblthemeMode"
+            app:layout_constraintStart_toEndOf="@+id/view_config_ib_day_mode"
+            app:srcCompat="@drawable/icon_moon_sel" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/grey_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_config_ib_night_mode" />
+
+        <TextView
+            android:id="@+id/lblFontFamily"
+            style="@style/App_HelperTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="فونت :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <com.folioreader.view.StyleableTextView
+            android:id="@+id/view_config_font_nazanin"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/nazanin"
+            android:textSize="17sp"
+            app:folio_font="@string/nazanin_font"
+            app:layout_constraintEnd_toStartOf="@+id/view_config_font_lotus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblFontFamily" />
+
+        <com.folioreader.view.StyleableTextView
+            android:id="@+id/view_config_font_lotus"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/lotus"
+            android:textSize="17sp"
+            app:folio_font="@string/lotus_font"
+            app:layout_constraintEnd_toStartOf="@+id/view_config_font_koodak"
+            app:layout_constraintStart_toEndOf="@+id/view_config_font_nazanin"
+            app:layout_constraintTop_toBottomOf="@id/lblFontFamily" />
+
+        <com.folioreader.view.StyleableTextView
+            android:id="@+id/view_config_font_koodak"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/koodak"
+            android:textSize="17sp"
+            app:folio_font="@string/koodak_font"
+            app:layout_constraintEnd_toStartOf="@+id/view_config_font_yekan"
+            app:layout_constraintStart_toEndOf="@+id/view_config_font_lotus"
+            app:layout_constraintTop_toBottomOf="@id/lblFontFamily" />
+
+        <com.folioreader.view.StyleableTextView
+            android:id="@+id/view_config_font_yekan"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/yekan"
+            android:textSize="17sp"
+            app:folio_font="@string/yekan_font"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view_config_font_koodak"
+            app:layout_constraintTop_toBottomOf="@id/lblFontFamily" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/grey_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_config_font_yekan" />
+
+        <TextView
+            android:id="@+id/lblFontSize"
+            style="@style/App_HelperTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="اندازه قلم :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view4"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <ImageView
+            android:id="@+id/view_config_iv_label_font_small"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:adjustViewBounds="false"
+            android:scaleType="center"
+            android:tint="@color/grey_color"
+            app:layout_constraintBottom_toTopOf="@+id/view5"
+            app:layout_constraintEnd_toStartOf="@+id/view_config_font_size_seek_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblFontSize"
+            app:srcCompat="@drawable/ic_format_font_black_24dp" />
+
+        <ImageView
+            android:id="@+id/view_config_iv_label_font_big"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:cropToPadding="false"
+            android:scaleType="center"
+            android:tint="@color/grey_color"
+            app:layout_constraintBottom_toTopOf="@+id/view5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view_config_font_size_seek_bar"
+            app:layout_constraintTop_toBottomOf="@id/lblFontSize"
+            app:srcCompat="@drawable/ic_format_font_black_36dp" />
+
+        <SeekBar
+            android:id="@+id/view_config_font_size_seek_bar"
+            android:layout_width="0dp"
+            android:layout_height="18dp"
+            android:max="4"
+            app:layout_constraintBottom_toTopOf="@+id/view5"
+            app:layout_constraintEnd_toStartOf="@+id/view_config_iv_label_font_big"
+            app:layout_constraintStart_toEndOf="@+id/view_config_iv_label_font_small"
+            app:layout_constraintTop_toBottomOf="@id/lblFontSize"
+            app:layout_constraintVertical_bias="0.51" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/grey_color"
+            app:layout_constraintBottom_toTopOf="@+id/buttonVertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_config_iv_label_font_small" />
+
+        <TextView
+            android:id="@+id/lblDirection"
+            style="@style/App_HelperTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="جهت صفحه :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view5"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <com.folioreader.util.StyleableTextView
+            android:id="@+id/buttonVertical"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/direction_vertical"
+            android:textSize="17sp"
+            app:folio_font="@string/lato_font"
+
+            app:layout_constraintEnd_toStartOf="@+id/buttonHorizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblDirection" />
+
+        <com.folioreader.util.StyleableTextView
+            android:id="@+id/buttonHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/direction_horizontal"
+            android:textSize="17sp"
+            app:folio_font="@string/lato_font"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonVertical"
+            app:layout_constraintTop_toBottomOf="@id/lblDirection" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/grey_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonHorizontal" />
+
+        <TextView
+            android:id="@+id/lblLanguage"
+            style="@style/App_HelperTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="انتخاب زبان :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view6"
+            tools:layout_editor_absoluteX="10dp" />
+
+
+
+        <com.folioreader.view.StyleableTextView
+            android:id="@+id/view_config_lang_en"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/lang_En"
+            android:textSize="17sp"
+            app:folio_font="@string/koodak_font"
+            app:layout_constraintEnd_toStartOf="@+id/view_config_lang_Ar"
+            app:layout_constraintStart_toEndOf="@+id/view_config_lang_fa"
+            app:layout_constraintTop_toBottomOf="@id/lblLanguage" />
+
+        <com.folioreader.view.StyleableTextView
+            android:id="@+id/view_config_lang_Ar"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/lang_fa"
+            android:textSize="17sp"
+            app:folio_font="@string/koodak_font"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view_config_lang_en"
+            app:layout_constraintTop_toBottomOf="@id/lblLanguage" />
+
+        <com.folioreader.view.StyleableTextView
+            android:id="@+id/view_config_lang_fa"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/lang_Ar"
+            android:textSize="17sp"
+            app:folio_font="@string/koodak_font"
+            app:layout_constraintEnd_toStartOf="@+id/view_config_lang_en"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblLanguage" />
+
+    </android.support.constraint.ConstraintLayout>
