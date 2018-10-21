@@ -38,4 +38,5 @@ dependencies
             implementation files('src/main/libs/activation.jar')
             implementation files('src/main/libs/additionnal.jar')
             implementation files('src/main/libs/mail.jar')
+            implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
         }

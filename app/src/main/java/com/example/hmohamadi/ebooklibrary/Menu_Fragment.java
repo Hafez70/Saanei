@@ -63,7 +63,7 @@ public class Menu_Fragment extends Fragment {
         _btnSendEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ChangeActivityHelper.changeActivity(getActivity(),ContactActivity.class,false);
+                ChangeActivityHelper.changeActivity(getActivity(),SendMailActivity.class,false);
             }
         });
         //---------- contact us --------------------//
@@ -83,7 +83,7 @@ public class Menu_Fragment extends Fragment {
         _btnContactUS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ChangeActivityHelper.changeActivity(getActivity(),ContactUsStaticTextActivity.class,false);
+                ChangeActivityHelper.changeActivity(getActivity(),ContactUsActivity.class,false);
             }
         });
         //---------- Contact us--------------------//
@@ -93,7 +93,7 @@ public class Menu_Fragment extends Fragment {
         _btnEnterWebSIte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ChangeActivityHelper.changeActivity(getActivity(),WevViewActivity.class,false);
+                ChangeActivityHelper.changeActivity(getActivity(),WebViewActivity.class,false);
             }
         });
         //---------- WebView--------------------//
