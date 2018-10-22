@@ -26,18 +26,16 @@ public class ContactUsActivity extends AppCompatActivity {
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView_ContactUs);
         recyclerView.addItemDecoration(new DividerItemDecoration(this));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         final List<ExpandableItemModel> data = new ArrayList<>();
         data.add(new ExpandableItemModel(
-                "تایتل 1",
-                "شخهسیاشسنتایشایشایعهشخسای عیخهسایخهعشسایخهعشس شایعخهشسایعهخشسایعهخشسایخهعشسایخهعشسایهخعشس شسیخهشسای خهعشسیاخهشعسایخهشس شایشهخسعایخهشعسایشسعایشصهعخا",
+                getResources().getString(R.string.contactus_qom_title),
+                getResources().getString(R.string.contactus_qom_description) ,
                 Utils.createInterpolator(Utils.FAST_OUT_SLOW_IN_INTERPOLATOR)));
         data.add(new ExpandableItemModel(
-                "تایتل 2",
-                "شخهسیاشسنتایشایشایعهشخسای عیخهسایخهعشسایخهعشس شایعخهشسایعهخشسایعهخشسایخهعشسایخهعشسایهخعشس شسیخهشسای خهعشسیاخهشعسایخهشس شایشهخسعایخهشعسایشسعایشصهعخا",
+                getResources().getString(R.string.contactus_tehran_title),
+                getResources().getString(R.string.contactus_tehran_description),
                 Utils.createInterpolator(Utils.FAST_OUT_SLOW_IN_INTERPOLATOR)));
 
         recyclerView.setAdapter(new ExpandableRecyclerAdapter(data));
-
     }
 }
