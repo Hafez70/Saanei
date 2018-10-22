@@ -18,7 +18,7 @@
     <string name="lbl_Year_gridItem">انتشار :</string>
 
     <!-- book list grid item -->
-    <!-- Contact Us -->
+    <!-- email Us -->
     <string name="contact_form">تماس با ما</string>
     <string name="contact_form_name">نام</string>
     <string name="contact_form_email">ایمیل</string>
@@ -32,5 +32,31 @@
     <string name="empty_message">متن خود را وارد کنید</string>
     <string name="empty_subject">موضوع خود را وارد کنید</string>
 
-    <!--Contact Us -->
+    <!--email Us -->
+
+    <!-- email Us -->
+    <string name="contactus_qom_title">دفتر حضرت آیت الله العظمی صانعی مدظله در قم</string>
+    <string name="contactus_qom_description">
+        بلوار شهيد محمد منتظري، کوچه هشتم، پلاک  بلوار شهيد محمد منتظري، کوچه هشتم، پلاک 4\n
+        کدپستی: 3713744369\n
+        صندوق پستی: 37185557\n
+        \n
+        تلفن های تماس: 2-37831660(025)
+        \n(025)37744767
+        \n(025)37744010
+        \n(025)40093774
+        \n
+\n        نمابر: 37735080(025)
+    </string>
+
+    <string name="contactus_tehran_title">دفتر حضرت آیت الله العظمی صانعی مدظله در تهران</string>
+    <string name="contactus_tehran_description">
+        "دفتر شماره 1\n"
+        "كارگرجنوبی، بالاتر از میدان پاستور ( به طرف انقلاب )، خیابان شهید سرخابی ، نبش کوچه شهید شاطرپور، پلاک 1\n"
+        "کدپستی : 1316973114\n"
+        "نمابر : 66409278 ( 021 )\n"
+        تلفن\u200Cهای تماس : 5 - 4001 56 66 ( 021 )"
+
+    </string>
+    <!--email Us -->
 </resources>
