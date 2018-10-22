@@ -46,7 +46,7 @@
         android:layout_below="@id/textView"
         android:orientation="vertical"
         app:ael_duration="400"
-        app:ael_expanded="true"
+        app:ael_expanded="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
