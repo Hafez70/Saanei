@@ -28,8 +28,7 @@
     <color name="yellow">#FFEB6B</color>
     <declare-styleable name="DirectionalViewpager">
         <attr format="string" name="direction">
-            <!-- <enum name="vertical" value="vertical"></enum>
-             <enum name="horizontal" value="horizontal"></enum>-->
+            
         </attr>
     </declare-styleable>
     <declare-styleable name="LoadingView">
@@ -89,7 +88,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="highlight">نشانه</string>
     <string name="highlight_search_result" translatable="false">javascript:highlightSearchResult(\"%s\", %d)</string>
-    <string name="highlights">Highlights</string>
+    <string name="highlights">منتخب ها</string>
     <string name="htmlBodyTableOpen">&lt;html>&lt;body>&lt;table></string>
     <string name="html_mime_type" translatable="false">text/html</string>
     <string name="koodak">کودک</string>
@@ -240,7 +239,7 @@
 
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
