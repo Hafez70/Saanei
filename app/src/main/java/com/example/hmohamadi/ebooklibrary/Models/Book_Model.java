@@ -3,6 +3,12 @@ package com.example.hmohamadi.ebooklibrary.Models;
 import java.io.Serializable;
 
 public class Book_Model implements Serializable {
+
+    public Book_Model()
+    {
+
+    }
+
     public Book_Model(int id, String name, int category_ID, String autorname, String year, int pagecount, String isbn, String url_path, String url_image, String keywords)
     {
         this.id = id;
@@ -27,6 +33,7 @@ public class Book_Model implements Serializable {
 
     private int id;
         private String name;
+        private String title;
         private int category_ID;
         private String category_name;
         private String autorname;
@@ -123,5 +130,13 @@ public class Book_Model implements Serializable {
 
     public void setCategory_name(String category_name) {
         this.category_name = category_name;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
