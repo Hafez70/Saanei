@@ -8,7 +8,7 @@ buildscript {
         google()
         jcenter()
         maven { url 'http://dl.bintray.com/mobisystech/maven' }
-
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
         //        mavenCentral()
 
         //        maven { url "https://jitpack.io" }
