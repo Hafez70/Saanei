@@ -15,6 +15,7 @@ import android.widget.SeekBar;
 
 import com.folioreader.Config;
 import com.folioreader.Constants;
+import com.folioreader.FolioReader;
 import com.folioreader.util.AppUtil;
 import com.folioreader.util.UiUtil;
 import com.folioreader.view.StyleableTextView;
@@ -75,6 +76,17 @@ public class Setting_Fragment extends Fragment {
         inflateView(v);
         configFonts(v);
         SeekBar seek = v.findViewById(R.id.view_setting_font_size_seek_bar);
+        Config _config = new Config()
+                .setAllowedDirection(Config.AllowedDirection.VERTICAL_AND_HORIZONTAL)
+                .setDirection(Config.Direction.VERTICAL)
+                .setFont(Constants.FONT_NAZANIN)
+                .setFontSize(2)
+                .setNightMode(false)
+                .setShowTts(true);
+        if (config==null) {
+        config=_config;
+        }
+
         seek.setProgress(config.getFontSize());
         configSeekBar(seek);
         selectFont(v,config.getFont());

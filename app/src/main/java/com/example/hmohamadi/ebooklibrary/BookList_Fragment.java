@@ -82,12 +82,12 @@ public class BookList_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_booklist, container, false);
         // Inflate the layout for this fragment
-        _lstBooks.add(new Book_Model(1,"کامله الرساله","1352","آیتالله صانعی",""));
-        _lstBooks.add(new Book_Model(2,"کامله","1354","صانعی",""));
-        _lstBooks.add(new Book_Model(3,"الرساله","1356","داداچ صانعی",""));
-        _lstBooks.add(new Book_Model(4,"هری پاتر 1","1380","جی کی رولینگ",""));
-        _lstBooks.add(new Book_Model(5,"هری پاتر 2","1382","رولینگ",""));
-        _lstBooks.add(new Book_Model(6,"هری پاتر 3","1383","جی جی",""));
+        _lstBooks.add(new Book_Model(1,"رساله توضیح المسائل","1352","آیت الله صانعی",""));
+        _lstBooks.add(new Book_Model(2,"کتاب نمونه 1","1354","آیت الله صانعی",""));
+        _lstBooks.add(new Book_Model(3,"کتاب نمونه 2","1356","آیت الله صانعی",""));
+        _lstBooks.add(new Book_Model(4,"کتاب نمونه 3","1380","آیت الله صانعی",""));
+        _lstBooks.add(new Book_Model(5,"کتاب نمونه 4","1382","آیت الله صانعی",""));
+        _lstBooks.add(new Book_Model(6,"کتاب نمونه 5","1383","آیت الله صانعی",""));
 
         grd_booklist = (GridView)rootView.findViewById(R.id.grdBookList);
         grd_booklist.setAdapter(new BookList_Adapter(getActivity(),_lstBooks));
