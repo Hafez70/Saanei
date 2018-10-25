@@ -56,8 +56,44 @@ public class DBHelper {
     public String Name_tblLanguage = "name";
     // Languages Table
 
+    //region// ContactUs Table
+    private String tblContactUs = "tblContactUs";
+    //columns
+    public String ID_tblContactUs = "_id";
+    public String Lang_ID_tblContactUs = "Lang_ID";
+    public String Version_tblContactUs = "Version";
+    public String Address_tblContactUs = "Address";
+    public String PostCode_tblContactUs = "PostCode";
+    public String PreTel1_tblContactUs = "PreTel1";
+    public String Tel1_tblContactUs = "Tel1";
+    public String PreTel2_tblContactUs = "PreTel2";
+    public String Tel2_tblContactUs = "Tel2";
+    public String PreTel3_tblContactUs = "PreTel3";
+    public String Tel3_tblContactUs = "Tel3";
+    public String PreTel4_tblContactUs = "PreTel4";
+    public String Tel4_tblContactUs = "Tel4";
+    public String PreTel5_tblContactUs = "PreTel5";
+    public String Tel5_tblContactUs = "Tel5";
+    public String PreFax_tblContactUs = "PreFax";
+    public String Fax_tblContactUs = "Fax";
+    //endregion// ContactUs Table
 
-
+    // Settings Table
+//    private String tblSettings = "tblSettings";
+//    //columns
+//    public String ID_tblCategory = "_id";
+//    public String WebSiteUrl_tblCategory = "WebSiteUrl";
+//    public String Fav_tblCategory= "SenderEmailAddress";
+//    public String Lang_ID_tblCategory = "SenderPassword";
+//    public String Lang_ID_tblCategory = "RecieverEmailAddress";
+//    public String Lang_ID_tblCategory = "SMTPHost";
+//    public String Lang_ID_tblCategory = "SMTPSocketFactoryPort";
+//    public String Lang_ID_tblCategory = "SMTPSocketFactoryClass";
+//    public String Lang_ID_tblCategory = "SMTPAuth";
+//    public String Lang_ID_tblCategory = "SMTPPort";
+//    public String Lang_ID_tblCategory = "vojoohatSiteUrl";
+//    public String Lang_ID_tblCategory = "Version";
+    // Category Table
     public DBHelper(Context context) {
         _openHelper = new DBOpenHelper (context);
     }
@@ -286,6 +322,42 @@ public class DBHelper {
     }
     //endregion///////////////////////////// BOOK end ////////////////////////////////////
 
+    //region /////////////////////// ContactUs ////////////////////////////////////
+    public ArrayList<Book_Model> getAll_ContactUs() {
+        ArrayList<Book_Model> resultLst= new ArrayList<Book_Model>();
+        SQLiteDatabase db = _openHelper.getReadableDatabase();
+        if (db == null) {
+            return null;
+        }
+
+        Cursor cursor = db.rawQuery("select * from "+tblBook, null);
+
+        if (cursor.getCount() > 0) {
+            for (int i = 0; i < cursor.getCount(); i++) {
+                cursor.moveToNext();
+                Book_Model row = new Book_Model();
+
+                row.setId(cursor.getInt(0));
+                row.setName(cursor.getString(1));
+                row.setTitle(cursor.getString(2));
+                row.setCategory_ID(cursor.getInt(3));
+                row.setAutorname(cursor.getString(4));
+                row.setYear(cursor.getString(5));
+                row.setIsbn(cursor.getString(6));
+                row.setUrl_path(cursor.getString(7));
+                row.setUrl_image(cursor.getString(8));
+                row.setJsonText(cursor.getString(9));
+                row.setVersion(cursor.getString(10));
+                row.setKeywords(cursor.getString(11));
+
+                resultLst.add(row);
+            }
+        }
+        cursor.close();
+        db.close();
+        return resultLst;
+    }
+    //endregion///////////////////////////// ContactUs ////////////////////////////////////
 }
 
 
