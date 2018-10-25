@@ -20,7 +20,7 @@ public final class R {
 
         public static int dragLayer = 0x7f0c0042;
         public static int endHandle = 0x7f0c0046;
-        public static int startHandle = 0x7f0c00cd;
+        public static int startHandle = 0x7f0c00ce;
     }
     public static final class layout {
         private layout() {}

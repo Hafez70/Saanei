@@ -154,6 +154,14 @@ public class FolioReader {
         return singleton;
     }
 
+    public FolioReader openBook(int rawId, String bookId) {
+        Intent intent = getIntentFromUrl(null, rawId);
+        //intent.putExtra(Config.INTENT_PORT, port);
+        intent.putExtra(INTENT_BOOK_ID, bookId);
+        context.startActivity(intent);
+        return singleton;
+    }
+
     public FolioReader openBook(String assetOrSdcardPath, String bookId) {
         Intent intent = getIntentFromUrl(assetOrSdcardPath, 0);
         intent.putExtra(INTENT_BOOK_ID, bookId);

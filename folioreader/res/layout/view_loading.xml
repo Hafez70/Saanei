@@ -9,12 +9,27 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
+        android:layout_width="48dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/lbl_viewloading"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintTop_toTopOf="parent"
         tools:indeterminateTint="@color/app_green" />
+
+    <TextView
+        android:id="@+id/lbl_viewloading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="لطفا منتظر بمانید"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/progressBar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/app_green"/>
 
 </merge>

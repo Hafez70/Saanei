@@ -25,10 +25,10 @@ public final class R {
 
         public static int bottom = 0x7f0c001d;
         public static int lay_down = 0x7f0c0069;
-        public static int left = 0x7f0c006e;
-        public static int pull_out = 0x7f0c009f;
-        public static int right = 0x7f0c00a3;
-        public static int top = 0x7f0c00e9;
+        public static int left = 0x7f0c006f;
+        public static int pull_out = 0x7f0c00a0;
+        public static int right = 0x7f0c00a4;
+        public static int top = 0x7f0c00ea;
     }
     public static final class styleable {
         private styleable() {}

@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import android.widget.ImageView;
 import com.example.hmohamadi.ebooklibrary.Models.Book_Model;
 import com.example.hmohamadi.ebooklibrary.R;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -43,7 +45,11 @@ public class BookList_Adapter extends ArrayAdapter<Book_Model> {
 
         AppCompatImageView imagebookPhoto = (AppCompatImageView)v.findViewById(R.id.img_bookImage_gridItem);
         if(book.getUrl_image().length() != 0) {
-            imagebookPhoto.setImageBitmap(getBitmapFromAssets(book.getUrl_image()));
+            Log.w("getView >>>>> "," >>>>>>>>>>>>>>>>>>>>> getUrl_image<<<<<<<" + book.getUrl_image());
+            Bitmap myBitmap = getBitmapFromFielPath(book.getUrl_image());
+            if(myBitmap != null) {
+                imagebookPhoto.setImageBitmap(myBitmap);
+            }
         }
 
         AppCompatTextView txt_name = (AppCompatTextView)v.findViewById(R.id.txt_name_gridItem);
@@ -106,5 +112,17 @@ public class BookList_Adapter extends ArrayAdapter<Book_Model> {
         Bitmap bitmap = BitmapFactory.decodeStream(is);
         return bitmap;
     }
+    private Bitmap getBitmapFromFielPath(String fileName){
 
+
+        File imgFile = new File(fileName);
+
+        if(imgFile.exists()) {
+
+            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+
+            return myBitmap;
+        }
+        return null;
+    }
 }

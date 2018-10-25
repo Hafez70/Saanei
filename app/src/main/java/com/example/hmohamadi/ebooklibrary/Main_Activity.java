@@ -1,12 +1,23 @@
 package com.example.hmohamadi.ebooklibrary;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
+
+import com.folioreader.Constants;
+import com.folioreader.ui.folio.activity.FolioActivity;
+import com.folioreader.util.FileUtil;
+
+import java.io.InputStream;
 
 
 public class Main_Activity extends AppCompatActivity
@@ -52,14 +63,49 @@ public class Main_Activity extends AppCompatActivity
     };
 
     @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode) {
+            case Constants.WRITE_EXTERNAL_STORAGE_REQUEST : {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    navigation.setSelectedItemId(R.id.navigation_BookList);
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (ContextCompat.checkSelfPermission(Main_Activity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(Main_Activity.this, Constants.getWriteExternalStoragePerms(), Constants.WRITE_EXTERNAL_STORAGE_REQUEST);
+
+        }
 
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_BookList);
+
+        InputStream epubInputStream;
+        epubInputStream = this.getResources().openRawResource(R.raw.resal);
+        FileUtil.saveTempEpubFile(FileUtil.getFolioEpubFilePath(FolioActivity.EpubSourceType.RAW, "", "resal"), "resal", epubInputStream);
+
+        InputStream epubInputStream_cover;
+        epubInputStream_cover = this.getResources().openRawResource(R.raw.resal_cover);
+        String coverFIlePath = FileUtil.getFolioCoverFilePath(FolioActivity.EpubSourceType.RAW, "", "resal_cover",".jpeg");
+        Log.w("onCreate >>> ","coverFIlePath :  >>" +  coverFIlePath);
+        FileUtil.saveTempEpubFile(coverFIlePath, "resal_cover", epubInputStream_cover);
     }
 
     @Override

@@ -42,6 +42,8 @@ public class Book_Model implements Serializable {
         private String isbn;
         private String url_path;
         private String url_image;
+        private String jsonText;
+        private String version;
         private String keywords;
 
     public int getId() {
@@ -138,5 +140,21 @@ public class Book_Model implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getJsonText() {
+        return jsonText;
+    }
+
+    public void setJsonText(String jsonText) {
+        this.jsonText = jsonText;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 }

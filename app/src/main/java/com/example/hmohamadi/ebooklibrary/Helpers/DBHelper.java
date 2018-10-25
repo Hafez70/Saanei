@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.hmohamadi.ebooklibrary.Models.Book_Model;
+import com.example.hmohamadi.ebooklibrary.Models.ReadPositionsModel;
+import com.folioreader.util.FileUtil;
 
 import java.security.Key;
 import java.util.ArrayList;
@@ -34,6 +36,8 @@ public class DBHelper {
     public String Url_path_tblBook = "Url_path";
     public String Url_Image_tblBook = "Url_Image";
     public String Keywords_tblBook = "Keywords";
+    public String JsonText_tblBook = "JsonText";
+    public String Version_tblBook = "version";
     // Book Table
 
     // Category Table
@@ -52,13 +56,15 @@ public class DBHelper {
     public String Name_tblLanguage = "name";
     // Languages Table
 
+
+
     public DBHelper(Context context) {
         _openHelper = new DBOpenHelper (context);
     }
 
     class DBOpenHelper extends SQLiteOpenHelper {
         DBOpenHelper (Context context) {
-            super(context, DBName , null, 1);
+            super(context, DBName , null, 2);
         }
 
         @Override
@@ -73,6 +79,8 @@ public class DBHelper {
                     ISBN_tblBook+" text, "+
                     Url_path_tblBook+" text, "+
                     Url_Image_tblBook+" text, "+
+                    JsonText_tblBook+" text, "+
+                    Version_tblBook+" text, "+
                     Keywords_tblBook+" text)");
 
             db.execSQL("create table "+ tblCategory  +" ("+
@@ -86,13 +94,24 @@ public class DBHelper {
                     Name_tblLanguage + " text)");
 
 
-            Log.w("SQLiteOpenHelper >>>>> "," >>>>>> onCreate called <<<<<<<");
+
 
             ContentValues row = new ContentValues();
 
-//            row.put(name_SettingTable, SECURIT_CODE_Setting);
-//            row.put(val_SettingTable, "1234");
-//            db.insert(SettingTable, null, row);
+
+            row.put(Name_tblBook,"رساله توضیح المسائل");
+            row.put(Title_tblBook,"resal");
+            //row.put(Cat_ID_tblBook,bk.getCategory_ID());
+            row.put(AutorName_tblBook,"آیت الله صانعی");
+            row.put(Year_tblBook,"1392");
+            row.put(ISBN_tblBook,"964-91554-0-6");
+            row.put(Url_path_tblBook,FileUtil.getFolioEpubFolderPath("resal") + "/resal.epub");
+            row.put(Url_Image_tblBook,FileUtil.getFolioEpubFolderPath("resal_cover") +"/resal_cover.jpeg");
+            row.put(JsonText_tblBook,"");
+            row.put(Version_tblBook,"1");
+            row.put(Keywords_tblBook,"");
+
+            db.insert(tblBook, null, row);
 
         }
 
@@ -103,7 +122,7 @@ public class DBHelper {
         }
     }
 
-    /////////////////////// BOOK ////////////////////////////////////
+    //region /////////////////////// BOOK ////////////////////////////////////
     public ArrayList<Book_Model> getAll_Books() {
         ArrayList<Book_Model> resultLst= new ArrayList<Book_Model>();
         SQLiteDatabase db = _openHelper.getReadableDatabase();
@@ -127,7 +146,9 @@ public class DBHelper {
                 row.setIsbn(cursor.getString(6));
                 row.setUrl_path(cursor.getString(7));
                 row.setUrl_image(cursor.getString(8));
-                row.setKeywords(cursor.getString(9));
+                row.setJsonText(cursor.getString(9));
+                row.setVersion(cursor.getString(10));
+                row.setKeywords(cursor.getString(11));
 
                 resultLst.add(row);
             }
@@ -152,6 +173,8 @@ public class DBHelper {
         row.put(ISBN_tblBook,bk.getIsbn());
         row.put(Url_path_tblBook,bk.getUrl_path());
         row.put(Url_Image_tblBook,bk.getUrl_image());
+        row.put(JsonText_tblBook,bk.getJsonText());
+        row.put(Version_tblBook,bk.getVersion());
         row.put(Keywords_tblBook,bk.getKeywords());
 
         Long bookID = db.insert(tblBook, null, row);
@@ -188,6 +211,8 @@ public class DBHelper {
         row.put(ISBN_tblBook,bk.getIsbn());
         row.put(Url_path_tblBook,bk.getUrl_path());
         row.put(Url_Image_tblBook,bk.getUrl_image());
+        row.put(JsonText_tblBook,bk.getJsonText());
+        row.put(Version_tblBook,bk.getVersion());
         row.put(Keywords_tblBook,bk.getKeywords());
 
         db.update(tblBook, row, ID_tblBook + " = ?", new String[] { String.valueOf(bk.getId()) } );
@@ -212,7 +237,9 @@ public class DBHelper {
             row.setIsbn(cursor.getString(6));
             row.setUrl_path(cursor.getString(7));
             row.setUrl_image(cursor.getString(8));
-            row.setKeywords(cursor.getString(9));
+            row.setJsonText(cursor.getString(9));
+            row.setVersion(cursor.getString(10));
+            row.setKeywords(cursor.getString(11));
 
         }
         cursor.close();
@@ -220,8 +247,46 @@ public class DBHelper {
 
         return row;
     }
-    /////////////////////////////////////////////////////////////////
+
+    public String get_Book_ReadPosition(Integer id) {
+        String _Jsonstring ="";
+        SQLiteDatabase db = _openHelper.getReadableDatabase();
+        if (db == null) {
+            return null;
+        }
+
+        Cursor cursor = db.rawQuery("select "+JsonText_tblBook+" from "+tblBook+" where "+ID_tblBook+" = ?", new String[] { String.valueOf(id) });
+        if (cursor.moveToNext()) {
+
+            _Jsonstring = cursor.getString(0);
+
+        }
+        cursor.close();
+        db.close();
+
+        return _Jsonstring;
+    }
+
+    public void update_Book_ReadPosition(Book_Model bk) {
+
+        SQLiteDatabase db = _openHelper.getWritableDatabase();
+
+        if (db == null) {
+            return;
+        }
+
+        ContentValues row = new ContentValues();
+
+
+        row.put(JsonText_tblBook,bk.getJsonText());
+
+
+        db.update(tblBook, row, ID_tblBook + " = ?", new String[] { String.valueOf(bk.getId()) } );
+        db.close();
+    }
+    //endregion///////////////////////////// BOOK end ////////////////////////////////////
 
 }
+
 
 

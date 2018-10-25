@@ -28,7 +28,8 @@
     <color name="yellow">#FFEB6B</color>
     <declare-styleable name="DirectionalViewpager">
         <attr format="string" name="direction">
-            
+            <!-- <enum name="vertical" value="vertical"></enum>
+             <enum name="horizontal" value="horizontal"></enum>-->
         </attr>
     </declare-styleable>
     <declare-styleable name="LoadingView">
@@ -239,7 +240,7 @@
 
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

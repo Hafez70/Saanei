@@ -21,7 +21,7 @@ import java.io.OutputStream;
 
 public class FileUtil {
     private static final String TAG = FileUtil.class.getSimpleName();
-    private static final String FOLIO_READER_ROOT = "folioreader";
+    private static final String FOLIO_READER_ROOT = "Saaneiepubs";
 
     public static String saveEpubFileAndLoadLazyBook(final Context context, FolioActivity.EpubSourceType epubSourceType, String epubFilePath, int epubRawId, String epubFileName) {
         String filePath;
@@ -35,6 +35,8 @@ public class FileUtil {
                 if (epubSourceType.equals(FolioActivity.EpubSourceType.RAW)) {
                     epubInputStream = context.getResources().openRawResource(epubRawId);
                     saveTempEpubFile(filePath, epubFileName, epubInputStream);
+
+
                 } else if (epubSourceType.equals(FolioActivity.EpubSourceType.ASSETS)) {
                     AssetManager assetManager = context.getAssets();
                     epubFilePath = epubFilePath.replaceAll(Constants.ASSET, "");
@@ -62,6 +64,14 @@ public class FileUtil {
             return epubFilePath;
         } else {
             return getFolioEpubFolderPath(epubFileName) + "/" + epubFileName + ".epub";
+        }
+    }
+
+    public static String getFolioCoverFilePath(FolioActivity.EpubSourceType sourceType, String CoverFilePath, String CoverFileName,String strFormat) {
+        if (FolioActivity.EpubSourceType.SD_CARD.equals(sourceType)) {
+            return CoverFilePath;
+        } else {
+            return getFolioEpubFolderPath(CoverFileName) + "/" + CoverFileName + strFormat;
         }
     }
 
