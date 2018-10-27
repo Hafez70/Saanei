@@ -224,6 +224,8 @@ public class ContactUsModel {
         }
 
         if (_contactUS.getPreFax() != null || _contactUS.getFax() != null) {
+
+            result += FaxLabel + ": ";
             if (_contactUS.getPreFax() != null)
                 result += "(" + _contactUS.getPreTel2() + ") ";
             if (_contactUS.getFax() != null)
