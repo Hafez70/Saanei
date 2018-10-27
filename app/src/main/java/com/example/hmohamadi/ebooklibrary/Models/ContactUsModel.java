@@ -3,9 +3,11 @@ package com.example.hmohamadi.ebooklibrary.Models;
 public class ContactUsModel {
     private int _id = 0;
     private int Lang_ID=0;
+    private int RowNumber=0;
     private String Version;
     private String Address;
-    private String  PostCode;
+    private String Title;
+    private String PostCode;
     private String PreTel1;
     private String Tel1;
     private String PreTel2;
@@ -113,5 +115,61 @@ public class ContactUsModel {
 
     public void setPreTel4(String preTel4) {
         PreTel4 = preTel4;
+    }
+
+    public String getTel4() {
+        return Tel4;
+    }
+
+    public void setTel4(String tel4) {
+        Tel4 = tel4;
+    }
+
+    public String getPreTel5() {
+        return PreTel5;
+    }
+
+    public void setPreTel5(String preTel5) {
+        PreTel5 = preTel5;
+    }
+
+    public String getTel5() {
+        return Tel5;
+    }
+
+    public void setTel5(String tel5) {
+        Tel5 = tel5;
+    }
+
+    public String getPreFax() {
+        return PreFax;
+    }
+
+    public void setPreFax(String preFax) {
+        PreFax = preFax;
+    }
+
+    public String getFax() {
+        return Fax;
+    }
+
+    public void setFax(String fax) {
+        Fax = fax;
+    }
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
+    }
+
+    public int getRowNumber() {
+        return RowNumber;
+    }
+
+    public void setRowNumber(int rowNumber) {
+        RowNumber = rowNumber;
     }
 }
