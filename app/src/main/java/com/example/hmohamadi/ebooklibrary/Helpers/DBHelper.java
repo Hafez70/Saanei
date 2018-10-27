@@ -66,6 +66,7 @@ public class DBHelper {
     public String Title_tblContactUs = "Titel";
     public String Address_tblContactUs = "Address";
     public String PostCode_tblContactUs = "PostCode";
+    public String MailBox_tblContactUs = "MailBox";
     public String PreTel1_tblContactUs = "PreTel1";
     public String Tel1_tblContactUs = "Tel1";
     public String PreTel2_tblContactUs = "PreTel2";
@@ -143,6 +144,7 @@ public class DBHelper {
                     Title_tblContactUs + " text, " +
                     Address_tblContactUs + " text, " +
                     PostCode_tblContactUs + " text, " +
+                    MailBox_tblContactUs + " text, " +
                     PreTel1_tblContactUs + " text, " +
                     Tel1_tblContactUs + " text, " +
                     PreTel2_tblContactUs + " text, " +
@@ -848,19 +850,20 @@ public class DBHelper {
                 row.setTitle(cursor.getString(3));
                 row.setAddress(cursor.getString(4));
                 row.setPostCode(cursor.getString(5));
-                row.setPreTel1(cursor.getString(6));
-                row.setTel1(cursor.getString(7));
-                row.setPreTel2(cursor.getString(8));
-                row.setTel2(cursor.getString(9));
-                row.setPreTel3(cursor.getString(10));
-                row.setTel3(cursor.getString(11));
-                row.setPreTel4(cursor.getString(12));
-                row.setTel4(cursor.getString(13));
-                row.setPreTel5(cursor.getString(14));
-                row.setTel5(cursor.getString(15));
-                row.setPreFax(cursor.getString(16));
-                row.setFax(cursor.getString(17));
-                row.setRowNumber(cursor.getInt(18));
+                row.setMailBox(cursor.getString(6));
+                row.setPreTel1(cursor.getString(7));
+                row.setTel1(cursor.getString(8));
+                row.setPreTel2(cursor.getString(9));
+                row.setTel2(cursor.getString(10));
+                row.setPreTel3(cursor.getString(11));
+                row.setTel3(cursor.getString(12));
+                row.setPreTel4(cursor.getString(13));
+                row.setTel4(cursor.getString(14));
+                row.setPreTel5(cursor.getString(15));
+                row.setTel5(cursor.getString(16));
+                row.setPreFax(cursor.getString(17));
+                row.setFax(cursor.getString(18));
+                row.setRowNumber(cursor.getInt(19));
                 resultLst.add(row);
             }
         }
