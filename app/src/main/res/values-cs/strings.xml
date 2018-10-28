@@ -3,13 +3,13 @@
 
     <!-- menufragment -->
 
-    <string name="menufragment_label_Title">منو اصلی</string>
-    <string name="menufragment_label_btnenterwebsite">ورود به سایت</string>
-    <string name="menufragment_label_btnSendEmail">ارسال ایمیل</string>
-    <string name="menufragment_label_btnContactUs">تماس با ما</string>
-    <string name="menufragment_label_btnAboutUs">درباره ما</string>
-    <string name="menufragment_label_btnSetting">تنظیمات</string>
-    <string name="menufragment_label_btnHelp">راهنما</string>
+    <string name="menufragment_label_Title">Main Menu</string>
+    <string name="menufragment_label_btnenterwebsite">Login to Website</string>
+    <string name="menufragment_label_btnSendEmail">Send Email</string>
+    <string name="menufragment_label_btnContactUs">Contact Us</string>
+    <string name="menufragment_label_btnAboutUs">About Us</string>
+    <string name="menufragment_label_btnSetting">Settings</string>
+    <string name="menufragment_label_btnHelp">Help</string>
 
     <!-- book list grid item -->
 

@@ -38,7 +38,6 @@
                 android:id="@+id/lbl_qom"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="@string/contactus_qom_title"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/btnExpand_qom"
                 app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +73,7 @@
             android:id="@+id/lbl_description_qom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/contactus_qom_description"
+
            />
 
     </com.github.florent37.expansionpanel.ExpansionLayout>
@@ -96,7 +95,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
 
-            <TextView
+           <!-- <TextView
                 style="@style/App_TextStyle"
                 android:id="@+id/lbl_tehran"
                 android:layout_width="0dp"
@@ -105,7 +104,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/btnExpand_tehran"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />-->
 
             <RelativeLayout
                 android:id="@+id/btnExpand_tehran"
@@ -114,7 +113,6 @@
                 android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/lbl_tehran"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <View
@@ -132,13 +130,13 @@
         app:expansion_expanded="false"
         android:background="@color/Mainbackground">
 
-        <TextView
+        <!--<TextView
             style="@style/App_TextStyle"
             android:id="@+id/lbl_description_tehran"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/contactus_tehran_description"
-             />
+             />-->
 
     </com.github.florent37.expansionpanel.ExpansionLayout>
 </android.support.v7.widget.LinearLayoutCompat>
