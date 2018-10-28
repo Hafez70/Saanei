@@ -19,26 +19,26 @@
 
     <!-- book list grid item -->
     <!-- email Us -->
-    <string name="contact_form">تماس با ما</string>
-    <string name="contact_form_name">نام</string>
-    <string name="contact_form_email">ایمیل</string>
-    <string name="contact_form_subject">موضوع</string>
-    <string name="contact_form_message">متن ایمیل</string>
-    <string name="contact_form_button">ارسال</string>
-    <string name="contact_form_post_message">منتظر بمانید! در حال ارسال ایمیل هستیم...</string>
-    <string name="contact_posted">پیغام شما با موفقیت ارسال شد.</string>
-    <string name="empty_name">نام خود را وارد کنید</string>
-    <string name="invalid_email">ایمیل نا معتبر است</string>
-    <string name="empty_message">متن خود را وارد کنید</string>
-    <string name="empty_subject">موضوع خود را وارد کنید</string>
+    <string name="contact_form">Contact Us</string>
+    <string name="contact_form_name">Name</string>
+    <string name="contact_form_email">Email</string>
+    <string name="contact_form_subject">Subject</string>
+    <string name="contact_form_message">Text</string>
+    <string name="contact_form_button">Send</string>
+    <string name="contact_form_post_message">Please Wait…Sending Email</string>
+    <string name="contact_posted">Your Email Sent Successfully.</string>
+    <string name="empty_name">Enter Your Name</string>
+    <string name="invalid_email">Invalid Email</string>
+    <string name="empty_message">Enter your Text</string>
+    <string name="empty_subject">Enter Your Subject</string>
 
     <!--email Us -->
 
     <!-- Contact Us -->
-    <string name="contactUs_Address">نشانی</string>
-    <string name="contactUs_PostCode">کد پستی</string>
-    <string name="contactUs_MailBox">صندوق پستی</string>
-    <string name="contactUs_PhoneNumbers">تلفن های تماس</string>
-    <string name="contactUs_Fax">نمابر</string>
+    <string name="contactUs_Address">Address</string>
+    <string name="contactUs_PostCode">PostCode</string>
+    <string name="contactUs_MailBox">MailBox</string>
+    <string name="contactUs_PhoneNumbers">Tel</string>
+    <string name="contactUs_Fax">Fax</string>
     <!--Contact Us -->
 </resources>
