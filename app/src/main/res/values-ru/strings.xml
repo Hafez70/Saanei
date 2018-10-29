@@ -43,14 +43,14 @@
     <!--Contact Us -->
 
     <!-- Settings -->
-    <string name="settings_ThemeSelect">حالت پوسته: </string>
-    <string name="settings_FontSelect">انتخاب فونت: </string>
+    <string name="settings_ThemeSelect">مظهر خارجی: </string>
+    <string name="settings_FontSelect">نوع الخط: </string>
     <string name="settings_FontNazanin">نازنین</string>
     <string name="settings_FontLotus">لوتوس</string>
     <string name="settings_FontKoodak">کودک</string>
     <string name="settings_FontYekan">یکان</string>
-    <string name="settings_FontSize">اندازه قلم: </string>
-    <string name="settings_ChooseLanguage">انتخاب زبان:  </string>
+    <string name="settings_FontSize">حجم الخط: </string>
+    <string name="settings_ChooseLanguage">اختر اللغة:  </string>
 
 
     <!--Settings-->
