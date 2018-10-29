@@ -143,4 +143,5 @@ public class Main_Activity extends AppCompatActivity
         navigation.setSelectedItemId(R.id.navigation_Setting);
         super.onConfigurationChanged(newConfig);
     }
+
 }
