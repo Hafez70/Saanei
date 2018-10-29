@@ -95,10 +95,10 @@ public class Setting_Fragment extends Fragment {
         seek.setProgress(config.getFontSize());
         configSeekBar(seek);
         selectFont(v,config.getFont());
+        selectLang(v,config.getLanguage());
         isNightMode = config.isNightMode();
 
         ImageButton btnDay = (ImageButton)v.findViewById(R.id.view_setting_ib_day_mode);
-
         ImageButton btnnight= (ImageButton)v.findViewById(R.id.view_setting_ib_night_mode);
         int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
         if(isNightMode)
