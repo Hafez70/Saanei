@@ -41,4 +41,15 @@
     <string name="contactUs_PhoneNumbers">Tel</string>
     <string name="contactUs_Fax">Fax</string>
     <!--Contact Us -->
+
+    <!-- Settings -->
+    <string name="settings_ThemeSelect">Theme:  </string>
+    <string name="settings_FontSelect">Font:  </string>
+    <string name="settings_FontNazanin">Arial</string>
+    <string name="settings_FontLotus">Times</string>
+    <string name="settings_FontKoodak">Tahoma</string>
+    <string name="settings_FontYekan">San Serif</string>
+    <string name="settings_FontSize">Font Size:  </string>
+    <string name="settings_ChooseLanguage">Language: </string>
+    <!--Settings-->
 </resources>
