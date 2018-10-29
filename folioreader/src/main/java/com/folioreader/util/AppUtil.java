@@ -93,6 +93,7 @@ public class AppUtil {
         JSONObject obj = new JSONObject();
         try {
             obj.put(Config.CONFIG_FONT, config.getFont());
+            obj.put(Config.LANGUAGE, config.getLanguage());
             obj.put(Config.CONFIG_FONT_SIZE, config.getFontSize());
             obj.put(Config.CONFIG_IS_NIGHT_MODE, config.isNightMode());
             obj.put(Config.CONFIG_THEME_COLOR_INT, config.getThemeColor());

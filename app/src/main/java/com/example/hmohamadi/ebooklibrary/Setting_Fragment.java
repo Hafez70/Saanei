@@ -2,6 +2,7 @@ package com.example.hmohamadi.ebooklibrary;
 
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -19,6 +20,8 @@ import com.folioreader.FolioReader;
 import com.folioreader.util.AppUtil;
 import com.folioreader.util.UiUtil;
 import com.folioreader.view.StyleableTextView;
+
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -75,6 +78,7 @@ public class Setting_Fragment extends Fragment {
     private void initViews(View v) {
         inflateView(v);
         configFonts(v);
+        configLang(v);
         SeekBar seek = v.findViewById(R.id.view_setting_font_size_seek_bar);
         Config _config = new Config()
                 .setAllowedDirection(Config.AllowedDirection.VERTICAL_AND_HORIZONTAL)
@@ -82,7 +86,8 @@ public class Setting_Fragment extends Fragment {
                 .setFont(Constants.FONT_NAZANIN)
                 .setFontSize(2)
                 .setNightMode(false)
-                .setShowTts(true);
+                .setShowTts(true)
+                .setLanguage("");
         if (config==null) {
         config=_config;
         }
@@ -203,6 +208,121 @@ public class Setting_Fragment extends Fragment {
                 btnyekan.setTextColor(_color);
             }
         });
+    }
+    private void configLang(final View _v) {
+        final int _color_grey = ContextCompat.getColor(getContext(),R.color.grey_color);
+        final StyleableTextView btnFa = _v.findViewById(R.id.view_setting_lang_fa);
+        btnFa.setTextColor(_color_grey);
+        final StyleableTextView btnAr = _v.findViewById(R.id.view_setting_lang_Ar);
+        btnAr.setTextColor(_color_grey);
+        final StyleableTextView btnEn = _v.findViewById(R.id.view_setting_lang_en);
+        btnEn.setTextColor(_color_grey);
+
+        btnFa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
+                btnFa.setTextColor(_color);
+                btnAr.setTextColor(_color_grey);
+                btnEn.setTextColor(_color_grey);
+                selectLang(_v,Constants.LANG_FA);
+
+            }
+        });
+
+        btnAr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectLang(_v,Constants.LANG_AR);
+                int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
+                btnFa.setTextColor(_color_grey);
+                btnAr.setTextColor(_color);
+                btnEn.setTextColor(_color_grey);
+
+            }
+        });
+        btnEn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                selectLang(_v,Constants.LANG_EN);
+                int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
+                btnFa.setTextColor(_color_grey);
+                btnAr.setTextColor(_color_grey);
+                btnEn.setTextColor(_color);
+
+            }
+        });
+
+    }
+    private void selectLang(View _v,String selectedLang ) {
+        final int _color_grey = ContextCompat.getColor(getContext(),R.color.grey_color);
+        int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
+        final StyleableTextView btnFa = _v.findViewById(R.id.view_setting_lang_fa);
+        btnFa.setTextColor(_color_grey);
+        final StyleableTextView btnAr = _v.findViewById(R.id.view_setting_lang_Ar);
+        btnAr.setTextColor(_color_grey);
+        final StyleableTextView btnEn = _v.findViewById(R.id.view_setting_lang_en);
+        btnEn.setTextColor(_color_grey);
+        switch (selectedLang) {
+            case Constants.LANG_FA : {
+
+
+                btnFa.setTextColor(_color);
+                btnFa.setSelected(true);
+
+                btnEn.setTextColor(_color_grey);
+                btnEn.setSelected(false);
+
+                btnAr.setTextColor(_color_grey);
+                btnAr.setSelected(false);
+
+                break;
+            }
+            case
+                    Constants.LANG_EN :{
+
+                btnFa.setTextColor(_color_grey);
+                btnFa.setSelected(false);
+
+                btnEn.setTextColor(_color);
+                btnEn.setSelected(true);
+
+                btnAr.setTextColor(_color_grey);
+                btnAr.setSelected(false);
+                break;
+            }
+            case
+                    Constants.LANG_AR :
+            {
+                btnFa.setTextColor(_color_grey);
+                btnFa.setSelected(false);
+
+                btnEn.setTextColor(_color_grey);
+                btnEn.setSelected(false);
+
+                btnAr.setTextColor(_color);
+                btnAr.setSelected(true);
+                break;
+            }
+
+        }
+        chngeApplicationLanguage(selectedLang);
+        config.setLanguage(selectedLang);
+
+        AppUtil.saveConfig(getActivity(), config);
+    }
+
+    private void chngeApplicationLanguage(String selectedLang )
+    {
+        String languageToLoad  = selectedLang; // your language
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getActivity().getBaseContext().getResources().updateConfiguration(config,
+        getActivity().getBaseContext().getResources().getDisplayMetrics());
     }
 
     private void selectFont(View _v,int selectedFont ) {

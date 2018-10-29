@@ -157,9 +157,8 @@ public class DBHelper {
                     Tel5_tblContactUs + " text, " +
                     PreFax_tblContactUs + " text, " +
                     Fax_tblContactUs + " text, " +
-                    Tel5_tblContactUs + " text, " +
-                    RowNumber_tblContactUs + " integer, " +
-                    Fax_tblContactUs + " text)");
+                    RowNumber_tblContactUs + " integer) "
+                  );
 
             db.execSQL("create table " + tblSettings + " (" +
                     ID_tblSettings + " integer primary key autoincrement, " +

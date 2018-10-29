@@ -15,7 +15,7 @@
 
     <string name="lbl_bookName_gridItem"></string>
     <string name="lbl_AutorName_gridItem">Dummy Button</string>
-    <string name="lbl_Year_gridItem">انتشار :</string>
+    <string name="lbl_Year_gridItem">Published :</string>
 
     <!-- book list grid item -->
     <!-- email Us -->
