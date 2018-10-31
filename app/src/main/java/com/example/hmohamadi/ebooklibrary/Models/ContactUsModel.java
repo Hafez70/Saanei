@@ -1,11 +1,16 @@
 package com.example.hmohamadi.ebooklibrary.Models;
 
+import android.support.v7.app.AppCompatActivity;
+
 public class ContactUsModel {
     private int _id = 0;
-    private int Lang_ID=0;
+    private int Lang_ID = 0;
+    private int RowNumber = 0;
     private String Version;
     private String Address;
-    private String  PostCode;
+    private String Title;
+    private String PostCode;
+    private String MailBox;
     private String PreTel1;
     private String Tel1;
     private String PreTel2;
@@ -16,8 +21,9 @@ public class ContactUsModel {
     private String Tel4;
     private String PreTel5;
     private String Tel5;
-    private String  PreFax;
+    private String PreFax;
     private String Fax;
+
 
     public int get_id() {
         return _id;
@@ -113,5 +119,126 @@ public class ContactUsModel {
 
     public void setPreTel4(String preTel4) {
         PreTel4 = preTel4;
+    }
+
+    public String getTel4() {
+        return Tel4;
+    }
+
+    public void setTel4(String tel4) {
+        Tel4 = tel4;
+    }
+
+    public String getPreTel5() {
+        return PreTel5;
+    }
+
+    public void setPreTel5(String preTel5) {
+        PreTel5 = preTel5;
+    }
+
+    public String getTel5() {
+        return Tel5;
+    }
+
+    public void setTel5(String tel5) {
+        Tel5 = tel5;
+    }
+
+    public String getPreFax() {
+        return PreFax;
+    }
+
+    public void setPreFax(String preFax) {
+        PreFax = preFax;
+    }
+
+    public String getFax() {
+        return Fax;
+    }
+
+    public void setFax(String fax) {
+        Fax = fax;
+    }
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
+    }
+
+    public int getRowNumber() {
+        return RowNumber;
+    }
+
+    public void setRowNumber(int rowNumber) {
+        RowNumber = rowNumber;
+    }
+
+    public String getContactUsDescriptionAsString(ContactUsModel _contactUS, String AddressLabel,
+                                                  String PostCodeLabel, String MailBoxLabel, String PhoneNumbersLabel, String FaxLabel) {
+        String result = "";
+        if (_contactUS.getAddress() != null) {
+            result += AddressLabel + ": " + _contactUS.getAddress() + "\n";
+        }
+        if (_contactUS.getPostCode() != null) {
+            result += PostCodeLabel + ": " + _contactUS.getPostCode() + "\n";
+        }
+        if (_contactUS.getMailBox() != null) {
+            result += MailBoxLabel + ": " + _contactUS.getMailBox() + "\n";
+        }
+        if (_contactUS.getPreTel1() != null || _contactUS.getTel1() != null) {
+            if (_contactUS.getPreTel1() != null)
+                result += PhoneNumbersLabel + ": (" + _contactUS.getPreTel1() + ") ";
+
+            if (_contactUS.getPreTel1() != null)
+                result += _contactUS.getTel1() + "\n";
+        }
+        if (_contactUS.getPreTel2() != null || _contactUS.getTel2() != null) {
+            result += "(" + _contactUS.getPreTel2() + ") " + _contactUS.getTel2() + "\n";
+        }
+        if (_contactUS.getPreTel3() != null || _contactUS.getTel3() != null) {
+
+            if (_contactUS.getPreTel3() != null)
+                result += "(" + _contactUS.getPreTel3() + ") ";
+
+            if (_contactUS.getTel3() != null)
+                result += _contactUS.getTel3() + "\n";
+        }
+        if (_contactUS.getPreTel4() != null || _contactUS.getTel4() != null) {
+            if (_contactUS.getPreTel4() != null)
+                result += "(" + _contactUS.getPreTel4() + ") ";
+
+            if (_contactUS.getTel4() != null)
+                result += _contactUS.getTel4() + "\n";
+        }
+        if (_contactUS.getPreTel5() != null || _contactUS.getTel5() != null) {
+
+            if (_contactUS.getPreTel5() != null)
+                result += "(" + _contactUS.getPreTel5() + ") ";
+
+            if (_contactUS.getTel5() != null)
+                result += _contactUS.getTel5() + "\n";
+        }
+
+        if (_contactUS.getPreFax() != null || _contactUS.getFax() != null) {
+
+            result += FaxLabel + ": ";
+            if (_contactUS.getPreFax() != null)
+                result += "(" + _contactUS.getPreTel2() + ") ";
+            if (_contactUS.getFax() != null)
+                result += _contactUS.getTel2() + "\n";
+        }
+        return result;
+    }
+
+    public String getMailBox() {
+        return MailBox;
+    }
+
+    public void setMailBox(String mailBox) {
+        MailBox = mailBox;
     }
 }

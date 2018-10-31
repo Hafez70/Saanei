@@ -18,7 +18,7 @@ public class Config implements Parcelable {
 
 
     public static final String SOURCE_EMAIL = "saaneimobileapp@gmail.com";
-
+    public static final String LANGUAGE = "Language";
     public static final String DESTINATION_EMAIL = "mostafa.abdollahi@gmail.com";
     public static final String PASSWORD = "Saanei2018";
     private static final String LOG_TAG = Config.class.getSimpleName();
@@ -39,6 +39,8 @@ public class Config implements Parcelable {
 
     private int font = 3;
     private int fontSize = 2;
+    private String Lang = "";
+
     private boolean nightMode;
     @ColorInt
     private int themeColor = DEFAULT_THEME_COLOR_INT;
@@ -80,6 +82,7 @@ public class Config implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(font);
+        dest.writeString(Lang);
         dest.writeInt(fontSize);
         dest.writeByte((byte) (nightMode ? 1 : 0));
         dest.writeInt(themeColor);
@@ -90,6 +93,7 @@ public class Config implements Parcelable {
 
     protected Config(Parcel in) {
         font = in.readInt();
+        Lang = in.readString();
         fontSize = in.readInt();
         nightMode = in.readByte() != 0;
         themeColor = in.readInt();
@@ -103,6 +107,7 @@ public class Config implements Parcelable {
 
     public Config(JSONObject jsonObject) {
         font = jsonObject.optInt(CONFIG_FONT);
+        Lang = jsonObject.optString(LANGUAGE);
         fontSize = jsonObject.optInt(CONFIG_FONT_SIZE);
         nightMode = jsonObject.optBoolean(CONFIG_IS_NIGHT_MODE);
         themeColor = getValidColorInt(jsonObject.optInt(CONFIG_THEME_COLOR_INT));
@@ -212,6 +217,15 @@ public class Config implements Parcelable {
         return this;
     }
 
+    public Config setLanguage(String Language) {
+        this.Lang = Language;
+        return this;
+    }
+
+    public String getLanguage() {
+
+        return this.Lang;
+    }
     public AllowedDirection getAllowedDirection() {
         return allowedDirection;
     }
@@ -287,6 +301,7 @@ public class Config implements Parcelable {
     public String toString() {
         return "Config{" +
                 "font=" + font +
+                ", Lang=" + Lang +
                 ", fontSize=" + fontSize +
                 ", nightMode=" + nightMode +
                 ", themeColor=" + themeColor +

@@ -2,6 +2,7 @@ package com.example.hmohamadi.ebooklibrary;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,11 +14,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.folioreader.Config;
 import com.folioreader.Constants;
 import com.folioreader.ui.folio.activity.FolioActivity;
+import com.folioreader.util.AppUtil;
 import com.folioreader.util.FileUtil;
 
 import java.io.InputStream;
+import java.util.Locale;
 
 
 public class Main_Activity extends AppCompatActivity
@@ -86,6 +90,8 @@ public class Main_Activity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Config config = AppUtil.getSavedConfig(getBaseContext());
+        chngeApplicationLanguage(config.getLanguage());
         setContentView(R.layout.activity_main);
 
         if (ContextCompat.checkSelfPermission(Main_Activity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -107,7 +113,16 @@ public class Main_Activity extends AppCompatActivity
         Log.w("onCreate >>> ","coverFIlePath :  >>" +  coverFIlePath);
         FileUtil.saveTempEpubFile(coverFIlePath, "resal_cover", epubInputStream_cover);
     }
-
+    private void chngeApplicationLanguage(String selectedLang )
+    {
+        String languageToLoad  = selectedLang; // your language
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
+    }
     @Override
     public void onFragmentInteraction(String data) {
 
@@ -121,4 +136,12 @@ public class Main_Activity extends AppCompatActivity
     public void onFragmentInteraction(Uri uri) {
 
     }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        // refresh your views here
+        Log.w("onConfigurationChanged","<<<<<<<<<<<<<<<<<<< call");
+        navigation.setSelectedItemId(R.id.navigation_Setting);
+        super.onConfigurationChanged(newConfig);
+    }
+
 }

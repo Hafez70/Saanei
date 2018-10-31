@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">با صانعی</string>
+
+    <!-- menufragment -->
+
+    <string name="menufragment_label_Title">Main Menu</string>
+    <string name="menufragment_label_btnenterwebsite">Login to Website</string>
+    <string name="menufragment_label_btnSendEmail">Send Email</string>
+    <string name="menufragment_label_btnContactUs">Contact Us</string>
+    <string name="menufragment_label_btnAboutUs">About Us</string>
+    <string name="menufragment_label_btnSetting">Settings</string>
+    <string name="menufragment_label_btnHelp">Help</string>
+
+    <!-- book list grid item -->
+
+    <string name="lbl_bookName_gridItem"></string>
+    <string name="lbl_AutorName_gridItem">Dummy Button</string>
+    <string name="lbl_Year_gridItem">Published :</string>
+
+    <!-- book list grid item -->
+    <!-- email Us -->
+    <string name="contact_form">Contact Us</string>
+    <string name="contact_form_name">Name</string>
+    <string name="contact_form_email">Email</string>
+    <string name="contact_form_subject">Subject</string>
+    <string name="contact_form_message">Text</string>
+    <string name="contact_form_button">Send</string>
+    <string name="contact_form_post_message">Please Wait…Sending Email</string>
+    <string name="contact_posted">Your Email Sent Successfully.</string>
+    <string name="empty_name">Enter Your Name</string>
+    <string name="invalid_email">Invalid Email</string>
+    <string name="empty_message">Enter your Text</string>
+    <string name="empty_subject">Enter Your Subject</string>
+
+    <!--email Us -->
+
+    <!-- Contact Us -->
+    <string name="contactUs_Address">Address</string>
+    <string name="contactUs_PostCode">PostCode</string>
+    <string name="contactUs_MailBox">MailBox</string>
+    <string name="contactUs_PhoneNumbers">Tel</string>
+    <string name="contactUs_Fax">Fax</string>
+    <!--Contact Us -->
+
+    <!-- Settings -->
+    <string name="settings_ThemeSelect">Theme:  </string>
+    <string name="settings_FontSelect">Font:  </string>
+    <string name="settings_FontNazanin">Arial</string>
+    <string name="settings_FontLotus">Times</string>
+    <string name="settings_FontKoodak">Tahoma</string>
+    <string name="settings_FontYekan">San Serif</string>
+    <string name="settings_FontSize">Font Size:  </string>
+    <string name="settings_ChooseLanguage">Language: </string>
+    <!--Settings-->
+</resources>
