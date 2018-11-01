@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 
@@ -38,6 +39,8 @@ public class Setting_Fragment extends Fragment {
 
 
     private OnFragmentInteractionListener mListener;
+
+
     private Config config = null;
     boolean  isNightMode = false;
     public Setting_Fragment() {
@@ -63,17 +66,17 @@ public class Setting_Fragment extends Fragment {
         super.onCreate(savedInstanceState);
         config = AppUtil.getSavedConfig(getContext());
     }
-
+    FrameLayout frameLayout;
+    View rootview;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-        View rootview = inflater.inflate(R.layout.fragment_setting, container, false);
-
+        frameLayout = new FrameLayout(getActivity());
+        rootview = inflater.inflate(R.layout.fragment_setting, container, false);
         initViews(rootview);
-
-        return rootview;
+        frameLayout.addView(rootview);
+        return frameLayout;
     }
 
     private void initViews(View v) {
@@ -324,6 +327,7 @@ public class Setting_Fragment extends Fragment {
         config.locale = locale;
         getActivity().getBaseContext().getResources().updateConfiguration(config,
         getActivity().getBaseContext().getResources().getDisplayMetrics());
+
     }
 
     private void selectFont(View _v,int selectedFont ) {
@@ -406,6 +410,7 @@ public class Setting_Fragment extends Fragment {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+
     }
 
     @Override
@@ -438,5 +443,17 @@ public class Setting_Fragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        // refresh your views here
+        Log.w("onConfigurationChanged","<<<<<<<<<<<<<<<<<<< call");
+        frameLayout. removeAllViews();
+        LayoutInflater inflater = (LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        rootview = inflater.inflate(R.layout.fragment_setting, null);
+        initViews(rootview);
+        frameLayout .addView(rootview);
+        super.onConfigurationChanged(newConfig);
     }
 }

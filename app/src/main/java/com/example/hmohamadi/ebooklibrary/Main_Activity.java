@@ -136,12 +136,6 @@ public class Main_Activity extends AppCompatActivity
     public void onFragmentInteraction(Uri uri) {
 
     }
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        // refresh your views here
-        Log.w("onConfigurationChanged","<<<<<<<<<<<<<<<<<<< call");
-        navigation.setSelectedItemId(R.id.navigation_Setting);
-        super.onConfigurationChanged(newConfig);
-    }
+
 
 }
