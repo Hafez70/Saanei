@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/container_contactus"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+    <com.github.florent37.expansionpanel.ExpansionHeader
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        app:expansion_headerIndicator="@id/btnExpand"
+        app:expansion_layout="@id/expansionLayout"
+        android:id="@+id/header"
+        android:background="@color/material_green_300"
+        app:expansion_toggleOnClick="true">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:background="@android:color/transparent"
+            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:paddingLeft="16dp"
+
+            android:paddingRight="16dp">
+
+            <TextView
+                style="@style/App_TextStyle"
+                android:id="@+id/lbl_title"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnExpand"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/btnExpand"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lbl_title"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/triangle" />
+            </RelativeLayout>
+
+        </android.support.constraint.ConstraintLayout>
+    </com.github.florent37.expansionpanel.ExpansionHeader>
+    <com.github.florent37.expansionpanel.ExpansionLayout
+        android:id="@+id/expansionLayout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:expansion_expanded="false"
+        android:background="@color/material_green_100">
+
+        <TextView
+            style="@style/App_TextStyle"
+            android:id="@+id/lbl_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+    </com.github.florent37.expansionpanel.ExpansionLayout>
+</android.support.v7.widget.LinearLayoutCompat>

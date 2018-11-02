@@ -1,142 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<ScrollView
     android:layout_height="wrap_content"
-    android:id="@+id/container_contactus"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        style="@style/App_TextStyle"
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
-        android:text="آدرس دفاتر"
-        android:textColor="#3E3E3E" />
-
-    <com.github.florent37.expansionpanel.ExpansionHeader
-        android:layout_height="wrap_content"
+    <android.support.v7.widget.LinearLayoutCompat
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        app:expansion_headerIndicator="@id/btnExpand_qom"
-        app:expansion_layout="@id/expansionLayout_qom"
-        android:id="@+id/header_qom"
-        android:background="@color/colorPrimary"
-        app:expansion_toggleOnClick="true">
-
-
-        <android.support.constraint.ConstraintLayout
-            android:background="@android:color/transparent"
-            android:layout_height="48dp"
-            android:layout_width="match_parent"
-            android:paddingLeft="16dp"
-
-            android:paddingRight="16dp">
-
-            <TextView
-                style="@style/App_TextStyle"
-                android:id="@+id/lbl_qom"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btnExpand_qom"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <RelativeLayout
-                android:id="@+id/btnExpand_qom"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/lbl_qom"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <View
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@drawable/triangle" />
-            </RelativeLayout>
-
-        </android.support.constraint.ConstraintLayout>
-    </com.github.florent37.expansionpanel.ExpansionHeader>
-    <com.github.florent37.expansionpanel.ExpansionLayout
-        android:id="@+id/expansionLayout_qom"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        app:expansion_expanded="false"
-        android:background="@color/Mainbackground">
-
-        <TextView
-            style="@style/App_TextStyle"
-            android:id="@+id/lbl_description_qom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-           />
-
-    </com.github.florent37.expansionpanel.ExpansionLayout>
-
-    <com.github.florent37.expansionpanel.ExpansionHeader
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        app:expansion_headerIndicator="@id/btnExpand_tehran"
-        app:expansion_layout="@id/expansionLayout_tehran"
-        android:id="@+id/header_tehran"
-        android:background="@color/colorPrimary"
-        app:expansion_toggleOnClick="true">
+        android:id="@+id/container_contactus"
+        android:orientation="vertical">
 
 
-        <android.support.constraint.ConstraintLayout
-            android:background="@android:color/transparent"
-            android:layout_height="48dp"
-            android:layout_width="match_parent"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp">
-
-           <!-- <TextView
-                style="@style/App_TextStyle"
-                android:id="@+id/lbl_tehran"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/contactus_tehran_title"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btnExpand_tehran"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />-->
-
-            <RelativeLayout
-                android:id="@+id/btnExpand_tehran"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <View
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@drawable/triangle" />
-            </RelativeLayout>
-
-        </android.support.constraint.ConstraintLayout>
-    </com.github.florent37.expansionpanel.ExpansionHeader>
-    <com.github.florent37.expansionpanel.ExpansionLayout
-        android:id="@+id/expansionLayout_tehran"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        app:expansion_expanded="false"
-        android:background="@color/Mainbackground">
-
-        <!--<TextView
-            style="@style/App_TextStyle"
-            android:id="@+id/lbl_description_tehran"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/contactus_tehran_description"
-             />-->
-
-    </com.github.florent37.expansionpanel.ExpansionLayout>
-</android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.LinearLayoutCompat>
+</ScrollView>

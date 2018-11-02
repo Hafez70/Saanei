@@ -177,59 +177,59 @@ public class ContactUsModel {
         RowNumber = rowNumber;
     }
 
-    public String getContactUsDescriptionAsString(ContactUsModel _contactUS, String AddressLabel,
+    public String getContactUsDescriptionAsString(String AddressLabel,
                                                   String PostCodeLabel, String MailBoxLabel, String PhoneNumbersLabel, String FaxLabel) {
         String result = "";
-        if (_contactUS.getAddress() != null) {
-            result += AddressLabel + ": " + _contactUS.getAddress() + "\n";
+        if (this.getAddress() != null) {
+            result += AddressLabel + ": " + this.getAddress() + "\n";
         }
-        if (_contactUS.getPostCode() != null) {
-            result += PostCodeLabel + ": " + _contactUS.getPostCode() + "\n";
+        if (this.getPostCode() != null) {
+            result += PostCodeLabel + ": " + this.getPostCode() + "\n";
         }
-        if (_contactUS.getMailBox() != null) {
-            result += MailBoxLabel + ": " + _contactUS.getMailBox() + "\n";
+        if (this.getMailBox() != null) {
+            result += MailBoxLabel + ": " + this.getMailBox() + "\n";
         }
-        if (_contactUS.getPreTel1() != null || _contactUS.getTel1() != null) {
-            if (_contactUS.getPreTel1() != null)
-                result += PhoneNumbersLabel + ": (" + _contactUS.getPreTel1() + ") ";
+        if (this.getPreTel1() != null || this.getTel1() != null) {
+            if (this.getPreTel1() != null)
+                result += PhoneNumbersLabel + ": (" + this.getPreTel1() + ") ";
 
-            if (_contactUS.getPreTel1() != null)
-                result += _contactUS.getTel1() + "\n";
+            if (this.getPreTel1() != null)
+                result += this.getTel1() + "\n";
         }
-        if (_contactUS.getPreTel2() != null || _contactUS.getTel2() != null) {
-            result += "(" + _contactUS.getPreTel2() + ") " + _contactUS.getTel2() + "\n";
+        if (this.getPreTel2() != null || this.getTel2() != null) {
+            result += "(" + this.getPreTel2() + ") " + this.getTel2() + "\n";
         }
-        if (_contactUS.getPreTel3() != null || _contactUS.getTel3() != null) {
+        if (this.getPreTel3() != null || this.getTel3() != null) {
 
-            if (_contactUS.getPreTel3() != null)
-                result += "(" + _contactUS.getPreTel3() + ") ";
+            if (this.getPreTel3() != null)
+                result += "(" + this.getPreTel3() + ") ";
 
-            if (_contactUS.getTel3() != null)
-                result += _contactUS.getTel3() + "\n";
+            if (this.getTel3() != null)
+                result += this.getTel3() + "\n";
         }
-        if (_contactUS.getPreTel4() != null || _contactUS.getTel4() != null) {
-            if (_contactUS.getPreTel4() != null)
-                result += "(" + _contactUS.getPreTel4() + ") ";
+        if (this.getPreTel4() != null || this.getTel4() != null) {
+            if (this.getPreTel4() != null)
+                result += "(" + this.getPreTel4() + ") ";
 
-            if (_contactUS.getTel4() != null)
-                result += _contactUS.getTel4() + "\n";
+            if (this.getTel4() != null)
+                result += this.getTel4() + "\n";
         }
-        if (_contactUS.getPreTel5() != null || _contactUS.getTel5() != null) {
+        if (this.getPreTel5() != null || this.getTel5() != null) {
 
-            if (_contactUS.getPreTel5() != null)
-                result += "(" + _contactUS.getPreTel5() + ") ";
+            if (this.getPreTel5() != null)
+                result += "(" + this.getPreTel5() + ") ";
 
-            if (_contactUS.getTel5() != null)
-                result += _contactUS.getTel5() + "\n";
+            if (this.getTel5() != null)
+                result += this.getTel5() + "\n";
         }
 
-        if (_contactUS.getPreFax() != null || _contactUS.getFax() != null) {
+        if (this.getPreFax() != null || this.getFax() != null) {
 
             result += FaxLabel + ": ";
-            if (_contactUS.getPreFax() != null)
-                result += "(" + _contactUS.getPreTel2() + ") ";
-            if (_contactUS.getFax() != null)
-                result += _contactUS.getTel2() + "\n";
+            if (this.getPreFax() != null)
+                result += "(" + this.getPreTel2() + ") ";
+            if (this.getFax() != null)
+                result += this.getTel2() + "\n";
         }
         return result;
     }

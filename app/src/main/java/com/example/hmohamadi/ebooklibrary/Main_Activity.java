@@ -82,6 +82,9 @@ public class Main_Activity extends AppCompatActivity
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
+                    getSupportFragmentManager().beginTransaction().remove(lstPages.get(0)).commit();
+                    getSupportFragmentManager().executePendingTransactions();
+                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, lstPages.get(0), "navigation_BookList").commit();
                     navigation.setSelectedItemId(R.id.navigation_BookList);
                 }
                 return;
