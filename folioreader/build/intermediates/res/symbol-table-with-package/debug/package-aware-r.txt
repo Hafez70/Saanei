@@ -1696,6 +1696,7 @@ string tr_tag
 string two_x
 string typesMeta
 string underline_highlights
+string view_loading_text
 string white_rgb
 string wikipedia
 string xhtml_mime_type

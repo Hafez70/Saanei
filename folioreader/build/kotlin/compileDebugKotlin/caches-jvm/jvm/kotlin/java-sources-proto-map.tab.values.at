@@ -1,4 +1,11 @@
-rance_MaterialComponents_Body2
+ce_Design_Counter_Overflow
+TextAppearance_Design_Error
+ TextAppearance_Design_HelperText
+TextAppearance_Design_Hint
+&TextAppearance_Design_Snackbar_Message
+TextAppearance_Design_Tab
+'TextAppearance_MaterialComponents_Body1
+'TextAppearance_MaterialComponents_Body2
 (TextAppearance_MaterialComponents_Button
 )TextAppearance_MaterialComponents_Caption
 &TextAppearance_MaterialComponents_Chip
@@ -363,10 +370,10 @@ $support_simple_spinner_dropdown_item
  
 
  
- È   20B J++"
+ ì   [20B J+1"
 *00**0000HÀ>R0X†Pº	(À>R0X†Pº	(	À>R
 0X†Pº	(À>R0X†Pº	(À>R0X†Pº	(À>R0X†Pº	(À>R0X†Pº	À>R0X†Pº	
-À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	(À>R0X†Pº	(À>R0X†Pº	( À>R!0X†Pº	 ~À>R"0X†Pº	(#À>R$0X†Pº	(%À>R&0X†Pº	('À>R(0X†Pº	()À>R*0X†Pº	ÌÀ>  ê
+À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	(À>R0X†Pº	(À>R0X†Pº	( À>R!0X†Pº	("À>R#0X†Pº	($À>R%0X†Pº	(&À>R'0X†Pº	 ~À>R(0X†Pº	()À>R*0X†Pº	(+À>R,0X†Pº	(-À>R.0X†Pº	(/À>R00X†Pº	ÌÀ>  
 com
 folioreader
 	Constants
@@ -403,6 +410,12 @@ FONT_YEKAN
 highlight_selected
 HREF
 href
+LANG_AR
+ar
+LANG_EN
+en
+LANG_FA
+ 
 	LOCALHOST
 http://127.0.0.1:8080/
 PORT_NUMBER
@@ -424,7 +437,7 @@ Thttps://en.wikipedia.org/w/api.php?action=opensearch&namespace=0&format=json&se
  
  
  
-, ÷     f20J0	2*00H&   ©
+2 ÷     f20J0	2*00H&   ©
 com
 folioreader
 ui
@@ -483,350 +496,4 @@ Thttps://en.wikipedia.org/w/api.php?action=opensearch&namespace=0&format=json&se
  
  
 
- Ø'   K20:B*00BB*0	0	J0HJ*00HJ*00HJ 0HJ!0HJ"*00HJ#0H²	J$02%0²	H²	J&0HJ'0HJ(*002*00HJ)*002*00HJ**0020HJ+*0020HJ,*002-*00HJ.*0020HJ/*0020HJ0*002%0²	HJ1*00220²	HJ40HJ5027*00280HJ-X*002S*002Y*00HÀ>J-Z*002S*002[*00HÀ>R*00X‚R*00X‚R*00X‚R	0X‚R	0X‚R	0X‚R	0X‚R0Xƒ²	R90X†Pº	(:À>R;0X†Pº	(À>R<0X†Pº	(À>R=0X†Pº	(>À>R?0X†Pº	(@À>RA0X†Pº	(BÀ>RC0X†Pº	(DÀ>R)E 
-*00*
-*0000XÀ>RG*00XÀ>RH*00XÀ>RI0X‚À>RJ0X†Pº	(KÀ>RL0X†Pº	(MÀ>RN0X†Pº	(OÀ>RP0X†Pº	(QÀ>RR0X†Pº	(-À>RS*00X‚À>RT0X†Pº	(UÀ>RV0X†Pº	(WÀ>  ë
-com
-folioreader
-Config
-android
-os
-
-Parcelable
-in
-Parcel
-
-jsonObject
-org
-json
-
-JSONObject
-Lang
-kotlin
-String
-allowedDirection
-AllowedDirection
-	direction
-	Direction
-font
-Int
-fontSize
-	nightMode
-Boolean
-showTts
-
-themeColor
-support
-
-annotation
-ColorInt
-describeContents
-getAllowedDirection
-getDirection
-getFont
-getFontSize
-getLanguage
-getThemeColor
-getValidColorInt
-colorInt
-isNightMode
-	isShowTts
-setAllowedDirection
-setDirection
-setFont
-setFontSize
-setLanguage
-Language
-setNightMode
-
-setShowTts
-setThemeColorInt
-setThemeColorRes
-
-colorResId
-ColorRes
-toString
-writeToParcel
-Unit
-dest
-flags
-CONFIG_ALLOWED_DIRECTION
-allowed_direction
-CONFIG_DIRECTION
-CONFIG_FONT
-CONFIG_FONT_SIZE
-	font_size
-CONFIG_IS_NIGHT_MODE
-is_night_mode
-CONFIG_IS_TTS
-is_tts
-CONFIG_THEME_COLOR_INT
-theme_color_int
-CREATOR
-Creator
-DEFAULT_ALLOWED_DIRECTION
-DEFAULT_DIRECTION
-DEFAULT_THEME_COLOR_INT
-DESTINATION_EMAIL
-mostafa.abdollahi@gmail.com
-EXTRA_OVERRIDE_CONFIG
-%com.folioreader.extra.OVERRIDE_CONFIG
-INTENT_CONFIG
-config
-INTENT_PORT
-port
-LANGUAGE
-LOG_TAG
-PASSWORD
-
-Saanei2018
-SOURCE_EMAIL
-saaneimobileapp@gmail.com
-getAllowedDirectionFromString
-allowedDirectionString
-getDirectionFromString
-directionString   –
- 
- 
- 
-
-
- 
- 
-	
-
-
- 
-
-
- 
- 
- 
-
- 
-
- 
-
-
- 
-3 
-
-6 
-F û    I†2
-*000B J020HÆÀ>J	00HÆÀ>jj   p
-com
-folioreader
-Config
-	Direction
-kotlin
-Enum
-valueOf
-value
-String
-values
-Array
-VERTICAL
-
-HORIZONTAL   6
- 
- 
- 
- 
-
- 
- 
-
- ê   ^20:(B J*0020HÀ>J*002*0
-0
-HÀ>J*002*00HÀ>J*002*00HÀ>J02*00HÀ>J'!02*002"*00HÀ>JO#8
-*00
-*00*
-*00
-*00002'*00HÀ>R0X‚Pº	(À>R0X‚Pº	(	À>R
-*00X‚À>  ¦
-com
-folioreader
-util
-AppUtil
-kotlin
-Any
-FOLIO_READER_ROOT
-String
-SMIL_ELEMENTS
-smil_elements
-TAG
-actionToString
-action
-Int
-charsetNameForURLConnection
-
-connection
-java
-net
-URLConnection
-
-formatDate
-hightlightDate
-Date
-getSavedConfig
-Config
-context
-android
-content
-Context
-hideKeyboard
-Unit
-activity
-app
-Activity
-
-saveConfig
-config
-toMap
-collections
-
-MutableMap
-Map
-
-jsonString
-FileType   š
- 
- 
-
- 
-
- 
- 
- 
-
-
-	 
-
- 
- 
-
-
- 
- 
-
-  
-$
-% 
-& ì   [20B J+1"
-*00**0000HÀ>R0X†Pº	(À>R0X†Pº	(	À>R
-0X†Pº	(À>R0X†Pº	(À>R0X†Pº	(À>R0X†Pº	(À>R0X†Pº	À>R0X†Pº	
-À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	À>R0X†Pº	(À>R0X†Pº	(À>R0X†Pº	( À>R!0X†Pº	("À>R#0X†Pº	($À>R%0X†Pº	(&À>R'0X†Pº	 ~À>R(0X†Pº	()À>R*0X†Pº	(+À>R,0X†Pº	(-À>R.0X†Pº	(/À>R00X†Pº	ÌÀ>  
-com
-folioreader
-	Constants
-kotlin
-Any
-ASSET
-String
-file:///android_asset/
-
-BOOK_TITLE
-
-book_title
-
-CHAPTER_ID
-id
-CHAPTER_SELECTED
-chapter_selected
-DATE_FORMAT
-MMM dd, yyyy | HH:mm
-DICTIONARY_BASE_URL
-8http://api.pearson.com/v2/dictionaries/entries?headword=
-FONT_ANDADA
-Int
-FONT_KOODAK
-	FONT_LATO
-	FONT_LORA
-
-FONT_LOTUS
-FONT_NAZANIN
-FONT_RALEWAY
-
-FONT_YEKAN
-HIGHLIGHT_SELECTED
-highlight_selected
-HREF
-href
-LANG_AR
-ru
-LANG_EN
-cs
-LANG_FA
- 
-	LOCALHOST
-http://127.0.0.1:8080/
-PORT_NUMBER
-SELECTED_CHAPTER_POSITION
-selected_chapter_position
-SELECTED_WORD
-selected_word
-TYPE
-type
-WIKIPEDIA_API_URL
-Thttps://en.wikipedia.org/w/api.php?action=opensearch&namespace=0&format=json&search=
-WRITE_EXTERNAL_STORAGE_REQUEST
-getWriteExternalStoragePerms
-Array   6
- 
- 
- 
-
- 
- 
- 
-2 é    M†2
-*000B J020HÆÀ>J	00HÆÀ>jjj   š
-com
-folioreader
-Config
-AllowedDirection
-kotlin
-Enum
-valueOf
-value
-String
-values
-Array
-ONLY_VERTICAL
-ONLY_HORIZONTAL
-VERTICAL_AND_HORIZONTAL   6
- 
- 
- 
- 
-
- 
- 
-
- É    O‚2
-*000BJ020HÆÀ>J
-00HÆÀ>jjj   r
-com
-folioreader
-util
-AppUtil
-FileType
-kotlin
-Enum
-valueOf
-value
-String
-values
-Array
-OPS
-OEBPS
-NONE   <
- 
- 
-
- 
- 
-
- 
-	 
- 
+ 

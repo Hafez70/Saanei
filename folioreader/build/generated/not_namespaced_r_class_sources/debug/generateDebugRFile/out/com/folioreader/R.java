@@ -1765,12 +1765,13 @@ public final class R {
         public static int two_x = 0x7f15009e;
         public static int typesMeta = 0x7f15009f;
         public static int underline_highlights = 0x7f1500a0;
-        public static int white_rgb = 0x7f1500a1;
-        public static int wikipedia = 0x7f1500a2;
-        public static int xhtml_mime_type = 0x7f1500a3;
-        public static int yekan = 0x7f1500a4;
-        public static int yekan_font = 0x7f1500a5;
-        public static int zip = 0x7f1500a6;
+        public static int view_loading_text = 0x7f1500a1;
+        public static int white_rgb = 0x7f1500a2;
+        public static int wikipedia = 0x7f1500a3;
+        public static int xhtml_mime_type = 0x7f1500a4;
+        public static int yekan = 0x7f1500a5;
+        public static int yekan_font = 0x7f1500a6;
+        public static int zip = 0x7f1500a7;
     }
     public static final class style {
         private style() {}

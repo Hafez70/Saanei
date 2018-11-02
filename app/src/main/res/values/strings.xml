@@ -5,6 +5,7 @@
 
     <string name="menufragment_label_Title">منو اصلی</string>
     <string name="menufragment_label_btnenterwebsite">ورود به سایت</string>
+    <string name="menufragment_label_btnPayments">وجوهات شرعی</string>
     <string name="menufragment_label_btnSendEmail">ارسال ایمیل</string>
     <string name="menufragment_label_btnContactUs">تماس با ما</string>
     <string name="menufragment_label_btnAboutUs">درباره ما</string>
@@ -52,6 +53,9 @@
     <string name="settings_FontSize">اندازه قلم: </string>
     <string name="settings_ChooseLanguage">انتخاب زبان:  </string>
 
-
+    <string name="txt_ask_onexit_title">پرسش</string>
+    <string name="txt_ask_onexit">آیا میخواهید از برنامه خارج شوید ؟</string>
+    <string name="txt_ask_onexit_yes">بله</string>
+    <string name="txt_ask_onexit_no">خیر</string>
     <!--Settings-->
 </resources>

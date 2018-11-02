@@ -30,7 +30,7 @@
             android:configChanges="locale"/>
         <activity android:name=".SendMailActivity" />
         <activity android:name=".AboutUsActivity" />
-
+        <activity android:name=".PaymentsWebviewActivity" />
         <activity android:name=".ContactUsActivity" />
         <activity android:name=".WebViewActivity"></activity>
     </application>

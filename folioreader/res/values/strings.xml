@@ -137,4 +137,6 @@
         <item quantity="other">%d جواب</item>
     </plurals>
 
+    <string name="view_loading_text">لطفا منتظر بمانید</string>
+
 </resources>

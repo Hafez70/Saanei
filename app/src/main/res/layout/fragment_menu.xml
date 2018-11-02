@@ -23,7 +23,11 @@
         style="@style/App_btnStyle"
         android:drawableLeft="@mipmap/ic_enterwebsite"
         android:text="@string/menufragment_label_btnenterwebsite" />
-
+    <Button
+        android:id="@+id/btnEnterPayments"
+        style="@style/App_btnStyle"
+        android:drawableLeft="@mipmap/ic_menufragment_payments"
+        android:text="@string/menufragment_label_btnPayments" />
     <Button
         android:id="@+id/btnSendEmail"
         style="@style/App_btnStyle"

@@ -156,6 +156,7 @@
     <string name="underline_highlights">
         <span style="border-bottom: 1px solid #ff0000;">%s</span>
     </string>
+    <string name="view_loading_text">لطفا منتظر بمانید</string>
     <string name="white_rgb">#ffffff</string>
     <string name="wikipedia">ویکیپدیا</string>
     <string name="xhtml_mime_type" translatable="false">application/xhtml+xml</string>
