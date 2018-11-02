@@ -10,7 +10,6 @@ import android.util.Log;
 import com.example.hmohamadi.ebooklibrary.Models.Book_Model;
 import com.example.hmohamadi.ebooklibrary.Models.ContactUsModel;
 import com.example.hmohamadi.ebooklibrary.Models.Language_model;
-import com.example.hmohamadi.ebooklibrary.Models.ReadPositionsModel;
 import com.example.hmohamadi.ebooklibrary.Models.Setting_model;
 import com.folioreader.util.FileUtil;
 
