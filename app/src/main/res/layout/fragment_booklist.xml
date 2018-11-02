@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:textDirection="rtl"
     tools:context="com.example.hmohamadi.ebooklibrary.BookList_Fragment"
-    tools:menu="@menu/menu_booklist_search">
+    >
 
     <android.support.constraint.ConstraintLayout
         android:background="@color/material_green_100"
