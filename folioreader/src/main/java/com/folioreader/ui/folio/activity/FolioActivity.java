@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -80,6 +81,7 @@ import org.readium.r2_streamer.server.EpubServerSingleton;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import static com.folioreader.Constants.CHAPTER_SELECTED;
 import static com.folioreader.Constants.HIGHLIGHT_SELECTED;
@@ -307,6 +309,17 @@ public class FolioActivity
             // Fix for appBarLayout.fitSystemWindows() not being called on API < 16
             appBarLayout.setTopMargin(getStatusBarHeight());
         }
+    }
+
+    private void chngeApplicationLanguage(String selectedLang )
+    {
+        String languageToLoad  = selectedLang; // your language
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
     }
 
     @Override
@@ -889,6 +902,8 @@ public class FolioActivity
         // and to avoid lint warning
         if (config == null)
             config = new Config();
+
+        chngeApplicationLanguage(config.getLanguage());
 
         AppUtil.saveConfig(this, config);
         direction = config.getDirection();

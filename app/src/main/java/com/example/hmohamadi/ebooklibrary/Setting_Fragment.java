@@ -72,34 +72,24 @@ public class Setting_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        frameLayout = new FrameLayout(getActivity());
+        Log.w("onCreateView >>> ","<<<< onCreateView :  called <<<<<<<<<<<<<<<<<<<");
         rootview = inflater.inflate(R.layout.fragment_setting, container, false);
         initViews(rootview);
-        frameLayout.addView(rootview);
-        return frameLayout;
+
+        return rootview;
     }
 
     private void initViews(View v) {
         inflateView(v);
         configFonts(v);
-        configLang(v);
-        SeekBar seek = v.findViewById(R.id.view_setting_font_size_seek_bar);
-        Config _config = new Config()
-                .setAllowedDirection(Config.AllowedDirection.VERTICAL_AND_HORIZONTAL)
-                .setDirection(Config.Direction.VERTICAL)
-                .setFont(Constants.FONT_NAZANIN)
-                .setFontSize(2)
-                .setNightMode(false)
-                .setShowTts(true)
-                .setLanguage("");
-        if (config==null) {
-        config=_config;
-        }
 
+        SeekBar seek = v.findViewById(R.id.view_setting_font_size_seek_bar);
+
+        configLang(v);
         seek.setProgress(config.getFontSize());
         configSeekBar(seek);
         selectFont(v,config.getFont());
-        selectLang(v,config.getLanguage());
+
         isNightMode = config.isNightMode();
 
         ImageButton btnDay = (ImageButton)v.findViewById(R.id.view_setting_ib_day_mode);
@@ -215,62 +205,30 @@ public class Setting_Fragment extends Fragment {
     }
     private void configLang(final View _v) {
         final int _color_grey = ContextCompat.getColor(getContext(),R.color.grey_color);
+        final int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
         final StyleableTextView btnFa = _v.findViewById(R.id.view_setting_lang_fa);
         btnFa.setTextColor(_color_grey);
         final StyleableTextView btnAr = _v.findViewById(R.id.view_setting_lang_Ar);
         btnAr.setTextColor(_color_grey);
         final StyleableTextView btnEn = _v.findViewById(R.id.view_setting_lang_en);
         btnEn.setTextColor(_color_grey);
+
+        if(config.getLanguage().length() == 0)
+        {
+            btnFa.setTextColor(_color);
+        }
+        else  if(config.getLanguage().contains(Constants.LANG_EN))
+        {
+            btnEn.setTextColor(_color);
+        }
+        else if(config.getLanguage().contains(Constants.LANG_AR))
+        {
+            btnAr.setTextColor(_color);
+        }
 
         btnFa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
-                btnFa.setTextColor(_color);
-                btnAr.setTextColor(_color_grey);
-                btnEn.setTextColor(_color_grey);
-                selectLang(_v,Constants.LANG_FA);
-
-            }
-        });
-
-        btnAr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectLang(_v,Constants.LANG_AR);
-                int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
-                btnFa.setTextColor(_color_grey);
-                btnAr.setTextColor(_color);
-                btnEn.setTextColor(_color_grey);
-
-            }
-        });
-        btnEn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                selectLang(_v,Constants.LANG_EN);
-                int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
-                btnFa.setTextColor(_color_grey);
-                btnAr.setTextColor(_color_grey);
-                btnEn.setTextColor(_color);
-
-            }
-        });
-
-    }
-    private void selectLang(View _v,String selectedLang ) {
-        final int _color_grey = ContextCompat.getColor(getContext(),R.color.grey_color);
-        int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
-        final StyleableTextView btnFa = _v.findViewById(R.id.view_setting_lang_fa);
-        btnFa.setTextColor(_color_grey);
-        final StyleableTextView btnAr = _v.findViewById(R.id.view_setting_lang_Ar);
-        btnAr.setTextColor(_color_grey);
-        final StyleableTextView btnEn = _v.findViewById(R.id.view_setting_lang_en);
-        btnEn.setTextColor(_color_grey);
-        switch (selectedLang) {
-            case Constants.LANG_FA : {
 
 
                 btnFa.setTextColor(_color);
@@ -281,25 +239,16 @@ public class Setting_Fragment extends Fragment {
 
                 btnAr.setTextColor(_color_grey);
                 btnAr.setSelected(false);
+                SaveLang(Constants.LANG_FA);
 
-                break;
             }
-            case
-                    Constants.LANG_EN :{
+        });
 
-                btnFa.setTextColor(_color_grey);
-                btnFa.setSelected(false);
-
-                btnEn.setTextColor(_color);
-                btnEn.setSelected(true);
-
-                btnAr.setTextColor(_color_grey);
-                btnAr.setSelected(false);
-                break;
-            }
-            case
-                    Constants.LANG_AR :
-            {
+        btnAr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SaveLang(Constants.LANG_AR);
+                int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
                 btnFa.setTextColor(_color_grey);
                 btnFa.setSelected(false);
 
@@ -308,14 +257,35 @@ public class Setting_Fragment extends Fragment {
 
                 btnAr.setTextColor(_color);
                 btnAr.setSelected(true);
-                break;
-            }
 
-        }
-        chngeApplicationLanguage(selectedLang);
+            }
+        });
+        btnEn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SaveLang(Constants.LANG_EN);
+                int _color = ContextCompat.getColor(getContext(),R.color.colorPrimary);
+                btnFa.setTextColor(_color_grey);
+                btnFa.setSelected(false);
+
+                btnEn.setTextColor(_color);
+                btnEn.setSelected(true);
+
+                btnAr.setTextColor(_color_grey);
+                btnAr.setSelected(false);
+
+            }
+        });
+
+    }
+
+    private void SaveLang(String selectedLang ) {
         config.setLanguage(selectedLang);
 
         AppUtil.saveConfig(getActivity(), config);
+        chngeApplicationLanguage(selectedLang);
+
     }
 
     private void chngeApplicationLanguage(String selectedLang )
@@ -327,7 +297,7 @@ public class Setting_Fragment extends Fragment {
         config.locale = locale;
         getActivity().getBaseContext().getResources().updateConfiguration(config,
         getActivity().getBaseContext().getResources().getDisplayMetrics());
-
+        mListener.onFragmentInteraction(Config.LANGUAGE);
     }
 
     private void selectFont(View _v,int selectedFont ) {
@@ -408,7 +378,7 @@ public class Setting_Fragment extends Fragment {
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+
         }
 
     }
@@ -442,18 +412,8 @@ public class Setting_Fragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(String _data);
     }
 
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        // refresh your views here
-        Log.w("onConfigurationChanged","<<<<<<<<<<<<<<<<<<< call");
-        frameLayout. removeAllViews();
-        LayoutInflater inflater = (LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        rootview = inflater.inflate(R.layout.fragment_setting, null);
-        initViews(rootview);
-        frameLayout .addView(rootview);
-        super.onConfigurationChanged(newConfig);
-    }
+
 }

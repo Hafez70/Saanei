@@ -97,12 +97,21 @@ public class Menu_Fragment extends Fragment {
             }
         });
         //---------- WebView--------------------//
-        //---------- WebView --------------------//
+        //---------- Setting --------------------//
         Button _btnSetting =  v.findViewById(R.id.btnSetting);
         _btnSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mListener.onFragmentInteraction("call_setting");
+            }
+        });
+        //---------- Setting--------------------//
+        //---------- WebView --------------------//
+        Button _btnPayments = (Button) v.findViewById(R.id.btnEnterPayments);
+        _btnPayments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChangeActivityHelper.changeActivity(getActivity(),PaymentsWebviewActivity.class,false);
             }
         });
         //---------- WebView--------------------//
@@ -116,6 +125,7 @@ public class Menu_Fragment extends Fragment {
         }
 
     }
+
 
     @Override
     public void onAttach(Context context) {

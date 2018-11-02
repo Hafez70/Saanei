@@ -27,8 +27,8 @@ public class Constants {
     public static final int FONT_LOTUS = 8;
 
     public static final String LANG_FA = "";
-    public static final String  LANG_EN= "cs";
-    public static final String  LANG_AR = "ru";
+    public static final String  LANG_EN= "en";
+    public static final String  LANG_AR = "ar";
 
     public static final String DATE_FORMAT = "MMM dd, yyyy | HH:mm";
     public static final String ASSET = "file:///android_asset/";
