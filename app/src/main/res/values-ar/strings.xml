@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">با صانعی</string>
+
+    <!-- menufragment -->
+
+    <string name="menufragment_label_Title">القائمة الرئيسية</string>
+    <string name="menufragment_label_btnenterwebsite">دخول الموقع</string>
+    <string name="menufragment_label_btnPayments">دفع الوجوه الشرعية</string>
+    <string name="menufragment_label_btnSendEmail">ارسل بريد الكتروني</string>
+    <string name="menufragment_label_btnContactUs">اتصل بنا</string>
+    <string name="menufragment_label_btnAboutUs">معلومات عنا</string>
+    <string name="menufragment_label_btnSetting">الإعدادات</string>
+    <string name="menufragment_label_btnHelp">مساعدة</string>
+
+    <!-- book list grid item -->
+
+    <string name="lbl_bookName_gridItem"></string>
+    <string name="lbl_AutorName_gridItem">Dummy Button</string>
+    <string name="lbl_Year_gridItem">انتشار :</string>
+
+    <!-- book list grid item -->
+    <!-- email Us -->
+    <string name="contact_form">اتصل بنا</string>
+    <string name="contact_form_name">الاسم</string>
+    <string name="contact_form_email">البريد الإلكتروني</string>
+    <string name="contact_form_subject">موضوع</string>
+    <string name="contact_form_message">الرسالة</string>
+    <string name="contact_form_button">إرسال</string>
+    <string name="contact_form_post_message">يرجى الانتظار، إرسال البريد الإلكتروني…</string>
+    <string name="contact_posted">تم إرسال بريدك الإلكتروني بنجاح.</string>
+    <string name="empty_name">أدخل أسمك</string>
+    <string name="invalid_email">بريد إلكتروني خاطئ</string>
+    <string name="empty_message">أدخل النص الخاص بك</string>
+    <string name="empty_subject">أدخل موضوعك</string>
+
+    <!--email Us -->
+
+    <!-- Contact Us -->
+    <string name="contactUs_Address">عنوان</string>
+    <string name="contactUs_PostCode">صندوق بريد</string>
+    <string name="contactUs_MailBox">صندوق بريد</string>
+    <string name="contactUs_PhoneNumbers">هاتف</string>
+    <string name="contactUs_Fax">الفاکس</string>
+    <!--Contact Us -->
+
+    <!-- Settings -->
+    <string name="settings_ThemeSelect">مظهر خارجی: </string>
+    <string name="settings_FontSelect">نوع الخط: </string>
+    <string name="settings_FontNazanin">نازنین</string>
+    <string name="settings_FontLotus">لوتوس</string>
+    <string name="settings_FontKoodak">کودک</string>
+    <string name="settings_FontYekan">یکان</string>
+    <string name="settings_FontSize">حجم الخط: </string>
+    <string name="settings_ChooseLanguage">اختر اللغة:  </string>
+
+    <string name="txt_ask_onexit_title">سوال</string>
+    <string name="txt_ask_onexit">هل تريد الخروج ؟</string>
+    <string name="txt_ask_onexit_yes">نعم</string>
+    <string name="txt_ask_onexit_no">لا</string>
+    <!--Settings-->
+</resources>
