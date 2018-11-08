@@ -6,21 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:textDirection="rtl"
+    android:layoutDirection="rtl"
+    android:focusableInTouchMode="true"
     tools:context="com.example.hmohamadi.ebooklibrary.BookList_Fragment"
     >
 
     <android.support.constraint.ConstraintLayout
-        android:background="@color/material_green_100"
-        android:layout_height="48dp"
+        android:background="@color/Mainbackground"
+        android:layout_height="50dp"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
+        android:layoutDirection="inherit"
         android:paddingLeft="16dp"
         android:paddingRight="16dp">
         <RelativeLayout
             android:id="@+id/btnSearch"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:inputType="text"
-
+            android:hint="@string/search_hint"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnSearch"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +51,8 @@
     </android.support.constraint.ConstraintLayout>
     <GridView
         android:id="@+id/grdBookList"
-
+        android:smoothScrollbar="true"
+        android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"

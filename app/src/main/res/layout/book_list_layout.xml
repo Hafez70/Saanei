@@ -1,59 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="230dp"
     android:orientation="vertical"
-    android:background="@color/colorPrimaryLight"
+    android:background="@color/material_green_50"
     android:layout_margin="10dp"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:gravity="center|center_vertical">
 
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/img_bookImage_gridItem"
         android:src="@drawable/ic_default_ebook"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="7"
-        android:layout_margin="10dp"/>
+        android:layout_weight="9"
+        android:layout_gravity="center_vertical"
+        />
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/txt_name_gridItem"
         style="@style/App_HelperTextStyle"
+        android:background="@color/material_green_50"
         android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:textSize="15sp"
-        android:layout_weight="1.2"/>
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/txt_AutorName_gridItem"
-        style="@style/App_HelperTextStyle"
-        android:textAlignment="center"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
 
-    <android.support.v7.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-            <android.support.v7.widget.AppCompatTextView
-                style="@style/App_HelperTextStyle"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="3dp"
-                android:textStyle="normal"
-                android:text="@string/lbl_Year_gridItem"/>
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/txt_Year_gridItem"
-                style="@style/App_HelperTextStyle"
-                android:textAlignment="textStart"
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_marginStart="0dp"
-                android:layout_marginBottom="3dp"
-                android:textStyle="normal"
-                android:layout_height="match_parent" />
-    </android.support.v7.widget.LinearLayoutCompat>
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:layout_weight="1.2"/>
+    <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/txt_AutorName_gridItem"-->
+        <!--style="@style/App_HelperTextStyle"-->
+        <!--android:textAlignment="center"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"/>-->
+
+    <!--<android.support.v7.widget.LinearLayoutCompat-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1">-->
+            <!--<android.support.v7.widget.AppCompatTextView-->
+                <!--style="@style/App_HelperTextStyle"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="2"-->
+                <!--android:layout_marginEnd="0dp"-->
+                <!--android:layout_marginBottom="3dp"-->
+                <!--android:textStyle="normal"-->
+                <!--android:text="@string/lbl_Year_gridItem"/>-->
+            <!--<android.support.v7.widget.AppCompatTextView-->
+                <!--android:id="@+id/txt_Year_gridItem"-->
+                <!--style="@style/App_HelperTextStyle"-->
+                <!--android:textAlignment="textStart"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="3"-->
+                <!--android:layout_marginStart="0dp"-->
+                <!--android:layout_marginBottom="3dp"-->
+                <!--android:textStyle="normal"-->
+                <!--android:layout_height="match_parent" />-->
+    <!--</android.support.v7.widget.LinearLayoutCompat>-->
 </LinearLayout>

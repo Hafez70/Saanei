@@ -26,12 +26,13 @@ public class DBHelper {
     private String DBName = "Saanei.db";
 
     //region Book Table
-    private String tblBook = "tblColors";
+    private String tblBook = "tblBooks";
     //columns
     public String ID_tblBook = "_id";
     public String Name_tblBook = "Name";
     public String Title_tblBook = "Title";
-    public String Cat_ID_tblBook = "Cat_ID";
+    //public String Cat_ID_tblBook = "Cat_ID";
+    public String Lang_ID_tblBook = "Lang_ID";
     public String AutorName_tblBook = "AutorName";
     public String Year_tblBook = "Year";
     public String ISBN_tblBook = "ISBN";
@@ -120,7 +121,7 @@ public class DBHelper {
                     ID_tblBook + " integer primary key autoincrement, " +
                     Name_tblBook + " text, " +
                     Title_tblBook + " text, " +
-                    Cat_ID_tblBook + " integer, " +
+                    Lang_ID_tblBook + " integer, " +
                     AutorName_tblBook + " text, " +
                     Year_tblBook + " text, " +
                     ISBN_tblBook + " text, " +
@@ -205,20 +206,82 @@ public class DBHelper {
             //endregion
 
             //region BooksInsert
-            ContentValues row = new ContentValues();
-            row.put(Name_tblBook, "رساله توضیح المسائل");
-            row.put(Title_tblBook, "resal");
-            //row.put(Cat_ID_tblBook,bk.getCategory_ID());
-            row.put(AutorName_tblBook, "آیت الله صانعی");
-            row.put(Year_tblBook, "1392");
-            row.put(ISBN_tblBook, "964-91554-0-6");
-            row.put(Url_path_tblBook, FileUtil.getFolioEpubFolderPath("resal") + "/resal.epub");
-            row.put(Url_Image_tblBook, FileUtil.getFolioEpubFolderPath("resal_cover") + "/resal_cover.jpeg");
-            row.put(JsonText_tblBook, "");
-            row.put(Version_tblBook, "1");
-            row.put(Keywords_tblBook, "");
+            ContentValues row_resaleh_org = new ContentValues();
+            row_resaleh_org.put(Name_tblBook, "رساله توضیح المسائل");
+            row_resaleh_org.put(Title_tblBook, "resaleh_org");
+            row_resaleh_org.put(Lang_ID_tblBook,1);
+            row_resaleh_org.put(AutorName_tblBook, "آیت الله صانعی");
+            row_resaleh_org.put(Year_tblBook, "");
+            row_resaleh_org.put(ISBN_tblBook, "");
+            row_resaleh_org.put(Url_path_tblBook, FileUtil.getFolioEpubFolderPath("resaleh_org") + "/resaleh_org.epub");
+            row_resaleh_org.put(Url_Image_tblBook, FileUtil.getFolioEpubFolderPath("resaleh_org_cover") + "/resaleh_org_cover.jpg");
+            row_resaleh_org.put(JsonText_tblBook, "");
+            row_resaleh_org.put(Version_tblBook, "1");
+            row_resaleh_org.put(Keywords_tblBook, "");
 
-            db.insert(tblBook, null, row);
+            db.insert(tblBook, null, row_resaleh_org);
+
+            ContentValues row_majma_1 = new ContentValues();
+            row_majma_1.put(Name_tblBook, "مجمع المسائل جلد اول");
+            row_majma_1.put(Title_tblBook, "majma_1");
+            row_majma_1.put(Lang_ID_tblBook,1);
+            row_majma_1.put(AutorName_tblBook, "آیت الله صانعی");
+            row_majma_1.put(Year_tblBook, "");
+            row_majma_1.put(ISBN_tblBook, "");
+            row_majma_1.put(Url_path_tblBook, FileUtil.getFolioEpubFolderPath("majma_1") + "/majma_1.epub");
+            row_majma_1.put(Url_Image_tblBook, FileUtil.getFolioEpubFolderPath("majma_1_cover") + "/majma_1_cover.jpg");
+            row_majma_1.put(JsonText_tblBook, "");
+            row_majma_1.put(Version_tblBook, "1");
+            row_majma_1.put(Keywords_tblBook, "");
+
+            db.insert(tblBook, null, row_majma_1);
+
+            ContentValues row_majma_2 = new ContentValues();
+            row_majma_2.put(Name_tblBook, "مجمع المسائل جلد دوم");
+            row_majma_2.put(Title_tblBook, "majma_2");
+            row_majma_2.put(Lang_ID_tblBook,1);
+            row_majma_2.put(AutorName_tblBook, "آیت الله صانعی");
+            row_majma_2.put(Year_tblBook, "");
+            row_majma_2.put(ISBN_tblBook, "");
+            row_majma_2.put(Url_path_tblBook, FileUtil.getFolioEpubFolderPath("majma_2") + "/majma_2.epub");
+            row_majma_2.put(Url_Image_tblBook, FileUtil.getFolioEpubFolderPath("majma_2_cover") + "/majma_2_cover.jpg");
+            row_majma_2.put(JsonText_tblBook, "");
+            row_majma_2.put(Version_tblBook, "1");
+            row_majma_2.put(Keywords_tblBook, "");
+
+            db.insert(tblBook, null, row_majma_2);
+
+
+            ContentValues row_majma_3 = new ContentValues();
+            row_majma_3.put(Name_tblBook, "مجمع المسائل جلد سوم");
+            row_majma_3.put(Title_tblBook, "majma_3");
+            row_majma_3.put(Lang_ID_tblBook,1);
+            row_majma_3.put(AutorName_tblBook, "آیت الله صانعی");
+            row_majma_3.put(Year_tblBook, "");
+            row_majma_3.put(ISBN_tblBook, "");
+            row_majma_3.put(Url_path_tblBook, FileUtil.getFolioEpubFolderPath("majma_3") + "/majma_3.epub");
+            row_majma_3.put(Url_Image_tblBook, FileUtil.getFolioEpubFolderPath("majma_3_cover") + "/majma_3_cover.jpg");
+            row_majma_3.put(JsonText_tblBook, "");
+            row_majma_3.put(Version_tblBook, "1");
+            row_majma_3.put(Keywords_tblBook, "");
+
+            db.insert(tblBook, null, row_majma_3);
+
+
+            ContentValues row_esteftaat_ghazayee_1 = new ContentValues();
+            row_esteftaat_ghazayee_1.put(Name_tblBook, "استفتاآت قضایی جلد یک");
+            row_esteftaat_ghazayee_1.put(Title_tblBook, "esteftaat_ghazayee_1");
+            row_esteftaat_ghazayee_1.put(Lang_ID_tblBook,1);
+            row_esteftaat_ghazayee_1.put(AutorName_tblBook, "آیت الله صانعی");
+            row_esteftaat_ghazayee_1.put(Year_tblBook, "");
+            row_esteftaat_ghazayee_1.put(ISBN_tblBook, "");
+            row_esteftaat_ghazayee_1.put(Url_path_tblBook, FileUtil.getFolioEpubFolderPath("esteftaat_ghazayee_1") + "/esteftaat_ghazayee_1.epub");
+            row_esteftaat_ghazayee_1.put(Url_Image_tblBook, FileUtil.getFolioEpubFolderPath("esteftaat_ghazayee_1_cover") + "/esteftaat_ghazayee_1_cover.jpg");
+            row_esteftaat_ghazayee_1.put(JsonText_tblBook, "");
+            row_esteftaat_ghazayee_1.put(Version_tblBook, "1");
+            row_esteftaat_ghazayee_1.put(Keywords_tblBook, "");
+
+            db.insert(tblBook, null, row_esteftaat_ghazayee_1);
             //endregion
 
             //region SettingsInsert fa
@@ -721,7 +784,7 @@ public class DBHelper {
             return null;
         }
 
-        Cursor cursor = db.rawQuery("select * from " + tblBook, null);
+        Cursor cursor = db.rawQuery("select * from " + tblBook , null);
 
         if (cursor.getCount() > 0) {
             for (int i = 0; i < cursor.getCount(); i++) {
@@ -731,7 +794,42 @@ public class DBHelper {
                 row.setId(cursor.getInt(0));
                 row.setName(cursor.getString(1));
                 row.setTitle(cursor.getString(2));
-                row.setCategory_ID(cursor.getInt(3));
+                row.setLang_ID(cursor.getInt(3));
+                row.setAutorname(cursor.getString(4));
+                row.setYear(cursor.getString(5));
+                row.setIsbn(cursor.getString(6));
+                row.setUrl_path(cursor.getString(7));
+                row.setUrl_image(cursor.getString(8));
+                row.setJsonText(cursor.getString(9));
+                row.setVersion(cursor.getString(10));
+                row.setKeywords(cursor.getString(11));
+
+                resultLst.add(row);
+            }
+        }
+        cursor.close();
+        db.close();
+        return resultLst;
+    }
+
+    public ArrayList<Book_Model> getAll_Books_by_Lang(int lang_id ) {
+        ArrayList<Book_Model> resultLst = new ArrayList<Book_Model>();
+        SQLiteDatabase db = _openHelper.getReadableDatabase();
+        if (db == null) {
+            return null;
+        }
+
+        Cursor cursor = db.rawQuery("select * from " + tblBook +" where " + Lang_ID_tblBook + " = " + lang_id , null);
+
+        if (cursor.getCount() > 0) {
+            for (int i = 0; i < cursor.getCount(); i++) {
+                cursor.moveToNext();
+                Book_Model row = new Book_Model();
+
+                row.setId(cursor.getInt(0));
+                row.setName(cursor.getString(1));
+                row.setTitle(cursor.getString(2));
+                row.setLang_ID(cursor.getInt(3));
                 row.setAutorname(cursor.getString(4));
                 row.setYear(cursor.getString(5));
                 row.setIsbn(cursor.getString(6));
@@ -758,7 +856,7 @@ public class DBHelper {
 
         row.put(Name_tblBook, bk.getName());
         row.put(Title_tblBook, bk.getTitle());
-        row.put(Cat_ID_tblBook, bk.getCategory_ID());
+        row.put(Lang_ID_tblBook, bk.getLang_ID());
         row.put(AutorName_tblBook, bk.getAutorname());
         row.put(Year_tblBook, bk.getYear());
         row.put(ISBN_tblBook, bk.getIsbn());
@@ -796,7 +894,7 @@ public class DBHelper {
 
         row.put(Name_tblBook, bk.getName());
         row.put(Title_tblBook, bk.getTitle());
-        row.put(Cat_ID_tblBook, bk.getCategory_ID());
+        row.put(Lang_ID_tblBook, bk.getLang_ID());
         row.put(AutorName_tblBook, bk.getAutorname());
         row.put(Year_tblBook, bk.getYear());
         row.put(ISBN_tblBook, bk.getIsbn());
@@ -822,7 +920,7 @@ public class DBHelper {
             row.setId(cursor.getInt(0));
             row.setName(cursor.getString(1));
             row.setTitle(cursor.getString(2));
-            row.setCategory_ID(cursor.getInt(3));
+            row.setLang_ID(cursor.getInt(3));
             row.setAutorname(cursor.getString(4));
             row.setYear(cursor.getString(5));
             row.setIsbn(cursor.getString(6));

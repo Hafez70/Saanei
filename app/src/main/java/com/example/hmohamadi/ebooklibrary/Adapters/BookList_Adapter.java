@@ -54,12 +54,12 @@ public class BookList_Adapter extends ArrayAdapter<Book_Model> {
 
         AppCompatTextView txt_name = (AppCompatTextView)v.findViewById(R.id.txt_name_gridItem);
         txt_name.setText(book.getName());
-
-        AppCompatTextView txt_autor = (AppCompatTextView)v.findViewById(R.id.txt_AutorName_gridItem);
-        txt_autor.setText(book.getAutorname());
-
-        AppCompatTextView txt_Year = (AppCompatTextView)v.findViewById(R.id.txt_Year_gridItem);
-        txt_Year.setText(book.getYear());
+//
+//        AppCompatTextView txt_autor = (AppCompatTextView)v.findViewById(R.id.txt_AutorName_gridItem);
+//        txt_autor.setText(book.getAutorname());
+//
+//        AppCompatTextView txt_Year = (AppCompatTextView)v.findViewById(R.id.txt_Year_gridItem);
+//        txt_Year.setText(book.getYear());
 
         return v;
     }

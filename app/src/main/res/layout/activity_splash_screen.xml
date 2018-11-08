@@ -4,7 +4,7 @@
     android:id="@+id/layoutMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/Mainbackground"
     android:gravity="top|center"
     android:orientation="vertical"
     android:visibility="visible">
@@ -20,14 +20,14 @@
         android:gravity="top"
         android:text="بِسمِ اللهِ الرَحمنِ الرَحیم"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
         android:fontFamily="@font/b_koodak_outline"/>
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/imgSplash_logo"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="300dp"
         android:src="@drawable/splash_logo" />
 

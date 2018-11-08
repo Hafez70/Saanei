@@ -16,9 +16,12 @@ import android.widget.GridView;
 import com.example.hmohamadi.ebooklibrary.Adapters.BookList_Adapter;
 import com.example.hmohamadi.ebooklibrary.Helpers.DBHelper;
 import com.example.hmohamadi.ebooklibrary.Models.Book_Model;
+import com.example.hmohamadi.ebooklibrary.Models.Language_model;
+import com.folioreader.Config;
 import com.folioreader.FolioReader;
 import com.folioreader.model.ReadPosition;
 import com.folioreader.model.ReadPositionImpl;
+import com.folioreader.util.AppUtil;
 import com.folioreader.util.OnHighlightListener;
 import com.folioreader.util.ReadPositionListener;
 
@@ -90,7 +93,12 @@ public class BookList_Fragment extends Fragment   implements  ReadPositionListen
         View rootView = inflater.inflate(R.layout.fragment_booklist, container, false);
         // Inflate the layout for this fragment
         DBHelper db = new DBHelper(getActivity());
-        _lstBooks = db.getAll_Books();
+
+        Config _conf = AppUtil.getSavedConfig(getActivity());
+
+        Language_model lng = db.get_LanguageID((_conf.getLanguage().length() == 0 ? "fa":  _conf.getLanguage()));
+
+        _lstBooks = db.getAll_Books_by_Lang(lng.get_id());
 //        _lstBooks.add(new Book_Model(1,"رساله توضیح المسائل","1352","آیت الله صانعی",""));
 //        _lstBooks.add(new Book_Model(2,"کتاب نمونه 1","1354","آیت الله صانعی",""));
 //        _lstBooks.add(new Book_Model(3,"کتاب نمونه 2","1356","آیت الله صانعی",""));

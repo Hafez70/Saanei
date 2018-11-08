@@ -9,11 +9,11 @@ public class Book_Model implements Serializable {
 
     }
 
-    public Book_Model(int id, String name, int category_ID, String autorname, String year, int pagecount, String isbn, String url_path, String url_image, String keywords)
+    public Book_Model(int id, String name, int _lang_ID, String autorname, String year, int pagecount, String isbn, String url_path, String url_image, String keywords)
     {
         this.id = id;
         this.name = name;
-        this.category_ID = category_ID;
+        this.lang_ID = _lang_ID;
         this.autorname = autorname;
         this.year = year;
         this.pagecount = pagecount;
@@ -34,7 +34,7 @@ public class Book_Model implements Serializable {
     private int id;
         private String name;
         private String title;
-        private int category_ID;
+        private int lang_ID;
         private String category_name;
         private String autorname;
         private String year;
@@ -62,12 +62,12 @@ public class Book_Model implements Serializable {
         this.name = name;
     }
 
-    public int getCategory_ID() {
-        return category_ID;
+    public int getLang_ID() {
+        return lang_ID;
     }
 
-    public void setCategory_ID(int category_ID) {
-        this.category_ID = category_ID;
+    public void setLang_ID(int category_ID) {
+        this.lang_ID = category_ID;
     }
 
     public String getAutorname() {

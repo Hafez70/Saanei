@@ -139,15 +139,25 @@ public class Main_Activity extends AppCompatActivity
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_BookList);
 
+        SaveBookinExternal("resaleh_org","resaleh_org_cover",R.raw.resaleh_org,R.raw.resaleh_org_cover);
+        SaveBookinExternal("majma_1","majma_1_cover",R.raw.majma_1,R.raw.majma_1_cover);
+        SaveBookinExternal("majma_2","majma_2_cover",R.raw.majma_2,R.raw.majma_2_cover);
+        SaveBookinExternal("majma_3","majma_3_cover",R.raw.majma_3,R.raw.majma_3_cover);
+        SaveBookinExternal("esteftaat_ghazayee_1","esteftaat_ghazayee_1_cover",R.raw.esteftaat_ghazayee_1,R.raw.esteftaat_ghazayee_1_cover);
+
+    }
+
+    private void SaveBookinExternal(String name,String coverName,int book_res, int cover_res)
+    {
         InputStream epubInputStream;
-        epubInputStream = this.getResources().openRawResource(R.raw.resal);
-        FileUtil.saveTempEpubFile(FileUtil.getFolioEpubFilePath(FolioActivity.EpubSourceType.RAW, "", "resal"), "resal", epubInputStream);
+        epubInputStream = this.getResources().openRawResource(book_res);
+        FileUtil.saveTempEpubFile(FileUtil.getFolioEpubFilePath(FolioActivity.EpubSourceType.RAW, "", name), name, epubInputStream);
 
         InputStream epubInputStream_cover;
-        epubInputStream_cover = this.getResources().openRawResource(R.raw.resal_cover);
-        String coverFIlePath = FileUtil.getFolioCoverFilePath(FolioActivity.EpubSourceType.RAW, "", "resal_cover",".jpeg");
+        epubInputStream_cover = this.getResources().openRawResource(cover_res);
+        String coverFIlePath = FileUtil.getFolioCoverFilePath(FolioActivity.EpubSourceType.RAW, "", coverName,".jpg");
 
-        FileUtil.saveTempEpubFile(coverFIlePath, "resal_cover", epubInputStream_cover);
+        FileUtil.saveTempEpubFile(coverFIlePath, coverName, epubInputStream_cover);
     }
 
     private void chngeApplicationLanguage(String selectedLang )
