@@ -7,10 +7,10 @@
     <string name="lora">Lora</string>
     <string name="raleway">Raleway</string>
 
-    <string name="koodak">الطفل</string>
-    <string name="nazanin">النازنین</string>
-    <string name="lotus">الوطوس</string>
-    <string name="yekan">الواحدات</string>
+    <string name="koodak">کودک</string>
+    <string name="nazanin">نازنین</string>
+    <string name="lotus">لوتوس</string>
+    <string name="yekan">یکان</string>
 
     <string name="lang_fa">فارسی</string>
     <string name="lang_Ar">العربیه</string>
@@ -30,17 +30,17 @@
     <string name="minute_left">%1$d دقیقه ·&#160;</string>
     <string name="less_than_minute">زیر یک دقیقه ·&#160;</string>
 
-    <string name="copied">کپی شد!</string>
-    <string name="send_to">بفرست به</string>
+    <string name="copied">نسخ!</string>
+    <string name="send_to">ارسال الی</string>
 
-    <string name="copy">کپی</string>
-    <string name="share">اشتراک</string>
-    <string name="define">تعاریف</string>
-    <string name="highlight">نشانه</string>
+    <string name="copy">نسخ</string>
+    <string name="share">شارک</string>
+    <string name="define">حدد</string>
+    <string name="highlight">تسليط الضوء</string>
 
     <string name="pages_left">%1$d صفحه </string>
     <string name="page_left">%1$d صفحه </string>
-    <string name="highlights">منتخب ها</string>
+    <string name="highlights">يسلط الضوء</string>
     <string name="half_speed">1/2x</string>
     <string name="onex">1x</string>
     <string name="one_and_half">1&#160;1/2x</string>
@@ -63,15 +63,15 @@
     <string name="tocReference">&lt;tr&gt;&lt;td&gt;Table of Contents:&lt;/td&gt;</string>
     <string name="change_Font">Change Font</string>
     <string name="change_Font_Color">Font Color:</string>
-    <string name="changeStyle">تعویض پوسته</string>
+    <string name="changeStyle">تغيير الموضوع</string>
     <string name="blue_rgb">#0000ff</string>
     <string name="red_rgb">#ff0000</string>
     <string name="green_rgb">#00ff00</string>
     <string name="black_rgb">#000000</string>
     <string name="white_rgb">#ffffff</string>
-    <string name="error_CannotChangeStyle">استایل عوض نمیشود</string>
-    <string name="OK">باشه</string>
-    <string name="Cancel">نه</string>
+    <string name="error_CannotChangeStyle">لا يمكن تغيير النمط</string>
+    <string name="OK">حسنا</string>
+    <string name="Cancel">الغاء</string>
     <string name="SetSizeTitle">Upper Panel Size:</string>
     <string name="LanguageChooserTitle">Choose two languages:</string>
     <string name="parallelTextBool">parallelTextBool</string>
@@ -96,10 +96,10 @@
     <string name="underline_highlights">
         <span style="border-bottom: 1px solid #ff0000;">%s</span>
     </string>
-    <string name="edit_notes">ذخیره متن</string>
-    <string name="save_note">ذخیره</string>
-    <string name="please_enter_note">لطفا یادداشت کنید</string>
-    <string name="contents">سرفصل ها</string>
+    <string name="edit_notes">تحرير الملاحظات</string>
+    <string name="save_note">حفظ الملاحظات</string>
+    <string name="please_enter_note">يرجى إدخال ملاحظة</string>
+    <string name="contents">محتويات</string>
 
     <string name="highlight_search_result" translatable="false">javascript:highlightSearchResult(\"%s\", %d)</string>
     <string name="make_search_results_invisible" translatable="false">javascript:makeSearchResultsInvisible()</string>
@@ -111,31 +111,30 @@
     <string name="debug_start_unable_drag">Starting unable to drag!</string>
     <string name="dictionary">دیکشنری</string>
     <string name="wikipedia">ویکیپدیا</string>
-    <string name="cannot_access_epub_message">برای باز کردن کتاب دسترسی به حافظه نیاز است</string>
-    <string name="direction_horizontal">افقی</string>
-    <string name="direction_vertical">عمودی</string>
+    <string name="cannot_access_epub_message">هناك حاجة إلى الوصول إلى الذاكرة</string>
+    <string name="direction_horizontal">أفقي</string>
+    <string name="direction_vertical">عمودي</string>
 
     <string name="xhtml_mime_type" translatable="false">application/xhtml+xml</string>
     <string name="html_mime_type" translatable="false">text/html</string>
     <string name="back_compat" translatable="false">BackCompat</string>
 
-    <string name="menu_item_copy">کپی</string>
-    <string name="menu_item_highlight">نشانه</string>
-    <string name="menu_item_define">تعاریف</string>
-    <string name="menu_item_share">اشتراک</string>
+    <string name="menu_item_copy">نسخ</string>
+    <string name="menu_item_highlight">تسليط الضوء</string>
+    <string name="menu_item_define">حدد</string>
+    <string name="menu_item_share">شارك</string>
 
-    <string name="menu_item_search">جستجو</string>
-    <string name="menu_item_config">تنظیمات</string>
+    <string name="menu_item_search">بحث</string>
+    <string name="menu_item_config">التكوين</string>
     <string name="menu_item_tts">تبدیل متن به گفتار</string>
 
-    <string name="search_hint">جستجو داخل متن کتاب</string>
-    <string name="search_empty_text">بدون نتیجه.</string>
-    <string name="search_failure_text">وقوع خطا</string>
+    <string name="search_hint">تلميح البحث</string>
+    <string name="search_empty_text">لا نتيجة</string>
+    <string name="search_failure_text">خطأ</string>
 
     <plurals name="numberOfSearchResults">
         <item quantity="one">%d جواب</item>
         <item quantity="other">%d جواب</item>
     </plurals>
-
-    <string name="view_loading_text">لدفا انتظراٌ ینتظرو انتظار</string>
+    <string name="view_loading_text">ارجوك انتظر</string>
 </resources>
