@@ -6,11 +6,14 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.GridView;
 
 import com.example.hmohamadi.ebooklibrary.Adapters.BookList_Adapter;
@@ -92,23 +95,8 @@ public class BookList_Fragment extends Fragment   implements  ReadPositionListen
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_booklist, container, false);
         // Inflate the layout for this fragment
-        DBHelper db = new DBHelper(getActivity());
-
-        Config _conf = AppUtil.getSavedConfig(getActivity());
-
-        Language_model lng = db.get_LanguageID((_conf.getLanguage().length() == 0 ? "fa":  _conf.getLanguage()));
-
-        _lstBooks = db.getAll_Books_by_Lang(lng.get_id());
-//        _lstBooks.add(new Book_Model(1,"رساله توضیح المسائل","1352","آیت الله صانعی",""));
-//        _lstBooks.add(new Book_Model(2,"کتاب نمونه 1","1354","آیت الله صانعی",""));
-//        _lstBooks.add(new Book_Model(3,"کتاب نمونه 2","1356","آیت الله صانعی",""));
-//        _lstBooks.add(new Book_Model(4,"کتاب نمونه 3","1380","آیت الله صانعی",""));
-//        _lstBooks.add(new Book_Model(5,"کتاب نمونه 4","1382","آیت الله صانعی",""));
-//        _lstBooks.add(new Book_Model(6,"کتاب نمونه 5","1383","آیت الله صانعی",""));
 
         grd_booklist = (GridView)rootView.findViewById(R.id.grdBookList);
-        grd_booklist.setAdapter(new BookList_Adapter(getActivity(),_lstBooks));
-
         grd_booklist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -126,9 +114,42 @@ public class BookList_Fragment extends Fragment   implements  ReadPositionListen
             }
         });
 
+        EditText txtSearch = rootView.findViewById(R.id.txtSearch);
+
+        txtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                FillBookData(grd_booklist, String.valueOf(s));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        FillBookData(grd_booklist,"");
+
         return rootView;
     }
 
+    private void FillBookData(GridView grid,String condition)
+    {
+        DBHelper db = new DBHelper(getActivity());
+
+        Config _conf = AppUtil.getSavedConfig(getActivity());
+
+        Language_model lng = db.get_LanguageID((_conf.getLanguage().length() == 0 ? "fa":  _conf.getLanguage()));
+
+        _lstBooks = db.getAll_Books_by_Lang(lng.get_id(),condition);
+
+        grid.setAdapter(new BookList_Adapter(getActivity(),_lstBooks));
+    }
     private ReadPosition getLastReadPosition(Book_Model bk) {
 
         DBHelper db = new DBHelper(getActivity());

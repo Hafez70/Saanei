@@ -812,14 +812,18 @@ public class DBHelper {
         return resultLst;
     }
 
-    public ArrayList<Book_Model> getAll_Books_by_Lang(int lang_id ) {
+    public ArrayList<Book_Model> getAll_Books_by_Lang(int lang_id ,String name ) {
         ArrayList<Book_Model> resultLst = new ArrayList<Book_Model>();
         SQLiteDatabase db = _openHelper.getReadableDatabase();
+        String _whereClouse = "";
         if (db == null) {
             return null;
         }
-
-        Cursor cursor = db.rawQuery("select * from " + tblBook +" where " + Lang_ID_tblBook + " = " + lang_id , null);
+        if(name.length() > 0)
+        {
+            _whereClouse = " AND " + Name_tblBook + " like '%"+name+"%'";
+        }
+        Cursor cursor = db.rawQuery("select * from " + tblBook +" where " + Lang_ID_tblBook + " = " + lang_id + _whereClouse , null);
 
         if (cursor.getCount() > 0) {
             for (int i = 0; i < cursor.getCount(); i++) {

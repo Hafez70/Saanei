@@ -233,6 +233,10 @@ public class FolioActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setConfig(savedInstanceState);
+
+
         handler = new Handler();
         density = getResources().getDisplayMetrics().density;
         LocalBroadcastManager.getInstance(this).registerReceiver(closeBroadcastReceiver,
@@ -242,7 +246,7 @@ public class FolioActivity
         // TODO: -> Make this configurable
         // getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        setConfig(savedInstanceState);
+        ///////////////////////////
         initDistractionFreeMode(savedInstanceState);
 
         setContentView(R.layout.folio_activity);

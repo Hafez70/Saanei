@@ -1,6 +1,7 @@
 package com.example.hmohamadi.ebooklibrary.Models;
 
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 public class ContactUsModel {
     private int _id = 0;
@@ -197,7 +198,11 @@ public class ContactUsModel {
                 result += this.getTel1() + "\n";
         }
         if (this.getPreTel2() != null || this.getTel2() != null) {
-            result += "(" + this.getPreTel2() + ") " + this.getTel2() + "\n";
+            if (this.getPreTel2() != null)
+                result += "(" + this.getPreTel2() + ") ";
+
+            if (this.getTel2() != null)
+                result += this.getTel2() + "\n";
         }
         if (this.getPreTel3() != null || this.getTel3() != null) {
 
@@ -227,9 +232,10 @@ public class ContactUsModel {
 
             result += FaxLabel + ": ";
             if (this.getPreFax() != null)
-                result += "(" + this.getPreTel2() + ") ";
+                result += "(" + this.getPreFax() + ") ";
+
             if (this.getFax() != null)
-                result += this.getTel2() + "\n";
+                result += this.getFax() + "\n";
         }
         return result;
     }

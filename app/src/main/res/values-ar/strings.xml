@@ -57,5 +57,7 @@
     <string name="txt_ask_onexit">هل تريد الخروج ؟</string>
     <string name="txt_ask_onexit_yes">نعم</string>
     <string name="txt_ask_onexit_no">لا</string>
+
+    <string name="txt_search_hint">بحث عناوين الكتب ...</string>
     <!--Settings-->
 </resources>

@@ -58,5 +58,6 @@
     <string name="txt_ask_onexit_yes">Yes</string>
     <string name="txt_ask_onexit_no">No</string>
 
+    <string name="txt_search_hint">Books Titles Search ...</string>
     <!--Settings-->
 </resources>

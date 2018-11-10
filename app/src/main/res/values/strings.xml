@@ -57,5 +57,7 @@
     <string name="txt_ask_onexit">آیا میخواهید از برنامه خارج شوید ؟</string>
     <string name="txt_ask_onexit_yes">بله</string>
     <string name="txt_ask_onexit_no">خیر</string>
+
+    <string name="txt_search_hint">جستجوی نام کتاب ...</string>
     <!--Settings-->
 </resources>

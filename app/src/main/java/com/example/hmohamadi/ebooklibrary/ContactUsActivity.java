@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.example.hmohamadi.ebooklibrary.Helpers.DBHelper;
 import com.example.hmohamadi.ebooklibrary.Models.ContactUsModel;
 import com.folioreader.Config;
+import com.folioreader.Constants;
 import com.folioreader.util.AppUtil;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class ContactUsActivity extends AppCompatActivity {
     public RelativeLayout buttonLayout;
 
     public ConstraintLayout container;
-
+    Config _conf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,7 @@ public class ContactUsActivity extends AppCompatActivity {
         viewContainer.removeAllViewsInLayout();
         viewContainer.setOrientation(LinearLayout.VERTICAL);
 
-        Config _conf = AppUtil.getSavedConfig(this);
+        _conf = AppUtil.getSavedConfig(this);
         List<ContactUsModel> lstModel = GetData(_conf.getLanguage());
 
         for (ContactUsModel model :
@@ -69,6 +70,14 @@ public class ContactUsActivity extends AppCompatActivity {
         //region init components
         TextView lblTitle = (TextView)MyView.findViewById(R.id.lbl_title);
         TextView lbldescription = (TextView)MyView.findViewById(R.id.lbl_description);
+        lbldescription.setTextDirection(View.TEXT_DIRECTION_RTL);
+
+        if(_conf.getLanguage() == Constants.LANG_EN) {
+            lbldescription.setTextDirection(View.TEXT_DIRECTION_LTR);
+            lbldescription.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+        }
+
+
         //endregion init components
         lblTitle.setText(_title);
         lbldescription.setText(_description);
