@@ -51,19 +51,40 @@ public class Main_Activity extends AppCompatActivity
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_menu: {
-                    getSupportFragmentManager().beginTransaction().hide(active_frg).show(lstPages.get(1)).commit();
+
+                    if(active_frg instanceof BookList_Fragment)
+                    {
+                        getSupportFragmentManager().beginTransaction()
+                                .setCustomAnimations(R.anim.enter_from_left,R.anim.exit_to_right)
+                                .hide(active_frg).show(lstPages.get(1)).commit();
+                    }
+                    else if(active_frg instanceof Setting_Fragment )
+                    {
+                        getSupportFragmentManager().beginTransaction()
+                                .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left)
+                                .hide(active_frg).show(lstPages.get(1)).commit();
+                    }
+
                     active_frg = lstPages.get(1);
                     return true;
                 }
                 case R.id.navigation_Setting: {
-                    getSupportFragmentManager().beginTransaction().hide(active_frg).show(lstPages.get(2)).commit();
+
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .setCustomAnimations(R.anim.enter_from_left,R.anim.exit_to_right)
+                            .hide(active_frg)
+                            .show(lstPages.get(2))
+                            .commit();
                     active_frg = lstPages.get(2);
                     return true;
 
                 }
                 case R.id.navigation_BookList: {
 
-                    getSupportFragmentManager().beginTransaction().hide(active_frg).show(lstPages.get(0)).commit();
+                    getSupportFragmentManager().beginTransaction()
+                            .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left)
+                            .hide(active_frg).show(lstPages.get(0)).commit();
                     active_frg = lstPages.get(0);
                     return true;
                 }
@@ -80,12 +101,13 @@ public class Main_Activity extends AppCompatActivity
             case Constants.WRITE_EXTERNAL_STORAGE_REQUEST : {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                {
 
-                    getSupportFragmentManager().beginTransaction().remove(lstPages.get(0)).commit();
-                    getSupportFragmentManager().executePendingTransactions();
-                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, lstPages.get(0), "navigation_BookList").commit();
-                    navigation.setSelectedItemId(R.id.navigation_BookList);
+//                    getSupportFragmentManager().beginTransaction().remove(lstPages.get(0)).commit();
+//                    getSupportFragmentManager().executePendingTransactions();
+//                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, lstPages.get(0), "navigation_BookList").commit();
+//                    navigation.setSelectedItemId(R.id.navigation_menu);
                 }
                 return;
             }
@@ -104,6 +126,7 @@ public class Main_Activity extends AppCompatActivity
 
 
         if (config==null) {
+            Log.w("onCreate >>>", ">>>>>>>>>>>>> config==null <<<<<<<<<<<<<<<<");
             Config _config = new Config()
                     .setAllowedDirection(Config.AllowedDirection.VERTICAL_AND_HORIZONTAL)
                     .setDirection(Config.Direction.VERTICAL)
@@ -117,8 +140,9 @@ public class Main_Activity extends AppCompatActivity
             AppUtil.saveConfig(this,_config);
         }
 
+        AppUtil.ChangeLocale(this,config);
 
-        chngeApplicationLanguage(config.getLanguage());
+        //chngeApplicationLanguage(config.getLanguage());
         setContentView(R.layout.activity_main);
 
         if (ContextCompat.checkSelfPermission(Main_Activity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -137,13 +161,21 @@ public class Main_Activity extends AppCompatActivity
 
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navigation.setSelectedItemId(R.id.navigation_BookList);
+        navigation.setSelectedItemId(R.id.navigation_menu);
 
         SaveBookinExternal("resaleh_org","resaleh_org_cover",R.raw.resaleh_org,R.raw.resaleh_org_cover);
         SaveBookinExternal("majma_1","majma_1_cover",R.raw.majma_1,R.raw.majma_1_cover);
         SaveBookinExternal("majma_2","majma_2_cover",R.raw.majma_2,R.raw.majma_2_cover);
         SaveBookinExternal("majma_3","majma_3_cover",R.raw.majma_3,R.raw.majma_3_cover);
         SaveBookinExternal("esteftaat_ghazayee_1","esteftaat_ghazayee_1_cover",R.raw.esteftaat_ghazayee_1,R.raw.esteftaat_ghazayee_1_cover);
+        SaveBookinExternal("esteftaat_ghazayee_2","esteftaat_ghazayee_2_cover",R.raw.esteftaat_ghazayee_2,R.raw.esteftaat_ghazayee_2_cover);
+
+        SaveBookinExternal("islamic_laws","islamic_laws_cover",R.raw.islamic_laws,R.raw.islamic_laws_cover);
+        SaveBookinExternal("istiftas_en","istiftas_en_cover",R.raw.istiftas_en,R.raw.istiftas_en_cover);
+
+        SaveBookinExternal("mesbah_al_moghaledin","mesbah_al_moghaledin_cover",R.raw.mesbah_al_moghaledin,R.raw.mesbah_al_moghaledin_cover);
+        SaveBookinExternal("tahrir_alvasile_1","tahrir_alvasile_1_cover",R.raw.tahrir_alvasile_1,R.raw.tahrir_alvasile_1_cover);
+        SaveBookinExternal("tahrir_alvasile_2","tahrir_alvasile_2_cover",R.raw.tahrir_alvasile_2,R.raw.tahrir_alvasile_2_cover);
 
     }
 
@@ -151,13 +183,14 @@ public class Main_Activity extends AppCompatActivity
     {
         InputStream epubInputStream;
         epubInputStream = this.getResources().openRawResource(book_res);
-        FileUtil.saveTempEpubFile(FileUtil.getFolioEpubFilePath(FolioActivity.EpubSourceType.RAW, "", name), name, epubInputStream);
-
+//        FileUtil.saveTempEpubFile(FileUtil.getFolioEpubFilePath(FolioActivity.EpubSourceType.RAW, "", name), name, epubInputStream);
+        FileUtil.saveTempEpubFile_Internal(this,FileUtil.getFolioEpubFilePath_internal(this, "", name), name, epubInputStream);
         InputStream epubInputStream_cover;
-        epubInputStream_cover = this.getResources().openRawResource(cover_res);
-        String coverFIlePath = FileUtil.getFolioCoverFilePath(FolioActivity.EpubSourceType.RAW, "", coverName,".jpg");
 
-        FileUtil.saveTempEpubFile(coverFIlePath, coverName, epubInputStream_cover);
+        epubInputStream_cover = this.getResources().openRawResource(cover_res);
+        String coverFIlePath = FileUtil.getFolioCoverFilePath_internal(this, "", coverName,".jpg");
+
+        FileUtil.saveTempEpubFile_Internal(this,coverFIlePath, coverName, epubInputStream_cover);
     }
 
     private void chngeApplicationLanguage(String selectedLang )
@@ -174,8 +207,8 @@ public class Main_Activity extends AppCompatActivity
     @Override
     public void onBackPressed() {
 
-        Log.w("onBackPressed >>> ","<<<< BackStackEntryCount : " + getSupportFragmentManager().getBackStackEntryCount());
-        if ( active_frg == lstPages.get(0)) {
+
+        if ( active_frg == lstPages.get(1)) {
             AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
             dialogBuilder.setTitle(R.string.txt_ask_onexit_title);
             dialogBuilder.setMessage(R.string.txt_ask_onexit);
@@ -195,16 +228,16 @@ public class Main_Activity extends AppCompatActivity
             b.show();
 
         } else {
-            navigation.setSelectedItemId(R.id.navigation_BookList);
+            navigation.setSelectedItemId(R.id.navigation_menu);
         }
     }
 
     @Override
     public void onFragmentInteraction(String data) {
 
-        if(data.contains("call_setting"))
+        if(data.contains("call_booklist"))
         {
-            navigation.setSelectedItemId(R.id.navigation_Setting);
+            navigation.setSelectedItemId(R.id.navigation_BookList);
         }
         if(data.contains(Config.LANGUAGE))
         {
@@ -213,13 +246,13 @@ public class Main_Activity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().remove(lstPages.get(2)).commit();
 
             getSupportFragmentManager().executePendingTransactions();
-            Log.w("remove >>> ","<<<< remove :  setting <<<<<<<<<<<<<<<<<<<");
+
             getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, lstPages.get(0), "navigation_BookList").hide(lstPages.get(0)).commit();
             getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, lstPages.get(1), "navigation_menu").hide(lstPages.get(1)).commit();
             getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, lstPages.get(2), "navigation_Setting").commit();
 
             getSupportFragmentManager().executePendingTransactions();
-            Log.w("add >>> ","<<<< add :  setting <<<<<<<<<<<<<<<<<<<");
+
             active_frg = lstPages.get(2);
         }
     }

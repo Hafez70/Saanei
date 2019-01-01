@@ -3,6 +3,7 @@ package com.folioreader.ui.folio.fragment;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -157,9 +158,25 @@ public class FolioPageFragment
         return fragment;
     }
 
+    private void chngeApplicationLanguage(String selectedLang )
+    {
+        String languageToLoad  = selectedLang; // your language
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getActivity().getBaseContext().getResources().updateConfiguration(config,
+                getActivity().getBaseContext().getResources().getDisplayMetrics());
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        mConfig = AppUtil.getSavedConfig(getContext());
+////        Config _conf = AppUtil.getSavedConfig(getContext());
+        chngeApplicationLanguage(mConfig.getLanguage() );
+
+        new WebView(getContext()).destroy();
 
         this.savedInstanceState = savedInstanceState;
 
@@ -192,7 +209,8 @@ public class FolioPageFragment
         mPagesLeftTextView = (TextView) mRootView.findViewById(R.id.pagesLeft);
         mMinutesLeftTextView = (TextView) mRootView.findViewById(R.id.minutesLeft);
 
-        mConfig = AppUtil.getSavedConfig(getContext());
+
+        //mConfig = AppUtil.getSavedConfig(getContext());
 
         loadingView = mRootView.findViewById(R.id.loadingView);
         initSeekbar();
@@ -406,6 +424,7 @@ public class FolioPageFragment
     }
 
     private void initWebView() {
+
 
         FrameLayout webViewLayout = mRootView.findViewById(R.id.webViewLayout);
         mWebview = webViewLayout.findViewById(R.id.folioWebView);
@@ -936,7 +955,9 @@ public class FolioPageFragment
                 (ViewGroup) getActivity().getWindow()
                         .getDecorView().findViewById(android.R.id.content);
         final View view = new View(getActivity());
-        view.setLayoutParams(new ViewGroup.LayoutParams(width, height));
+        ViewGroup.LayoutParams lp =new ViewGroup.LayoutParams(width, height);
+        lp.resolveLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+        view.setLayoutParams(lp);
         view.setBackgroundColor(Color.TRANSPARENT);
 
         root.addView(view);
@@ -944,15 +965,16 @@ public class FolioPageFragment
         view.setX(x);
         view.setY(y);
         final QuickAction quickAction =
-                new QuickAction(getActivity(), QuickAction.HORIZONTAL);
+                new QuickAction(getActivity(), QuickAction.VERTICAL);
+
         quickAction.addActionItem(new ActionItem(ACTION_ID_COPY,
                 getString(R.string.copy)));
         quickAction.addActionItem(new ActionItem(ACTION_ID_HIGHLIGHT,
                 getString(R.string.highlight)));
-        if (!mSelectedText.trim().contains(" ")) {
-            quickAction.addActionItem(new ActionItem(ACTION_ID_DEFINE,
-                    getString(R.string.define)));
-        }
+//        if (!mSelectedText.trim().contains(" ")) {
+//            quickAction.addActionItem(new ActionItem(ACTION_ID_DEFINE,
+//                    getString(R.string.define)));
+//        }
         quickAction.addActionItem(new ActionItem(ACTION_ID_SHARE,
                 getString(R.string.share)));
         quickAction.setOnActionItemClickListener(new QuickAction.OnActionItemClickListener() {

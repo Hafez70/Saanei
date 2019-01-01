@@ -1,17 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:layout_height="wrap_content"
+<RelativeLayout
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <android.support.v7.widget.LinearLayoutCompat
-        xmlns:android="http://schemas.android.com/apk/res/android"
-
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <RelativeLayout
+        android:id="@+id/header_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/container_contactus"
-        android:orientation="vertical">
+        android:layout_alignParentTop="true"
+        android:background="@color/Mainbackground"
+        android:gravity="center"
+        android:layout_gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@color/Mainbackground">
+            <ImageButton
+                android:id="@+id/btn_telegram"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_telegram"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                />
+            <ImageButton
+                android:id="@+id/btn_instagram"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_insta"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"/>
+            <ImageButton
+                android:id="@+id/btn_channel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_channel"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"/>
+            <ImageButton
+                android:id="@+id/btn_sms"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_sms"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"/>
+        </LinearLayout>
+    </RelativeLayout>
+        <ScrollView
+            android:id="@+id/scrollContainer"
+            android:layout_below="@+id/header_contact"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:fillViewport="true"
+            >
 
 
-    </android.support.v7.widget.LinearLayoutCompat>
-</ScrollView>
+        <android.support.v7.widget.LinearLayoutCompat
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/container_contactus"
+            android:orientation="vertical">
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+    </ScrollView>
+</RelativeLayout>

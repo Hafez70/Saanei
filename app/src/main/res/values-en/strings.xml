@@ -1,16 +1,27 @@
 <resources>
     <string name="app_name">صانعی</string>
+    <string name="KEY_CALL">220</string>
 
     <!-- menufragment -->
 
     <string name="menufragment_label_Title">Main Menu</string>
-    <string name="menufragment_label_btnenterwebsite">Login to Website</string>
-    <string name="menufragment_label_btnPayments">Payment of Islamic Duties</string>
-    <string name="menufragment_label_btnSendEmail">Send Email</string>
+    <string name="menufragment_label_btnenterwebsite">Website</string>
+    <string name="menufragment_label_btnPayments">Islamic Duties</string>
+    <string name="menufragment_label_btnSendEmail">Send questions</string>
+
+    <string name="menufragment_label_btnNews">News</string>
+    <string name="menufragment_label_btnEstekhare">Istikhara</string>
+    <string name="menufragment_label_btnLibrary">Library</string>
+    <string name="menufragment_label_btnFeghhi">!</string>
+    <string name="menufragment_label_btnNashrie">!</string>
+    <string name="menufragment_label_btnPDF">Pdf Books</string>
     <string name="menufragment_label_btnContactUs">Contact Us</string>
     <string name="menufragment_label_btnAboutUs">About Us</string>
     <string name="menufragment_label_btnSetting">Settings</string>
     <string name="menufragment_label_btnHelp">Help</string>
+
+    <!-- WebView -->
+    <string name="check_internet_connection">Check Internet Connection</string>
 
     <!-- book list grid item -->
 
@@ -32,6 +43,9 @@
     <string name="invalid_email">Invalid Email</string>
     <string name="empty_message">Enter your Text</string>
     <string name="empty_subject">Enter Your Subject</string>
+    <string name="sending_email">Sending Email</string>
+    <string name="email_sent">Email Sent</string>
+    <string name="email_sending_error">Sending Failed</string>
 
     <!--email Us -->
 
@@ -41,6 +55,9 @@
     <string name="contactUs_MailBox">MailBox</string>
     <string name="contactUs_PhoneNumbers">Tel</string>
     <string name="contactUs_Fax">Fax</string>
+
+    <string name="tells_list_dialog_text">Tel. Numbers</string>
+    <string name="tells_list_dialog_cancel">Cancel</string>
     <!--Contact Us -->
 
     <!-- Settings -->
@@ -53,11 +70,13 @@
     <string name="settings_FontSize">Font Size:  </string>
     <string name="settings_ChooseLanguage">Language: </string>
 
-    <string name="txt_ask_onexit_title">؟</string>
+    <string name="txt_ask_onexit_title"></string>
     <string name="txt_ask_onexit">Do you want to exit ?</string>
     <string name="txt_ask_onexit_yes">Yes</string>
     <string name="txt_ask_onexit_no">No</string>
 
     <string name="txt_search_hint">Books Titles Search ...</string>
+
+    <string name="Downlading">Downloading ...</string>
     <!--Settings-->
 </resources>

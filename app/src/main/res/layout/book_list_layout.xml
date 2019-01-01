@@ -1,34 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="230dp"
-    android:orientation="vertical"
-    android:background="@color/material_green_50"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@drawable/linear_border"
     android:layout_margin="10dp"
     android:padding="5dp"
-    android:gravity="center|center_vertical">
+    android:gravity="start"
 
+    >
+
+    <LinearLayout
+        android:id="@+id/griditem_txt_container"
+        android:layout_width="223dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txt_name_gridItem"
+            style="@style/App_HelperTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:textAlignment="textStart"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+        <com.codesgood.views.JustifiedTextView
+            android:id="@+id/txt_Keyword_gridItem"
+            style="@style/App_HelperTextStyle_Secondary"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:background="@android:color/transparent"
+            android:gravity="top|start"
+            android:text="یشسیشسیشسیشسیس"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70" />
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/img_bookImage_gridItem"
-        android:src="@drawable/ic_default_ebook"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="9"
-        android:layout_gravity="center_vertical"
-        />
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/majma_1_cover"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/txt_name_gridItem"
-        style="@style/App_HelperTextStyle"
-        android:background="@color/material_green_50"
-        android:textAlignment="center"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-
-        android:textSize="12sp"
-        android:textStyle="normal"
-        android:layout_weight="1.2"/>
     <!--<android.support.v7.widget.AppCompatTextView-->
         <!--android:id="@+id/txt_AutorName_gridItem"-->
         <!--style="@style/App_HelperTextStyle"-->
@@ -61,4 +99,4 @@
                 <!--android:textStyle="normal"-->
                 <!--android:layout_height="match_parent" />-->
     <!--</android.support.v7.widget.LinearLayoutCompat>-->
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

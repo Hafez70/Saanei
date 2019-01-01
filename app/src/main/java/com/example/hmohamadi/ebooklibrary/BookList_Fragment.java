@@ -102,11 +102,14 @@ public class BookList_Fragment extends Fragment   implements  ReadPositionListen
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 _book  = _lstBooks.get(position);/////////////////////
-                Log.w("onItemClick >>> ","Book ID clicked : "+ String.valueOf(_book.getId()));
+                Log.w("get book :","name : " +_book.getName());
+                Log.w("get book :","name : " +_book.getUrl_path());
+                Log.w("get book :","name : " +_book.getUrl_image());
+
                 ReadPosition readPosition = getLastReadPosition(_book);
                 if(readPosition != null)
                 {
-                    Log.w("onItemClick >>> ","ReadPosition != null ");
+
                     folioReader.setReadPosition(readPosition );
                 }
                 folioReader.openBook(_book.getUrl_path(),String.valueOf(_book.getId()));
@@ -155,8 +158,7 @@ public class BookList_Fragment extends Fragment   implements  ReadPositionListen
         DBHelper db = new DBHelper(getActivity());
         ReadPosition rp = ReadPositionImpl.createInstance(db.get_Book_ReadPosition(bk.getId()));
 
-        Log.w("getReadPosition >>> ","Read pos json : >>" +  db.get_Book_ReadPosition(bk.getId()));
-        //Log.w("getReadPosition >>> ","Read pos : id >>"+ rp.getBookId() + "  - href >> " + rp.getChapterHref());
+
         return rp ;
     }
 
@@ -186,13 +188,13 @@ public class BookList_Fragment extends Fragment   implements  ReadPositionListen
 
     @Override
     public void saveReadPosition(ReadPosition readPosition) {
-        Log.w("saveReadPosition >>> ","Read pos : id >>"+ readPosition.getBookId() + "  - href >> " + readPosition.getChapterHref());
+
 
         DBHelper db = new DBHelper(getActivity());
         if(_book != null) {
 
             _book.setJsonText(readPosition.toJson());
-            Log.w("saveReadPosition >>> ","_book != null >>>> "+ _book.getJsonText());
+
             db.update_Book_ReadPosition(_book);
         }
     }

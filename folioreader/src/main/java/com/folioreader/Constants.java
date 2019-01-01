@@ -29,16 +29,26 @@ public class Constants {
     public static final String LANG_FA = "";
     public static final String  LANG_EN= "en";
     public static final String  LANG_AR = "ar";
+    public static final int CALL_TAG_KEY = 220;
 
     public static final String DATE_FORMAT = "MMM dd, yyyy | HH:mm";
     public static final String ASSET = "file:///android_asset/";
     public static final int WRITE_EXTERNAL_STORAGE_REQUEST = 102;
+    public static final int PHONE_CALL_PERMITIONN = 103;
     public static final String CHAPTER_ID = "id";
     public static final String HREF = "href";
+
+    public static final String WEBVIEW_URL_KEY = "url_key";
 
     public static String[] getWriteExternalStoragePerms() {
         return new String[] {
             Manifest.permission.WRITE_EXTERNAL_STORAGE
+        };
+    }
+
+    public static String[] gePhonecallPerms() {
+        return new String[] {
+                Manifest.permission.CALL_PHONE
         };
     }
 }

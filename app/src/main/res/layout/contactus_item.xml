@@ -5,10 +5,13 @@
     android:layout_height="wrap_content"
     android:id="@+id/container_contactus"
     android:orientation="vertical"
+    android:layoutDirection="rtl"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     >
     <com.github.florent37.expansionpanel.ExpansionHeader
+
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
@@ -23,18 +26,31 @@
             android:background="@android:color/transparent"
             android:layout_height="48dp"
             android:layout_width="match_parent"
-            android:paddingLeft="16dp"
+            android:paddingStart="16dp"
 
-            android:paddingRight="16dp">
+            android:paddingEnd="16dp">
+
+            <ImageButton
+                android:id="@+id/btn_contactus_call"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@android:drawable/sym_call_outgoing"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lbl_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <TextView
-                style="@style/App_TextStyle"
                 android:id="@+id/lbl_title"
+                style="@style/App_TextStyle"
+                android:textDirection="rtl"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btnExpand"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnExpand"
+                app:layout_constraintEnd_toStartOf="@id/btn_contactus_call"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <RelativeLayout
@@ -43,8 +59,8 @@
                 android:layout_height="48dp"
                 android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/lbl_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/lbl_title"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <View

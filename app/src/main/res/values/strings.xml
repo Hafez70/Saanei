@@ -1,16 +1,25 @@
 <resources>
     <string name="app_name">صانعی</string>
-
+    <string name="KEY_CALL">220</string>
     <!-- menufragment -->
 
     <string name="menufragment_label_Title">منو اصلی</string>
-    <string name="menufragment_label_btnenterwebsite">ورود به سایت</string>
+    <string name="menufragment_label_btnenterwebsite">وب سایت</string>
     <string name="menufragment_label_btnPayments">وجوهات شرعی</string>
-    <string name="menufragment_label_btnSendEmail">ارسال ایمیل</string>
+    <string name="menufragment_label_btnSendEmail">ارسال سوال</string>
+    <string name="menufragment_label_btnNews">اخبار</string>
+    <string name="menufragment_label_btnEstekhare">استخاره</string>
+    <string name="menufragment_label_btnLibrary">کتابخانه</string>
+    <string name="menufragment_label_btnFeghhi">دروس</string>
+    <string name="menufragment_label_btnPDF">پی.دی.اف کتابها</string>
+    <string name="menufragment_label_btnNashrie">نشریه صفیر</string>
     <string name="menufragment_label_btnContactUs">تماس با ما</string>
     <string name="menufragment_label_btnAboutUs">درباره ما</string>
     <string name="menufragment_label_btnSetting">تنظیمات</string>
     <string name="menufragment_label_btnHelp">راهنما</string>
+
+    <!-- WebView -->
+    <string name="check_internet_connection">اتصال به اینترنت را چک کنید</string>
 
     <!-- book list grid item -->
 
@@ -32,7 +41,9 @@
     <string name="invalid_email">ایمیل نا معتبر است</string>
     <string name="empty_message">متن خود را وارد کنید</string>
     <string name="empty_subject">موضوع خود را وارد کنید</string>
-
+    <string name="sending_email">در حال ارسال</string>
+    <string name="email_sent">ایمیل ارسال شد</string>
+    <string name="email_sending_error">ایرادی در ارسال رخ داده است</string>
     <!--email Us -->
 
     <!-- Contact Us -->
@@ -41,6 +52,10 @@
     <string name="contactUs_MailBox">صندوق پستی</string>
     <string name="contactUs_PhoneNumbers">تلفن های تماس</string>
     <string name="contactUs_Fax">نمابر</string>
+
+    <string name="tells_list_dialog_text">شماره های تماس</string>
+    <string name="tells_list_dialog_cancel">انصراف</string>
+
     <!--Contact Us -->
 
     <!-- Settings -->
@@ -53,11 +68,13 @@
     <string name="settings_FontSize">اندازه قلم: </string>
     <string name="settings_ChooseLanguage">انتخاب زبان:  </string>
 
-    <string name="txt_ask_onexit_title">پرسش</string>
+    <string name="txt_ask_onexit_title"></string>
     <string name="txt_ask_onexit">آیا میخواهید از برنامه خارج شوید ؟</string>
     <string name="txt_ask_onexit_yes">بله</string>
     <string name="txt_ask_onexit_no">خیر</string>
 
     <string name="txt_search_hint">جستجوی نام کتاب ...</string>
+
+    <string name="Downlading">در حال بارگیری ...</string>
     <!--Settings-->
 </resources>

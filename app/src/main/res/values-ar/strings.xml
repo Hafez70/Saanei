@@ -1,16 +1,28 @@
 <resources>
     <string name="app_name">صانعی</string>
+    <string name="KEY_CALL">220</string>
 
     <!-- menufragment -->
 
     <string name="menufragment_label_Title">القائمة الرئيسية</string>
     <string name="menufragment_label_btnenterwebsite">دخول الموقع</string>
-    <string name="menufragment_label_btnPayments">دفع الوجوه الشرعية</string>
-    <string name="menufragment_label_btnSendEmail">ارسل بريد الكتروني</string>
+    <string name="menufragment_label_btnPayments">وجوه الشرعية</string>
+    <string name="menufragment_label_btnSendEmail">إرسال الاسئلة</string>
+
+    <string name="menufragment_label_btnNews">الأخبار</string>
+    <string name="menufragment_label_btnEstekhare">لخيرة</string>
+    <string name="menufragment_label_btnLibrary">المكتبة</string>
+    <string name="menufragment_label_btnFeghhi">دورس خارج الفقه</string>
+    <string name="menufragment_label_btnNashrie">نشریه صفیر حیات</string>
+    <string name="menufragment_label_btnPDF">بی دی اف کتب</string>
     <string name="menufragment_label_btnContactUs">اتصل بنا</string>
     <string name="menufragment_label_btnAboutUs">معلومات عنا</string>
     <string name="menufragment_label_btnSetting">الإعدادات</string>
     <string name="menufragment_label_btnHelp">مساعدة</string>
+
+
+    <!-- WebView -->
+    <string name="check_internet_connection">تحقق من اتصال الإنترنت</string>
 
     <!-- book list grid item -->
 
@@ -32,6 +44,9 @@
     <string name="invalid_email">بريد إلكتروني خاطئ</string>
     <string name="empty_message">أدخل النص الخاص بك</string>
     <string name="empty_subject">أدخل موضوعك</string>
+    <string name="sending_email">إرسال البريد الإلكتروني</string>
+    <string name="email_sent">أرسل البريد الإلكتروني</string>
+    <string name="email_sending_error">لقد تعذر الارسال</string>
 
     <!--email Us -->
 
@@ -41,6 +56,9 @@
     <string name="contactUs_MailBox">صندوق بريد</string>
     <string name="contactUs_PhoneNumbers">هاتف</string>
     <string name="contactUs_Fax">الفاکس</string>
+
+    <string name="tells_list_dialog_text">أرقام الهواتف</string>
+    <string name="tells_list_dialog_cancel">إلغاء</string>
     <!--Contact Us -->
 
     <!-- Settings -->
@@ -53,11 +71,13 @@
     <string name="settings_FontSize">حجم الخط: </string>
     <string name="settings_ChooseLanguage">اختر اللغة:  </string>
 
-    <string name="txt_ask_onexit_title">سوال</string>
+    <string name="txt_ask_onexit_title"></string>
     <string name="txt_ask_onexit">هل تريد الخروج ؟</string>
     <string name="txt_ask_onexit_yes">نعم</string>
     <string name="txt_ask_onexit_no">لا</string>
 
     <string name="txt_search_hint">بحث عناوين الكتب ...</string>
+
+    <string name="Downlading">جارى التحميل. ...</string>
     <!--Settings-->
 </resources>

@@ -2,19 +2,21 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/navigation_menu"
-        android:icon="@drawable/ic_menu_navigation"
-        android:title=""/>
+
 
     <item
         android:id="@+id/navigation_Search"
         android:icon="@drawable/ic_search_navigation"
         android:title=""
         android:visible="false"/>
+
     <item
         android:id="@+id/navigation_BookList"
         android:icon="@drawable/ic_booklist_navigation"
+        android:title=""/>
+    <item
+        android:id="@+id/navigation_menu"
+        android:icon="@drawable/ic_menu_navigation"
         android:title=""/>
 
     <item

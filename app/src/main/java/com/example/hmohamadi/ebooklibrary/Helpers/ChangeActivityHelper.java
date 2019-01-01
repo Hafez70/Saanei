@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import com.example.hmohamadi.ebooklibrary.R;
+
 
 /**
  * Created by varsovski on 18-Mar-15.
@@ -48,6 +50,16 @@ public class ChangeActivityHelper implements OnClickListener {
             source.finish();
         }
         Intent intent = new Intent(source, destination);
+        source.startActivity(intent);
+        source.overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+    }
+
+    public static void changeActivity(Activity source, Class<?> destination, boolean shouldFinishContext, Bundle bundle) {
+        if (shouldFinishContext){
+            source.finish();
+        }
+        Intent intent = new Intent(source, destination);
+        intent.putExtras(bundle);
         source.startActivity(intent);
     }
 

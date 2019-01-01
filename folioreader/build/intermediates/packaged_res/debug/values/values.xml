@@ -28,8 +28,7 @@
     <color name="yellow">#FFEB6B</color>
     <declare-styleable name="DirectionalViewpager">
         <attr format="string" name="direction">
-            <!-- <enum name="vertical" value="vertical"></enum>
-             <enum name="horizontal" value="horizontal"></enum>-->
+            
         </attr>
     </declare-styleable>
     <declare-styleable name="LoadingView">
@@ -110,7 +109,7 @@
     <string name="menu_item_config">تنظیمات</string>
     <string name="menu_item_copy">کپی</string>
     <string name="menu_item_define">تعاریف</string>
-    <string name="menu_item_highlight">نشانه</string>
+    <string name="menu_item_highlight">نشانه گذاری</string>
     <string name="menu_item_search">جستجو</string>
     <string name="menu_item_share">اشتراک</string>
     <string name="menu_item_tts">تبدیل متن به گفتار</string>
@@ -241,7 +240,7 @@
 
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

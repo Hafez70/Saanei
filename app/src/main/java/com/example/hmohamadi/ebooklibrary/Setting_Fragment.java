@@ -72,7 +72,7 @@ public class Setting_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Log.w("onCreateView >>> ","<<<< onCreateView :  called <<<<<<<<<<<<<<<<<<<");
+
         rootview = inflater.inflate(R.layout.fragment_setting, container, false);
         initViews(rootview);
 
@@ -343,7 +343,7 @@ public class Setting_Fragment extends Fragment {
 
         StyleableTextView btnnazanin = v.findViewById(R.id.view_setting_font_nazanin);
         btnnazanin.setSelected(nazanin);
-        Log.w("My error >>>>", " setSelectedFont >>>>>>>>>>>>>" + String.valueOf(nazanin));
+
         StyleableTextView btnlotus = v.findViewById(R.id.view_setting_font_lotus);
         btnlotus.setSelected(lotus);
         StyleableTextView btnkoodak = v.findViewById(R.id.view_setting_font_koodak);

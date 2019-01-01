@@ -55,8 +55,17 @@ public class FileUtil {
     }
 
     public static String getFolioEpubFolderPath(String epubFileName) {
+
         return Environment.getExternalStorageDirectory().getAbsolutePath()
                 + "/" + FOLIO_READER_ROOT + "/" + epubFileName;
+    }
+
+    public static String getFolioEpubFolderPath_internalStorage(Context mycontext,String epubFileName) {
+
+//        return Environment.getgetExternalStorageDirectory().getAbsolutePath()
+//                + "/" + FOLIO_READER_ROOT + "/" + epubFileName;
+
+        return mycontext.getFilesDir().getAbsolutePath()  + "/" + FOLIO_READER_ROOT + "/" + epubFileName;
     }
 
     public static String getFolioEpubFilePath(FolioActivity.EpubSourceType sourceType, String epubFilePath, String epubFileName) {
@@ -73,6 +82,18 @@ public class FileUtil {
         } else {
             return getFolioEpubFolderPath(CoverFileName) + "/" + CoverFileName + strFormat;
         }
+    }
+
+    public static String getFolioEpubFilePath_internal(Context myContext, String epubFilePath, String epubFileName) {
+
+            return getFolioEpubFolderPath_internalStorage(myContext,epubFileName) + "/" + epubFileName + ".epub";
+
+    }
+
+    public static String getFolioCoverFilePath_internal(Context myContext, String CoverFilePath, String CoverFileName,String strFormat) {
+
+            return getFolioEpubFolderPath_internalStorage(myContext,CoverFileName) + "/" + CoverFileName + strFormat;
+
     }
 
     private static boolean isFolderAvailable(String epubFileName) {
@@ -121,4 +142,31 @@ public class FileUtil {
         }
         return false;
     }
+
+    public static Boolean saveTempEpubFile_Internal(Context myContext,String filePath, String fileName, InputStream inputStream) {
+        OutputStream outputStream = null;
+        File file = new File(filePath);
+        try {
+            if (!file.exists()) {
+                File folder = new File(getFolioEpubFolderPath_internalStorage(myContext,fileName));
+                folder.mkdirs();
+
+                outputStream = new FileOutputStream(file);
+                int read = 0;
+                byte[] bytes = new byte[inputStream.available()];
+
+                while ((read = inputStream.read(bytes)) != -1) {
+                    outputStream.write(bytes, 0, read);
+                }
+            } else {
+                return true;
+            }
+            inputStream.close();
+            outputStream.close();
+        } catch (IOException e) {
+            Log.e(TAG, e.getMessage());
+        }
+        return false;
+    }
+
 }

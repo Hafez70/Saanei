@@ -88,7 +88,7 @@ import static com.folioreader.Constants.HIGHLIGHT_SELECTED;
 import static com.folioreader.Constants.SELECTED_CHAPTER_POSITION;
 import static com.folioreader.Constants.TYPE;
 
-public class FolioActivity
+public class    FolioActivity
         extends AppCompatActivity
         implements FolioActivityCallback, MainMvpView, MediaControllerCallback,
         View.OnSystemUiVisibilityChangeListener {
@@ -234,9 +234,6 @@ public class FolioActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setConfig(savedInstanceState);
-
-
         handler = new Handler();
         density = getResources().getDisplayMetrics().density;
         LocalBroadcastManager.getInstance(this).registerReceiver(closeBroadcastReceiver,
@@ -246,7 +243,7 @@ public class FolioActivity
         // TODO: -> Make this configurable
         // getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        ///////////////////////////
+        setConfig(savedInstanceState);
         initDistractionFreeMode(savedInstanceState);
 
         setContentView(R.layout.folio_activity);
@@ -906,7 +903,7 @@ public class FolioActivity
         // and to avoid lint warning
         if (config == null)
             config = new Config();
-
+        //AppUtil.ChangeLocale(getBaseContext(),config);
         chngeApplicationLanguage(config.getLanguage());
 
         AppUtil.saveConfig(this, config);

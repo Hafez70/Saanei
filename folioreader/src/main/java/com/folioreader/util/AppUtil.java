@@ -2,6 +2,8 @@ package com.folioreader.util;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Build;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -60,6 +62,43 @@ public class AppUtil {
             Log.e(TAG, "toMap failed", e);
         }
         return map;
+    }
+
+    public static void ChangeLocale(Context context,Config conf)
+    {
+//        Locale current = context.getResources().getConfiguration().locale;
+//        Log.w("Current Locale : >>", "before >>>>>>>>>>>>>>>> " + current.getDisplayLanguage() + " <<<<<<<<<<<<<<<");
+        String languageToLoad  = (conf.getLanguage().length() == 0 ? "fa":  conf.getLanguage());//conf.getLanguage(); // your language
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        context.getResources().updateConfiguration(config,
+                context.getResources().getDisplayMetrics());
+//        current = context.getResources().getConfiguration().locale;
+//        Log.w("Current Locale : >>", "after >>>>>>>>>>>>>>>> " + current.getDisplayLanguage() + " <<<<<<<<<<<<<<<");
+    }
+
+    public static void setLocale(Context context,Config conf){
+//        Locale current = context.getResources().getConfiguration().locale;
+//        Log.w("Current Locale : >>", "before >>>>>>>>>>>>>>>> " + current.getDisplayLanguage() + " <<<<<<<<<<<<<<<");
+        String languageToLoad  = (conf.getLanguage().length() == 0 ? "fa":  conf.getLanguage());
+        Locale locale = new Locale(languageToLoad);
+        Resources resources = context.getResources();
+        Configuration configuration = resources.getConfiguration();
+        Locale.setDefault(locale);
+        configuration.setLocale(locale);
+
+        if (Build.VERSION.SDK_INT >= 25) {
+            context = context.getApplicationContext().createConfigurationContext(configuration);
+            context = context.createConfigurationContext(configuration);
+        }
+
+        context.getResources().updateConfiguration(configuration,
+                resources.getDisplayMetrics());
+
+//        current = context.getResources().getConfiguration().locale;
+//        Log.w("Current Locale : >>", "after >>>>>>>>>>>>>>>> " + current.getDisplayLanguage() + " <<<<<<<<<<<<<<<");
     }
 
     public static String charsetNameForURLConnection(URLConnection connection) {

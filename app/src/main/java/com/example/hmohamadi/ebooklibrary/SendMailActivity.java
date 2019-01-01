@@ -8,9 +8,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.hmohamadi.ebooklibrary.Helpers.SendMail;
 import com.folioreader.Config;
+import com.folioreader.util.AppUtil;
 
 import java.util.Locale;
 import java.util.regex.Matcher;
@@ -22,7 +24,10 @@ public class SendMailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-         setContentView(R.layout.activity_sendmail);
+        Config _conf = AppUtil.getSavedConfig(this);
+        AppUtil.ChangeLocale(this,_conf);
+
+        setContentView(R.layout.activity_sendmail);
 
         final EditText your_name        = (EditText) findViewById(R.id.your_name);
         final EditText your_email       = (EditText) findViewById(R.id.your_email);
@@ -55,7 +60,7 @@ public class SendMailActivity extends AppCompatActivity {
                 return;
             }
             if (TextUtils.isEmpty(message)){
-                your_message.setError("متن ایمیل نباید خالی باشد");
+                your_message.setError(getResources().getString(R.string.empty_message));
                 your_message.requestFocus();
                 return;
             }

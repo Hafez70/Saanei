@@ -14,6 +14,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import com.example.hmohamadi.ebooklibrary.R;
 import com.folioreader.Config;
 import android.app.ProgressDialog;
 
@@ -44,11 +45,11 @@ private boolean _do = true;
         NetworkInfo netInfo = conMgr.getActiveNetworkInfo();
         if (netInfo == null) {
             _do = false;
-            Toast.makeText(context,"اتصال به اینترنت را چک کنید", Toast.LENGTH_LONG).show();
+            Toast.makeText(context,"", Toast.LENGTH_LONG).show();
         }
         else
         {
-            progressDialog = ProgressDialog.show(context,"در حال ","لطفا صبر کنید...",false,false);
+            progressDialog = ProgressDialog.show(context,context.getResources().getString(R.string.sending_email),context.getResources().getString(R.string.contact_form_post_message),false,false);
         }
 
         //Showing progress dialog while sending email
@@ -60,11 +61,11 @@ private boolean _do = true;
         super.onPostExecute(resault);
         if(resault)
         {
-            Toast.makeText(context,"ایمیل ارسال شد", Toast.LENGTH_LONG).show();
+            Toast.makeText(context,context.getResources().getString(R.string.email_sent), Toast.LENGTH_LONG).show();
         }
         else
         {
-            Toast.makeText(context,"ایرادی در ارسال رخ داده است", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, context.getResources().getString(R.string.email_sending_error), Toast.LENGTH_LONG).show();
         }
         //Dismissing the progress dialog
         if(progressDialog != null) {

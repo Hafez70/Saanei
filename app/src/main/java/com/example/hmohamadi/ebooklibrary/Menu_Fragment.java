@@ -8,8 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout;
 
 import com.example.hmohamadi.ebooklibrary.Helpers.ChangeActivityHelper;
+import com.example.hmohamadi.ebooklibrary.Helpers.DBHelper;
+import com.example.hmohamadi.ebooklibrary.Models.Language_model;
+import com.example.hmohamadi.ebooklibrary.Models.Setting_model;
+import com.folioreader.Config;
+import com.folioreader.Constants;
+import com.folioreader.util.AppUtil;
 
 
 /**
@@ -59,7 +67,7 @@ public class Menu_Fragment extends Fragment {
 
 
         //---------- contact us --------------------//
-        Button _btnSendEmail =  v.findViewById(R.id.btnSendEmail);
+        LinearLayout _btnSendEmail =  v.findViewById(R.id.btnSendEmail);
         _btnSendEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +77,7 @@ public class Menu_Fragment extends Fragment {
         //---------- contact us --------------------//
 
         //---------- About us --------------------//
-        Button _btnAboutUs = v.findViewById(R.id.btnAboutUs);
+        LinearLayout _btnAboutUs = v.findViewById(R.id.btnAboutUs);
         _btnAboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,7 +87,8 @@ public class Menu_Fragment extends Fragment {
         //---------- About us --------------------//
 
         //---------- Contact us --------------------//
-        Button _btnContactUS = v.findViewById(R.id.btnContactUs);
+        LinearLayout _btnContactUS = v.findViewById(R.id.btnContactUs);
+        
         _btnContactUS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,29 +98,108 @@ public class Menu_Fragment extends Fragment {
         //---------- Contact us--------------------//
 
         //---------- WebView --------------------//
-        Button _btnEnterWebSIte = (Button) v.findViewById(R.id.btnEnterWebSIte);
+        LinearLayout _btnEnterWebSIte = (LinearLayout) v.findViewById(R.id.btnEnterWebSIte);
         _btnEnterWebSIte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ChangeActivityHelper.changeActivity(getActivity(),WebViewActivity.class,false);
+
+                Bundle b = new Bundle();
+                b.putString(Constants.WEBVIEW_URL_KEY, GetSettingConfig().getWebSiteUrl());
+                ChangeActivityHelper.changeActivity(getActivity(),WebViewActivity.class,false,b);
             }
         });
-        //---------- WebView--------------------//
-        //---------- Setting --------------------//
-        Button _btnSetting =  v.findViewById(R.id.btnSetting);
-        _btnSetting.setOnClickListener(new View.OnClickListener() {
+
+        LinearLayout _btnPDF = (LinearLayout) v.findViewById(R.id.btnPDF);
+        _btnPDF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.onFragmentInteraction("call_setting");
+
+                Bundle b = new Bundle();
+                b.putString(Constants.WEBVIEW_URL_KEY, GetSettingConfig().getLibraryUrl());
+                ChangeActivityHelper.changeActivity(getActivity(),WebViewActivity.class,false,b);
+            }
+        });
+
+
+        LinearLayout _btnNews = (LinearLayout) v.findViewById(R.id.btnNews);
+        _btnNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Bundle b = new Bundle();
+                b.putString(Constants.WEBVIEW_URL_KEY, GetSettingConfig().getNewsUrl());
+                ChangeActivityHelper.changeActivity(getActivity(),WebViewActivity.class,false,b);
+            }
+        });
+
+
+        LinearLayout _btnEstekhare  = (LinearLayout) v.findViewById(R.id.btnEstekhare);
+        _btnEstekhare .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Bundle b = new Bundle();
+                b.putString(Constants.WEBVIEW_URL_KEY, GetSettingConfig().getEstekhareUrl());
+                ChangeActivityHelper.changeActivity(getActivity(),WebViewActivity.class,false,b);
+            }
+        });
+
+
+        LinearLayout _btnNashrie = (LinearLayout) v.findViewById(R.id.btnNashriehUrl);
+
+        _btnNashrie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Bundle b = new Bundle();
+                b.putString(Constants.WEBVIEW_URL_KEY, GetSettingConfig().getNashriehUrl());
+                ChangeActivityHelper.changeActivity(getActivity(),WebViewActivity.class,false,b);
+            }
+        });
+
+        LinearLayout _btnfeghhi = (LinearLayout) v.findViewById(R.id.btnFeghhiUrl);
+        _btnfeghhi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Bundle b = new Bundle();
+                b.putString(Constants.WEBVIEW_URL_KEY, GetSettingConfig().getFeghhiUrl());
+                ChangeActivityHelper.changeActivity(getActivity(),WebViewActivity.class,false,b);
+            }
+        });
+        //LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams();
+        //
+
+
+        Config _config = AppUtil.getSavedConfig(getActivity());
+        if(_config.getLanguage().length() > 0)
+        {
+            _btnNashrie.setVisibility(View.GONE);
+            _btnfeghhi.setVisibility(View.GONE);
+        }
+        else
+        {
+            _btnNashrie.setVisibility(View.VISIBLE);
+            _btnfeghhi.setVisibility(View.VISIBLE);
+        }
+        //---------- WebView--------------------//
+        //---------- Setting --------------------//
+        LinearLayout _btnbooklist =  v.findViewById(R.id.btnBookList);
+        _btnbooklist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onFragmentInteraction("call_booklist");
             }
         });
         //---------- Setting--------------------//
         //---------- WebView --------------------//
-        Button _btnPayments = (Button) v.findViewById(R.id.btnEnterPayments);
+        LinearLayout _btnPayments = (LinearLayout) v.findViewById(R.id.btnEnterPayments);
         _btnPayments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ChangeActivityHelper.changeActivity(getActivity(),PaymentsWebviewActivity.class,false);
+                Bundle b = new Bundle();
+                b.putString(Constants.WEBVIEW_URL_KEY, GetSettingConfig().getVojoohatSiteUrl());
+                ChangeActivityHelper.changeActivity(getActivity(),WebViewActivity.class,false,b);
             }
         });
         //---------- WebView--------------------//
@@ -126,6 +214,14 @@ public class Menu_Fragment extends Fragment {
 
     }
 
+    private Setting_model GetSettingConfig()
+    {
+        DBHelper db = new DBHelper(getActivity());
+        Config _conf = AppUtil.getSavedConfig(getActivity());
+        Language_model lng = db.get_LanguageID((_conf.getLanguage().length() == 0 ? "fa":  _conf.getLanguage()));
+
+        return db.get_Setting_byLang(lng.get_id());
+    }
 
     @Override
     public void onAttach(Context context) {

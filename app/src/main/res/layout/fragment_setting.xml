@@ -3,8 +3,10 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/container"
+        android:background="@color/Mainbackground"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:context="com.example.hmohamadi.ebooklibrary.Setting_Fragment">
 
         <TextView
             android:id="@+id/lblthemeMode"
@@ -163,7 +165,7 @@
             app:layout_constraintEnd_toStartOf="@+id/view_setting_iv_label_font_big"
             app:layout_constraintStart_toEndOf="@+id/view_setting_iv_label_font_small"
             app:layout_constraintTop_toBottomOf="@id/lblFontSize"
-            app:layout_constraintVertical_bias="0.51" />
+            app:layout_constraintVertical_bias="0.50" />
 
         <View
             android:id="@+id/view6"

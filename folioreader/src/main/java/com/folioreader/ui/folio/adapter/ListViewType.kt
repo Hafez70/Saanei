@@ -25,7 +25,7 @@ enum class ListViewType(val value: Int) {
             return try {
                 valueOf(string!!)
             } catch (e: Exception) {
-                Log.w("ListViewType", "-> ", e)
+
                 UNKNOWN_VIEW
             }
         }

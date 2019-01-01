@@ -33,7 +33,7 @@ dependencies
             implementation 'com.desarrollodroide:fragmenttransactionextended:1'
             implementation 'com.android.support:support-compat:28.0.0'
             implementation 'com.daimajia.easing:library:2.0@aar'
-
+            implementation 'com.codesgood:justifiedtextview:1.1.0'
             implementation 'com.daimajia.androidanimations:library:2.3@aar'
             implementation 'com.github.florent37:expansionpanel:1.1.2'
             implementation project(':folioreader')

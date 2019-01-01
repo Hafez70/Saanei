@@ -4,6 +4,13 @@ public class Setting_model {
     private int _id;
     private int lang_id;
     private String WebSiteUrl;
+
+    private String NewsUrl;
+    private String EstekhareUrl;
+    private String LibraryUrl;
+    private String FeghhiUrl;
+    private String NashriehUrl;
+
     private String SenderEmailAddress;
     private String SenderPassword;
     private String RecieverEmailAddress;
@@ -117,5 +124,45 @@ public class Setting_model {
 
     public void setVersion(String version) {
         Version = version;
+    }
+
+    public String getNewsUrl() {
+        return NewsUrl;
+    }
+
+    public void setNewsUrl(String newsUrl) {
+        NewsUrl = newsUrl;
+    }
+
+    public String getEstekhareUrl() {
+        return EstekhareUrl;
+    }
+
+    public void setEstekhareUrl(String estekhareUrl) {
+        EstekhareUrl = estekhareUrl;
+    }
+
+    public String getLibraryUrl() {
+        return LibraryUrl;
+    }
+
+    public void setLibraryUrl(String libraryUrl) {
+        LibraryUrl = libraryUrl;
+    }
+
+    public String getFeghhiUrl() {
+        return FeghhiUrl;
+    }
+
+    public void setFeghhiUrl(String feghhiUrl) {
+        FeghhiUrl = feghhiUrl;
+    }
+
+    public String getNashriehUrl() {
+        return NashriehUrl;
+    }
+
+    public void setNashriehUrl(String nashriehUrl) {
+        NashriehUrl = nashriehUrl;
     }
 }

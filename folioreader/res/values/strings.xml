@@ -120,7 +120,7 @@
     <string name="back_compat" translatable="false">BackCompat</string>
 
     <string name="menu_item_copy">کپی</string>
-    <string name="menu_item_highlight">نشانه</string>
+    <string name="menu_item_highlight">نشانه گذاری</string>
     <string name="menu_item_define">تعاریف</string>
     <string name="menu_item_share">اشتراک</string>
 

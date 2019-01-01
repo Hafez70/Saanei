@@ -1,7 +1,13 @@
 package com.example.hmohamadi.ebooklibrary.Models;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+
+import com.example.hmohamadi.ebooklibrary.Helpers.DBHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactUsModel {
     private int _id = 0;
@@ -240,6 +246,69 @@ public class ContactUsModel {
         return result;
     }
 
+    public static List<String> Get_Tells_list(int ID, Context mycontext)
+    {
+        DBHelper db = new DBHelper(mycontext);
+        ContactUsModel newmodel = db.get_ContactUs_With_ID(ID); 
+        
+        
+        List<String> lst= new ArrayList<>(); 
+        if (newmodel.getPreTel1() != null || newmodel.getTel1() != null) {
+            String tell = "";
+            if (newmodel.getPreTel1() != null)
+            {
+                tell = newmodel.getPreTel1();
+            }  
+
+            if (newmodel.getTel1() != null)
+                tell += newmodel.getTel1() ;  
+            
+            lst.add(tell) ;
+        }
+        if (newmodel.getPreTel2() != null || newmodel.getTel2() != null) {
+            String tell = "";
+            if (newmodel.getPreTel2() != null)
+                tell += newmodel.getPreTel2();
+
+            if (newmodel.getTel2() != null)
+                tell += newmodel.getTel2() ;
+
+            lst.add(tell) ;
+        }
+        if (newmodel.getPreTel3() != null || newmodel.getTel3() != null) {
+            String tell = "";
+            if (newmodel.getPreTel3() != null)
+                tell += newmodel.getPreTel3();
+
+            if (newmodel.getTel3() != null)
+                tell += newmodel.getTel3() ;
+
+            lst.add(tell) ;
+        }
+        if (newmodel.getPreTel4() != null || newmodel.getTel4() != null) {
+            String tell = "";
+            if (newmodel.getPreTel4() != null)
+                tell += newmodel.getPreTel4();
+
+            if (newmodel.getTel4() != null)
+                tell += newmodel.getTel4() ;
+
+            lst.add(tell) ;
+        }
+        if (newmodel.getPreTel5() != null || newmodel.getTel5() != null) {
+            String tell = "";
+            if (newmodel.getPreTel5() != null)
+                tell += newmodel.getPreTel5();
+
+            if (newmodel.getTel5() != null)
+                tell += newmodel.getTel5() ;
+
+            lst.add(tell) ;
+        }
+        
+        return lst;
+    }
+    
     public String getMailBox() {
         return MailBox;
     }

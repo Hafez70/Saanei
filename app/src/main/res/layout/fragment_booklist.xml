@@ -16,8 +16,8 @@
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layoutDirection="inherit"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
         <RelativeLayout
             android:id="@+id/btnSearch"
             android:layout_width="35dp"
@@ -56,7 +56,7 @@
         android:layout_height="match_parent"
         android:layout_margin="10dp"
         android:horizontalSpacing="5dp"
-        android:numColumns="2"
+        android:numColumns="1"
         android:padding="5dp"
         android:verticalSpacing="5dp"
         tools:listitem="@layout/book_list_layout">

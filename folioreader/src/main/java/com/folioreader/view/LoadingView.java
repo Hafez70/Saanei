@@ -48,6 +48,9 @@ public class LoadingView extends ConstraintLayout {
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
 
+//        Config _conf = AppUtil.getSavedConfig(context);
+//        AppUtil.ChangeLocale(context,_conf);
+
         LayoutInflater.from(context).inflate(R.layout.view_loading, this);
 
         if (isInEditMode())

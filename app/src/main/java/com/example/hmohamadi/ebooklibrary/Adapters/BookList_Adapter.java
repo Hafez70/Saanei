@@ -4,6 +4,12 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
@@ -15,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
+import com.codesgood.views.JustifiedTextView;
 import com.example.hmohamadi.ebooklibrary.Models.Book_Model;
 import com.example.hmohamadi.ebooklibrary.R;
 
@@ -45,15 +52,20 @@ public class BookList_Adapter extends ArrayAdapter<Book_Model> {
 
         AppCompatImageView imagebookPhoto = (AppCompatImageView)v.findViewById(R.id.img_bookImage_gridItem);
         if(book.getUrl_image().length() != 0) {
-            Log.w("getView >>>>> "," >>>>>>>>>>>>>>>>>>>>> getUrl_image<<<<<<<" + book.getUrl_image());
+
             Bitmap myBitmap = getBitmapFromFielPath(book.getUrl_image());
             if(myBitmap != null) {
+                myBitmap = getRoundedCornerBitmap(myBitmap,10);
                 imagebookPhoto.setImageBitmap(myBitmap);
             }
         }
 
         AppCompatTextView txt_name = (AppCompatTextView)v.findViewById(R.id.txt_name_gridItem);
         txt_name.setText(book.getName());
+
+        JustifiedTextView txt_keyword = (JustifiedTextView)v.findViewById(R.id.txt_Keyword_gridItem);
+        txt_keyword.setText(book.getKeywords());
+
 //
 //        AppCompatTextView txt_autor = (AppCompatTextView)v.findViewById(R.id.txt_AutorName_gridItem);
 //        txt_autor.setText(book.getAutorname());
@@ -65,50 +77,17 @@ public class BookList_Adapter extends ArrayAdapter<Book_Model> {
     }
 
     private Bitmap getBitmapFromAssets(String fileName){
-        /*
-            AssetManager
-                Provides access to an application's raw asset files.
-        */
 
-        /*
-            public final AssetManager getAssets ()
-                Retrieve underlying AssetManager storage for these resources.
-        */
         AssetManager am = mycontext.getAssets();
         InputStream is = null;
         try{
-            /*
-                public final InputStream open (String fileName)
-                    Open an asset using ACCESS_STREAMING mode. This provides access to files that
-                    have been bundled with an application as assets -- that is,
-                    files placed in to the "assets" directory.
 
-                    Parameters
-                        fileName : The name of the asset to open. This name can be hierarchical.
-                    Throws
-                        IOException
-            */
             is = am.open(fileName);
         }catch(IOException e){
             e.printStackTrace();
         }
 
-        /*
-            BitmapFactory
-                Creates Bitmap objects from various sources, including files, streams, and byte-arrays.
-        */
 
-        /*
-            public static Bitmap decodeStream (InputStream is)
-                Decode an input stream into a bitmap. If the input stream is null, or cannot
-                be used to decode a bitmap, the function returns null. The stream's
-                position will be where ever it was after the encoded data was read.
-
-                Parameters
-                    is : The input stream that holds the raw data to be decoded into a bitmap.
-                Returns
-                    The decoded bitmap, or null if the image data could not be decoded.
-        */
         Bitmap bitmap = BitmapFactory.decodeStream(is);
         return bitmap;
     }
@@ -124,5 +103,27 @@ public class BookList_Adapter extends ArrayAdapter<Book_Model> {
             return myBitmap;
         }
         return null;
+    }
+
+    public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
+        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap
+                .getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+
+        final int color = 0xff424242;
+        final Paint paint = new Paint();
+        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        final RectF rectF = new RectF(rect);
+        final float roundPx = pixels;
+
+        paint.setAntiAlias(true);
+        canvas.drawARGB(0, 0, 0, 0);
+        paint.setColor(color);
+        canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        canvas.drawBitmap(bitmap, rect, rect, paint);
+
+        return output;
     }
 }
